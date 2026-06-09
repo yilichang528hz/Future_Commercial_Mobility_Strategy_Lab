@@ -1,0 +1,21 @@
+{
+  "completed_batches": 3,
+  "last_batch": [
+    "strategy-roadmap-timeline-animation",
+    "technology-maturity-quadrant-animation",
+    "trend-radar-animation"
+  ],
+  "processed_total": [
+    "connected-fleet-data-flow-animation",
+    "energy-roadmap-crossover-animation",
+    "esg-policy-carbon-signal-animation",
+    "safety-adas-risk-education-animation",
+    "scenario-simulator-interactive-map",
+    "strategy-roadmap-timeline-animation",
+    "technology-maturity-quadrant-animation",
+    "trend-radar-animation"
+  ],
+  "remaining": [],
+  "batch_size": 3,
+  "final_bundle": true
+}

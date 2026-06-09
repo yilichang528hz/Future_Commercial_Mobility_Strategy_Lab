@@ -1,0 +1,1717 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "moduleId": "strategy-roadmap-studio",
+    "dataStatus": "demo_assumptions",
+    "sourceBasis": "Portfolio proposal strategy narrative converted into a static 2026-2035 roadmap prototype.",
+    "publicBoundary": {
+      "zh": "本策略路線圖僅為作品集 demo 假設，用於展示商品企劃推理框架；不是官方產品上市、採購、工程、法規、財務或永續揭露建議。",
+      "en": "This strategy roadmap uses portfolio demo assumptions only. It demonstrates product-planning reasoning and is not an official launch, procurement, engineering, legal, financial, or sustainability-disclosure recommendation.",
+      "ja": "この戦略ロードマップはポートフォリオ用の demo 仮定です。商品企画の考え方を示すものであり、公式な発売、調達、技術、法務、財務、サステナビリティ開示の提案ではありません。"
+    },
+    "title": {
+      "zh": "策略路線圖工作室",
+      "en": "Strategy Roadmap Studio",
+      "ja": "戦略ロードマップスタジオ"
+    },
+    "subtitle": {
+      "zh": "把趨勢、成熟度、情境、能源、安全、車聯網與 ESG 訊號整理成 2026 至 2035 的商品企劃節奏。",
+      "en": "Turns trend, maturity, scenario, energy, safety, connected-fleet, and ESG signals into a 2026-2035 product-planning cadence.",
+      "ja": "トレンド、成熟度、シナリオ、エネルギー、安全、コネクテッドフリート、ESG の信号を 2026-2035 年の商品企画リズムに整理します。"
+    }
+  },
+  "labels": {
+    "demo": {
+      "zh": "Demo assumptions",
+      "en": "Demo assumptions",
+      "ja": "Demo assumptions"
+    },
+    "humanReview": {
+      "zh": "需人工審查",
+      "en": "Human review required",
+      "ja": "人による確認が必要"
+    },
+    "notLaunchPlan": {
+      "zh": "不是產品上市時程",
+      "en": "Not a launch schedule",
+      "ja": "発売スケジュールではありません"
+    },
+    "filterAll": {
+      "zh": "全部",
+      "en": "All",
+      "ja": "すべて"
+    },
+    "selectedItem": {
+      "zh": "選取項目",
+      "en": "Selected item",
+      "ja": "選択項目"
+    },
+    "recommendedActions": {
+      "zh": "建議行動",
+      "en": "Recommended actions",
+      "ja": "推奨アクション"
+    },
+    "requiredData": {
+      "zh": "所需資料",
+      "en": "Required data",
+      "ja": "必要データ"
+    },
+    "dealerEducation": {
+      "zh": "通路教育",
+      "en": "Dealer education",
+      "ja": "販売チャネル教育"
+    },
+    "pocSuggestion": {
+      "zh": "客戶 PoC 建議",
+      "en": "Customer PoC suggestion",
+      "ja": "顧客 PoC 提案"
+    },
+    "successMetrics": {
+      "zh": "成功指標",
+      "en": "Success metrics",
+      "ja": "成功指標"
+    },
+    "risks": {
+      "zh": "風險",
+      "en": "Risks",
+      "ja": "リスク"
+    },
+    "validationNeeds": {
+      "zh": "驗證需求",
+      "en": "Validation needs",
+      "ja": "検証事項"
+    },
+    "timelineSummaryTitle": {
+      "zh": "可及性摘要",
+      "en": "Accessibility summary",
+      "ja": "アクセシビリティ要約"
+    },
+    "demoStart": {
+      "zh": "開始導覽",
+      "en": "Start demo",
+      "ja": "デモ開始"
+    },
+    "filterLabel": {
+      "zh": "篩選策略主題",
+      "en": "Filter strategy themes",
+      "ja": "戦略テーマを絞り込む"
+    }
+  },
+  "themes": [
+    {
+      "id": "education",
+      "name": {
+        "zh": "教育與資料基礎",
+        "en": "Education and data foundation",
+        "ja": "教育とデータ基盤"
+      }
+    },
+    {
+      "id": "energy",
+      "name": {
+        "zh": "能源與 TCO",
+        "en": "Energy and TCO",
+        "ja": "エネルギーと TCO"
+      }
+    },
+    {
+      "id": "safety",
+      "name": {
+        "zh": "安全與 ADAS",
+        "en": "Safety and ADAS",
+        "ja": "安全と ADAS"
+      }
+    },
+    {
+      "id": "connected_fleet",
+      "name": {
+        "zh": "車聯網與服務",
+        "en": "Connected fleet and service",
+        "ja": "コネクテッドフリートとサービス"
+      }
+    },
+    {
+      "id": "esg",
+      "name": {
+        "zh": "ESG 與政策",
+        "en": "ESG and policy",
+        "ja": "ESG と政策"
+      }
+    },
+    {
+      "id": "scenario",
+      "name": {
+        "zh": "情境與客戶 PoC",
+        "en": "Scenario and customer PoC",
+        "ja": "シナリオと顧客 PoC"
+      }
+    }
+  ],
+  "periods": [
+    {
+      "id": "2026_2027",
+      "start": 2026,
+      "end": 2027,
+      "label": {
+        "zh": "2026-2027 近期教育與資料基礎",
+        "en": "2026-2027 Near-term education and data foundation",
+        "ja": "2026-2027 短期教育とデータ基盤"
+      }
+    },
+    {
+      "id": "2028_2030",
+      "start": 2028,
+      "end": 2030,
+      "label": {
+        "zh": "2028-2030 PoC 擴充與固定路線電動化",
+        "en": "2028-2030 PoC expansion and fixed-route electrification",
+        "ja": "2028-2030 PoC 拡張と固定ルート電動化"
+      }
+    },
+    {
+      "id": "2031_2033",
+      "start": 2031,
+      "end": 2033,
+      "label": {
+        "zh": "2031-2033 車聯網與預測維修成熟",
+        "en": "2031-2033 Connected-fleet and predictive-maintenance maturity",
+        "ja": "2031-2033 コネクテッドフリートと予知保全の成熟"
+      }
+    },
+    {
+      "id": "2034_2035",
+      "start": 2034,
+      "end": 2035,
+      "label": {
+        "zh": "2034-2035 長期追蹤與邊界驗證",
+        "en": "2034-2035 Long-term tracking and boundary validation",
+        "ja": "2034-2035 長期追跡と境界検証"
+      }
+    }
+  ],
+  "roadmapItems": [
+    {
+      "id": "data_foundation",
+      "periodId": "2026_2027",
+      "startYear": 2026,
+      "endYear": 2027,
+      "theme": "education",
+      "strategyTheme": {
+        "zh": "建立企劃資料字典",
+        "en": "Build the planning data dictionary",
+        "ja": "企画データ辞書を整える"
+      },
+      "targetSegments": {
+        "zh": [
+          "都市配送",
+          "冷鏈物流",
+          "車隊租賃"
+        ],
+        "en": [
+          "Urban delivery",
+          "Cold-chain logistics",
+          "Fleet leasing"
+        ],
+        "ja": [
+          "都市配送",
+          "コールドチェーン",
+          "フリートリース"
+        ]
+      },
+      "customerScenarios": {
+        "zh": [
+          "固定路線訪談",
+          "停車時間盤點",
+          "維修回廠資料整理"
+        ],
+        "en": [
+          "Fixed-route interviews",
+          "Downtime inventory",
+          "Service-return data cleanup"
+        ],
+        "ja": [
+          "固定ルートヒアリング",
+          "停止時間の棚卸し",
+          "入庫データ整理"
+        ]
+      },
+      "recommendedActions": {
+        "zh": [
+          "定義路線、載重、能源、維修與 ESG 欄位",
+          "把 demo 指標和正式資料分開"
+        ],
+        "en": [
+          "Define route, payload, energy, service, and ESG fields",
+          "Separate demo indicators from formal data"
+        ],
+        "ja": [
+          "ルート、積載、エネルギー、整備、ESG の項目を定義する",
+          "demo 指標と正式データを分ける"
+        ]
+      },
+      "requiredData": {
+        "zh": [
+          "年里程",
+          "任務類型",
+          "停車時間",
+          "維修原因",
+          "能源成本"
+        ],
+        "en": [
+          "Annual mileage",
+          "Mission type",
+          "Downtime",
+          "Service reason",
+          "Energy cost"
+        ],
+        "ja": [
+          "年間走行距離",
+          "業務タイプ",
+          "停止時間",
+          "整備理由",
+          "エネルギーコスト"
+        ]
+      },
+      "dealerEducationTasks": {
+        "zh": [
+          "建立 TCO、BEV、FMS、ESG 的基礎說法",
+          "訓練不得把 demo 數字說成承諾"
+        ],
+        "en": [
+          "Create basic TCO, BEV, FMS, and ESG explanations",
+          "Train teams not to present demo values as commitments"
+        ],
+        "ja": [
+          "TCO、BEV、FMS、ESG の基本説明を作る",
+          "demo 数値を約束として話さない教育を行う"
+        ]
+      },
+      "customerPocSuggestions": {
+        "zh": [
+          "先做訪談與資料盤點，不急著宣稱技術適配"
+        ],
+        "en": [
+          "Start with interviews and data inventory before making fit claims"
+        ],
+        "ja": [
+          "適合性を主張する前に、ヒアリングとデータ棚卸しから始める"
+        ]
+      },
+      "successMetrics": {
+        "zh": [
+          "資料欄位完成率",
+          "訪談樣本數",
+          "資料缺口清單"
+        ],
+        "en": [
+          "Field-completion rate",
+          "Interview sample count",
+          "Data-gap list"
+        ],
+        "ja": [
+          "項目完成率",
+          "ヒアリング件数",
+          "データギャップ一覧"
+        ]
+      },
+      "risks": {
+        "zh": [
+          "資料定義不一致會讓後續 PoC 失真"
+        ],
+        "en": [
+          "Inconsistent definitions distort later PoCs"
+        ],
+        "ja": [
+          "定義の不一致は後続 PoC を歪める"
+        ]
+      },
+      "validationNeeds": {
+        "zh": [
+          "需由商品、服務、通路與法規人員共同確認欄位"
+        ],
+        "en": [
+          "Product, service, dealer, and compliance teams should review fields together"
+        ],
+        "ja": [
+          "商品、サービス、販売チャネル、コンプライアンス担当で項目を確認する"
+        ]
+      },
+      "glossaryTerms": [
+        "tco",
+        "bev",
+        "fms",
+        "esg"
+      ]
+    },
+    {
+      "id": "dealer_education",
+      "periodId": "2026_2027",
+      "startYear": 2026,
+      "endYear": 2027,
+      "theme": "safety",
+      "strategyTheme": {
+        "zh": "安全與 ADAS 教育基礎",
+        "en": "Safety and ADAS education foundation",
+        "ja": "安全と ADAS 教育の基礎"
+      },
+      "targetSegments": {
+        "zh": [
+          "市區配送",
+          "客運",
+          "工程車"
+        ],
+        "en": [
+          "City delivery",
+          "Bus operation",
+          "Construction vehicles"
+        ],
+        "ja": [
+          "市街地配送",
+          "バス運行",
+          "建設車両"
+        ]
+      },
+      "customerScenarios": {
+        "zh": [
+          "駕駛教育",
+          "車隊安全會議",
+          "交車說明"
+        ],
+        "en": [
+          "Driver education",
+          "Fleet safety meetings",
+          "Delivery handover"
+        ],
+        "ja": [
+          "ドライバー教育",
+          "フリート安全会議",
+          "納車説明"
+        ]
+      },
+      "recommendedActions": {
+        "zh": [
+          "整理 AEB、盲點、環景與疲勞警示的限制說法",
+          "把 ADAS 定位為輔助與教育，不暗示事故消除"
+        ],
+        "en": [
+          "Document limitation language for AEB, blind spot, surround view, and fatigue warning",
+          "Frame ADAS as assistance and education, not accident elimination"
+        ],
+        "ja": [
+          "AEB、死角、周辺視界、疲労警告の制約表現を整理する",
+          "ADAS は支援と教育であり、事故ゼロを示唆しない"
+        ]
+      },
+      "requiredData": {
+        "zh": [
+          "車型配備",
+          "駕駛任務",
+          "事故樣態",
+          "通路訓練回饋"
+        ],
+        "en": [
+          "Vehicle equipment",
+          "Driver tasks",
+          "Incident patterns",
+          "Dealer-training feedback"
+        ],
+        "ja": [
+          "車両装備",
+          "運転業務",
+          "事故パターン",
+          "販売チャネル教育の反応"
+        ]
+      },
+      "dealerEducationTasks": {
+        "zh": [
+          "建立常見問答",
+          "設計系統限制說明",
+          "演練不過度承諾的話術"
+        ],
+        "en": [
+          "Build FAQ material",
+          "Explain system limits",
+          "Practice non-overclaiming language"
+        ],
+        "ja": [
+          "FAQ を作成する",
+          "システム限界を説明する",
+          "過剰な約束を避ける話法を練習する"
+        ]
+      },
+      "customerPocSuggestions": {
+        "zh": [
+          "用教育活動與駕駛回饋衡量理解度，不以 demo 分數作安全認證"
+        ],
+        "en": [
+          "Use education sessions and driver feedback to measure understanding, not demo scores as safety certification"
+        ],
+        "ja": [
+          "教育会とドライバー反応で理解度を見る。demo スコアを安全認証にしない"
+        ]
+      },
+      "successMetrics": {
+        "zh": [
+          "FAQ 完成度",
+          "訓練參與率",
+          "限制說明理解度"
+        ],
+        "en": [
+          "FAQ readiness",
+          "Training participation",
+          "Limit-understanding score"
+        ],
+        "ja": [
+          "FAQ 完成度",
+          "教育参加率",
+          "制約理解度"
+        ]
+      },
+      "risks": {
+        "zh": [
+          "若語氣過度，會造成自動駕駛或安全保證的誤解"
+        ],
+        "en": [
+          "Overclaiming can imply autonomy or guaranteed safety"
+        ],
+        "ja": [
+          "過剰表現は自動運転や安全保証の誤解を生む"
+        ]
+      },
+      "validationNeeds": {
+        "zh": [
+          "正式文案需對照實車規格、手冊、法規與安全審查"
+        ],
+        "en": [
+          "Formal copy needs review against vehicle specs, manuals, regulation, and safety review"
+        ],
+        "ja": [
+          "正式文言は車両仕様、取扱説明書、規制、安全確認と照合する"
+        ]
+      },
+      "glossaryTerms": [
+        "adas",
+        "ai-governance",
+        "poc"
+      ]
+    },
+    {
+      "id": "fixed_route_bev_poc",
+      "periodId": "2028_2030",
+      "startYear": 2028,
+      "endYear": 2030,
+      "theme": "energy",
+      "strategyTheme": {
+        "zh": "固定路線 BEV PoC",
+        "en": "Fixed-route BEV PoC",
+        "ja": "固定ルート BEV PoC"
+      },
+      "targetSegments": {
+        "zh": [
+          "都市配送",
+          "短程冷鏈",
+          "園區物流"
+        ],
+        "en": [
+          "Urban delivery",
+          "Short-haul cold chain",
+          "Closed logistics parks"
+        ],
+        "ja": [
+          "都市配送",
+          "短距離コールドチェーン",
+          "構内物流"
+        ]
+      },
+      "customerScenarios": {
+        "zh": [
+          "路線可預測",
+          "夜間場站充電",
+          "停車時間可控"
+        ],
+        "en": [
+          "Predictable routes",
+          "Overnight depot charging",
+          "Managed downtime"
+        ],
+        "ja": [
+          "予測可能なルート",
+          "夜間の拠点充電",
+          "管理可能な停止時間"
+        ]
+      },
+      "recommendedActions": {
+        "zh": [
+          "選擇固定任務做小規模 PoC",
+          "用 TCO 與 SOH 指標追蹤條件，不宣稱全面替代"
+        ],
+        "en": [
+          "Run small PoCs on fixed missions",
+          "Track conditions with TCO and SOH indicators without claiming broad replacement"
+        ],
+        "ja": [
+          "固定業務で小規模 PoC を行う",
+          "TCO と SOH で条件を追跡し、全面代替を主張しない"
+        ]
+      },
+      "requiredData": {
+        "zh": [
+          "日行駛距離",
+          "載重",
+          "充電功率",
+          "電價",
+          "停車窗口",
+          "電池 SOH"
+        ],
+        "en": [
+          "Daily distance",
+          "Payload",
+          "Charging power",
+          "Electricity price",
+          "Downtime window",
+          "Battery SOH"
+        ],
+        "ja": [
+          "日走行距離",
+          "積載",
+          "充電出力",
+          "電力価格",
+          "停止時間",
+          "電池 SOH"
+        ]
+      },
+      "dealerEducationTasks": {
+        "zh": [
+          "說明 BEV 適合條件",
+          "教育充電、電池健康與殘值風險"
+        ],
+        "en": [
+          "Explain BEV fit conditions",
+          "Educate on charging, battery health, and residual-value risk"
+        ],
+        "ja": [
+          "BEV が適する条件を説明する",
+          "充電、電池状態、残価リスクを教育する"
+        ]
+      },
+      "customerPocSuggestions": {
+        "zh": [
+          "以一到兩條固定路線測試，不延伸為全車隊建議"
+        ],
+        "en": [
+          "Test one or two fixed routes before extending to fleet-wide recommendations"
+        ],
+        "ja": [
+          "一から二本の固定ルートで試し、全車隊提案へ急がない"
+        ]
+      },
+      "successMetrics": {
+        "zh": [
+          "準點率",
+          "充電成功率",
+          "停車時間影響",
+          "demo TCO 趨勢"
+        ],
+        "en": [
+          "On-time rate",
+          "Charging success",
+          "Downtime impact",
+          "Demo TCO trend"
+        ],
+        "ja": [
+          "定時率",
+          "充電成功率",
+          "停止時間への影響",
+          "demo TCO 傾向"
+        ]
+      },
+      "risks": {
+        "zh": [
+          "路線臨時變動、充電容量不足或載重變化會降低適配度"
+        ],
+        "en": [
+          "Route changes, weak charging capacity, or payload variation can reduce fit"
+        ],
+        "ja": [
+          "ルート変更、充電容量不足、積載変動は適合性を下げる"
+        ]
+      },
+      "validationNeeds": {
+        "zh": [
+          "需以實際車型、能源價格、場站條件與維修能力覆核"
+        ],
+        "en": [
+          "Validate with actual vehicle specs, energy prices, depot conditions, and service capability"
+        ],
+        "ja": [
+          "実車仕様、エネルギー価格、拠点条件、整備能力で確認する"
+        ]
+      },
+      "glossaryTerms": [
+        "bev",
+        "poc",
+        "tco",
+        "soh"
+      ]
+    },
+    {
+      "id": "fleet_service_poc",
+      "periodId": "2028_2030",
+      "startYear": 2028,
+      "endYear": 2030,
+      "theme": "connected_fleet",
+      "strategyTheme": {
+        "zh": "FMS 服務 PoC",
+        "en": "FMS service PoC",
+        "ja": "FMS サービス PoC"
+      },
+      "targetSegments": {
+        "zh": [
+          "車隊租賃",
+          "冷鏈物流",
+          "客運"
+        ],
+        "en": [
+          "Fleet leasing",
+          "Cold-chain logistics",
+          "Bus operation"
+        ],
+        "ja": [
+          "フリートリース",
+          "コールドチェーン",
+          "バス運行"
+        ]
+      },
+      "customerScenarios": {
+        "zh": [
+          "保養排程",
+          "遠端診斷",
+          "駕駛行為教育"
+        ],
+        "en": [
+          "Maintenance scheduling",
+          "Remote diagnostics",
+          "Driver-behavior education"
+        ],
+        "ja": [
+          "保守スケジュール",
+          "遠隔診断",
+          "運転行動教育"
+        ]
+      },
+      "recommendedActions": {
+        "zh": [
+          "建立資料同意、清理與服務回應流程",
+          "用小規模客戶報告驗證可讀性"
+        ],
+        "en": [
+          "Create consent, data-cleaning, and service-response flows",
+          "Validate readability through small customer reports"
+        ],
+        "ja": [
+          "同意、データ整備、サービス対応の流れを作る",
+          "小規模な顧客レポートで読みやすさを検証する"
+        ]
+      },
+      "requiredData": {
+        "zh": [
+          "里程",
+          "故障碼",
+          "維修工單",
+          "駕駛事件",
+          "客戶同意"
+        ],
+        "en": [
+          "Mileage",
+          "Fault codes",
+          "Repair orders",
+          "Driver events",
+          "Customer consent"
+        ],
+        "ja": [
+          "走行距離",
+          "故障コード",
+          "整備オーダー",
+          "運転イベント",
+          "顧客同意"
+        ]
+      },
+      "dealerEducationTasks": {
+        "zh": [
+          "說明 FMS 不等於即時監控承諾",
+          "建立資料治理與服務升級話術"
+        ],
+        "en": [
+          "Explain that FMS is not a blanket real-time monitoring promise",
+          "Build data-governance and service-escalation language"
+        ],
+        "ja": [
+          "FMS は包括的なリアルタイム監視の約束ではないと説明する",
+          "データガバナンスとサービス対応の説明を作る"
+        ]
+      },
+      "customerPocSuggestions": {
+        "zh": [
+          "先以保養提醒或月報為範圍，避免收集過多敏感資料"
+        ],
+        "en": [
+          "Begin with maintenance reminders or monthly reports and avoid excessive sensitive data"
+        ],
+        "ja": [
+          "保守通知や月次レポートから始め、過度な機微データ収集を避ける"
+        ]
+      },
+      "successMetrics": {
+        "zh": [
+          "報告閱讀率",
+          "服務回應時間",
+          "保養準時率",
+          "資料品質"
+        ],
+        "en": [
+          "Report-read rate",
+          "Service response time",
+          "Maintenance punctuality",
+          "Data quality"
+        ],
+        "ja": [
+          "レポート閲覧率",
+          "サービス応答時間",
+          "保守の定時性",
+          "データ品質"
+        ]
+      },
+      "risks": {
+        "zh": [
+          "若同意、資安或服務流程不足，會削弱客戶信任"
+        ],
+        "en": [
+          "Weak consent, cybersecurity, or service workflow can erode trust"
+        ],
+        "ja": [
+          "同意、サイバーセキュリティ、サービス手順が弱いと信頼を損なう"
+        ]
+      },
+      "validationNeeds": {
+        "zh": [
+          "需法務、資安、服務與客戶窗口共同審查"
+        ],
+        "en": [
+          "Legal, cybersecurity, service, and customer-facing teams should review together"
+        ],
+        "ja": [
+          "法務、サイバーセキュリティ、サービス、顧客窓口で確認する"
+        ]
+      },
+      "glossaryTerms": [
+        "fms",
+        "poc",
+        "kpi",
+        "ai-governance"
+      ]
+    },
+    {
+      "id": "carbon_reporting_pilot",
+      "periodId": "2028_2030",
+      "startYear": 2028,
+      "endYear": 2030,
+      "theme": "esg",
+      "strategyTheme": {
+        "zh": "碳追蹤 demo 報告",
+        "en": "Carbon-tracking demo report",
+        "ja": "炭素追跡 demo レポート"
+      },
+      "targetSegments": {
+        "zh": [
+          "企業車隊",
+          "冷鏈物流",
+          "客運"
+        ],
+        "en": [
+          "Corporate fleets",
+          "Cold-chain logistics",
+          "Bus operation"
+        ],
+        "ja": [
+          "企業フリート",
+          "コールドチェーン",
+          "バス運行"
+        ]
+      },
+      "customerScenarios": {
+        "zh": [
+          "ESG 壓力提升",
+          "油電轉換評估",
+          "內部管理報告"
+        ],
+        "en": [
+          "Rising ESG pressure",
+          "Diesel-to-electric assessment",
+          "Internal management reporting"
+        ],
+        "ja": [
+          "ESG 圧力の上昇",
+          "ディーゼルから電動への評価",
+          "内部管理レポート"
+        ]
+      },
+      "recommendedActions": {
+        "zh": [
+          "將活動資料、能源係數與邊界假設分層呈現",
+          "清楚標示 demo 不可作正式揭露"
+        ],
+        "en": [
+          "Separate activity data, energy factors, and boundary assumptions",
+          "Clearly state that demo reports are not formal disclosure"
+        ],
+        "ja": [
+          "活動データ、エネルギー係数、境界仮定を分けて示す",
+          "demo レポートは正式開示ではないと明示する"
+        ]
+      },
+      "requiredData": {
+        "zh": [
+          "燃料用量",
+          "電力係數",
+          "再生能源比例",
+          "里程",
+          "載重",
+          "盤查邊界"
+        ],
+        "en": [
+          "Fuel use",
+          "Electricity factors",
+          "Renewable share",
+          "Mileage",
+          "Payload",
+          "Accounting boundary"
+        ],
+        "ja": [
+          "燃料使用量",
+          "電力係数",
+          "再生可能比率",
+          "走行距離",
+          "積載",
+          "算定境界"
+        ]
+      },
+      "dealerEducationTasks": {
+        "zh": [
+          "教育 CO2e、KPI 與正式盤查差異",
+          "避免把 demo 減量說成已驗證成果"
+        ],
+        "en": [
+          "Explain CO2e, KPI, and formal-accounting differences",
+          "Avoid presenting demo differences as verified reductions"
+        ],
+        "ja": [
+          "CO2e、KPI、正式算定との差を説明する",
+          "demo 差分を検証済み削減として示さない"
+        ]
+      },
+      "customerPocSuggestions": {
+        "zh": [
+          "以內部管理儀表板試行，不直接進入永續報告"
+        ],
+        "en": [
+          "Pilot as an internal management dashboard, not sustainability disclosure"
+        ],
+        "ja": [
+          "内部管理ダッシュボードとして試し、サステナビリティ開示へ直結させない"
+        ]
+      },
+      "successMetrics": {
+        "zh": [
+          "資料可追溯性",
+          "更新日期完整度",
+          "人工審查紀錄"
+        ],
+        "en": [
+          "Traceability",
+          "Update-date completeness",
+          "Human-review record"
+        ],
+        "ja": [
+          "追跡可能性",
+          "更新日記録",
+          "人による確認記録"
+        ]
+      },
+      "risks": {
+        "zh": [
+          "係數過期或邊界不清會讓推論不適合公開使用"
+        ],
+        "en": [
+          "Outdated factors or unclear boundaries make conclusions unsuitable for public use"
+        ],
+        "ja": [
+          "古い係数や曖昧な境界は公開利用に適さない結論を生む"
+        ]
+      },
+      "validationNeeds": {
+        "zh": [
+          "需永續、財務、法務與客戶共同確認方法"
+        ],
+        "en": [
+          "Sustainability, finance, legal, and customer teams should review the method"
+        ],
+        "ja": [
+          "サステナビリティ、財務、法務、顧客側で方法を確認する"
+        ]
+      },
+      "glossaryTerms": [
+        "esg",
+        "kpi",
+        "carbon-accounting",
+        "tco"
+      ]
+    },
+    {
+      "id": "predictive_maintenance_maturity",
+      "periodId": "2031_2033",
+      "startYear": 2031,
+      "endYear": 2033,
+      "theme": "connected_fleet",
+      "strategyTheme": {
+        "zh": "預測維修成熟化",
+        "en": "Predictive-maintenance maturity",
+        "ja": "予知保全の成熟"
+      },
+      "targetSegments": {
+        "zh": [
+          "高里程車隊",
+          "冷鏈物流",
+          "客運"
+        ],
+        "en": [
+          "High-mileage fleets",
+          "Cold-chain logistics",
+          "Bus operation"
+        ],
+        "ja": [
+          "高走行フリート",
+          "コールドチェーン",
+          "バス運行"
+        ]
+      },
+      "customerScenarios": {
+        "zh": [
+          "停車成本高",
+          "保養排程密集",
+          "服務網絡需協同"
+        ],
+        "en": [
+          "High downtime cost",
+          "Dense maintenance schedule",
+          "Coordinated service network"
+        ],
+        "ja": [
+          "停止コストが高い",
+          "保守頻度が高い",
+          "サービス網の連携が必要"
+        ]
+      },
+      "recommendedActions": {
+        "zh": [
+          "把診斷資料、工單與零件需求連成服務流程",
+          "用 AI 輔助排序，但保留人工判斷"
+        ],
+        "en": [
+          "Connect diagnostics, repair orders, and parts demand into service workflows",
+          "Use AI-assisted prioritization while keeping human judgment"
+        ],
+        "ja": [
+          "診断、整備オーダー、部品需要をサービス工程につなぐ",
+          "AI 支援の優先順位付けを使い、人の判断を残す"
+        ]
+      },
+      "requiredData": {
+        "zh": [
+          "故障碼歷史",
+          "零件庫存",
+          "維修工時",
+          "SOH",
+          "客戶停車成本"
+        ],
+        "en": [
+          "Fault-code history",
+          "Parts inventory",
+          "Labor hours",
+          "SOH",
+          "Customer downtime cost"
+        ],
+        "ja": [
+          "故障コード履歴",
+          "部品在庫",
+          "整備工数",
+          "SOH",
+          "顧客停止コスト"
+        ]
+      },
+      "dealerEducationTasks": {
+        "zh": [
+          "訓練服務顧問解讀預測分數限制",
+          "建立人工覆核節點"
+        ],
+        "en": [
+          "Train service advisors to explain prediction-score limits",
+          "Create human-review checkpoints"
+        ],
+        "ja": [
+          "サービス担当が予測スコアの限界を説明できるようにする",
+          "人による確認点を作る"
+        ]
+      },
+      "customerPocSuggestions": {
+        "zh": [
+          "從特定零件或電池健康提醒開始，不承諾完全避免故障"
+        ],
+        "en": [
+          "Start with selected parts or battery-health reminders without promising failure prevention"
+        ],
+        "ja": [
+          "特定部品や電池状態通知から始め、故障防止を約束しない"
+        ]
+      },
+      "successMetrics": {
+        "zh": [
+          "提前提醒命中率",
+          "誤報率",
+          "服務回應時間",
+          "停車時間變化"
+        ],
+        "en": [
+          "Early-alert precision",
+          "False-positive rate",
+          "Service response time",
+          "Downtime change"
+        ],
+        "ja": [
+          "事前通知の精度",
+          "誤検知率",
+          "サービス応答時間",
+          "停止時間の変化"
+        ]
+      },
+      "risks": {
+        "zh": [
+          "資料偏差或服務量能不足會讓預測無法轉成客戶價值"
+        ],
+        "en": [
+          "Data bias or insufficient service capacity prevents predictions from becoming customer value"
+        ],
+        "ja": [
+          "データ偏りやサービス能力不足は予測を顧客価値に変えにくくする"
+        ]
+      },
+      "validationNeeds": {
+        "zh": [
+          "需資安、服務、零件與客戶營運資料共同驗證"
+        ],
+        "en": [
+          "Validate with cybersecurity, service, parts, and customer operation data"
+        ],
+        "ja": [
+          "サイバーセキュリティ、サービス、部品、顧客運用データで検証する"
+        ]
+      },
+      "glossaryTerms": [
+        "fms",
+        "ai-governance",
+        "soh",
+        "kpi"
+      ]
+    },
+    {
+      "id": "ecosystem_expansion",
+      "periodId": "2031_2033",
+      "startYear": 2031,
+      "endYear": 2033,
+      "theme": "scenario",
+      "strategyTheme": {
+        "zh": "跨模組情境組合",
+        "en": "Cross-module scenario packaging",
+        "ja": "横断的なシナリオ設計"
+      },
+      "targetSegments": {
+        "zh": [
+          "企業車隊",
+          "物流園區",
+          "公共運輸"
+        ],
+        "en": [
+          "Corporate fleets",
+          "Logistics parks",
+          "Public transport"
+        ],
+        "ja": [
+          "企業フリート",
+          "物流拠点",
+          "公共交通"
+        ]
+      },
+      "customerScenarios": {
+        "zh": [
+          "能源、維修、安全與 ESG 同時被要求",
+          "採購決策需要多部門共識"
+        ],
+        "en": [
+          "Energy, maintenance, safety, and ESG demands converge",
+          "Procurement decisions need cross-functional agreement"
+        ],
+        "ja": [
+          "エネルギー、整備、安全、ESG 要求が重なる",
+          "調達判断に部門横断の合意が必要"
+        ]
+      },
+      "recommendedActions": {
+        "zh": [
+          "把情境模擬器輸出轉成客戶訪談包",
+          "建立跨部門決策地圖"
+        ],
+        "en": [
+          "Turn scenario-simulator output into customer interview packs",
+          "Build a cross-functional decision map"
+        ],
+        "ja": [
+          "シナリオシミュレーターの出力を顧客ヒアリング資料にする",
+          "部門横断の意思決定マップを作る"
+        ]
+      },
+      "requiredData": {
+        "zh": [
+          "部門角色",
+          "採購條件",
+          "能源限制",
+          "安全需求",
+          "ESG 報告需求"
+        ],
+        "en": [
+          "Department roles",
+          "Procurement criteria",
+          "Energy constraints",
+          "Safety needs",
+          "ESG reporting needs"
+        ],
+        "ja": [
+          "部門役割",
+          "調達条件",
+          "エネルギー制約",
+          "安全ニーズ",
+          "ESG レポート需要"
+        ]
+      },
+      "dealerEducationTasks": {
+        "zh": [
+          "訓練通路以條件式語言協助客戶排序",
+          "避免單一技術萬用說法"
+        ],
+        "en": [
+          "Train dealers to help customers prioritize with conditional language",
+          "Avoid one-size-fits-all technology claims"
+        ],
+        "ja": [
+          "条件付きの言葉で顧客の優先順位付けを支援する",
+          "単一技術が万能という表現を避ける"
+        ]
+      },
+      "customerPocSuggestions": {
+        "zh": [
+          "用一個任務場景串接 BEV、ADAS、FMS 與 ESG 報告假設"
+        ],
+        "en": [
+          "Use one mission scenario to connect BEV, ADAS, FMS, and ESG reporting assumptions"
+        ],
+        "ja": [
+          "一つの業務シナリオで BEV、ADAS、FMS、ESG レポート仮定をつなぐ"
+        ]
+      },
+      "successMetrics": {
+        "zh": [
+          "客戶決策角色確認率",
+          "條件假設完整度",
+          "後續 PoC 可行性"
+        ],
+        "en": [
+          "Decision-role clarity",
+          "Condition-assumption completeness",
+          "PoC feasibility"
+        ],
+        "ja": [
+          "意思決定役割の明確度",
+          "条件仮定の完成度",
+          "PoC 実行可能性"
+        ]
+      },
+      "risks": {
+        "zh": [
+          "若把情境輸出當成正式推薦，會忽略客戶內部限制"
+        ],
+        "en": [
+          "Treating scenario output as formal recommendation can miss customer constraints"
+        ],
+        "ja": [
+          "シナリオ出力を正式提案にすると顧客側の制約を見落とす"
+        ]
+      },
+      "validationNeeds": {
+        "zh": [
+          "需客戶訪談、營運資料與內部審查共同校正"
+        ],
+        "en": [
+          "Validate with customer interviews, operating data, and internal review"
+        ],
+        "ja": [
+          "顧客ヒアリング、運用データ、内部確認で補正する"
+        ]
+      },
+      "glossaryTerms": [
+        "bev",
+        "adas",
+        "fms",
+        "esg",
+        "poc"
+      ]
+    },
+    {
+      "id": "hydrogen_v2g_tracking",
+      "periodId": "2034_2035",
+      "startYear": 2034,
+      "endYear": 2035,
+      "theme": "energy",
+      "strategyTheme": {
+        "zh": "氫能與 V2G 長期追蹤",
+        "en": "Hydrogen and V2G long-term tracking",
+        "ja": "水素と V2G の長期追跡"
+      },
+      "targetSegments": {
+        "zh": [
+          "長途貨運",
+          "高載重任務",
+          "能源韌性場景"
+        ],
+        "en": [
+          "Long-haul freight",
+          "Heavy-payload missions",
+          "Energy-resilience scenarios"
+        ],
+        "ja": [
+          "長距離輸送",
+          "高積載業務",
+          "エネルギーレジリエンス場面"
+        ]
+      },
+      "customerScenarios": {
+        "zh": [
+          "基礎設施未成熟但需要監測",
+          "政策或能源價格可能改變條件"
+        ],
+        "en": [
+          "Infrastructure is immature but needs monitoring",
+          "Policy or energy-price shifts may change fit"
+        ],
+        "ja": [
+          "インフラは未成熟だが監視が必要",
+          "政策やエネルギー価格で条件が変わる可能性"
+        ]
+      },
+      "recommendedActions": {
+        "zh": [
+          "保留追蹤指標，不把觀察項目包裝成近期導入",
+          "建立氫能、V2G 與電網條件觀察清單"
+        ],
+        "en": [
+          "Keep tracking indicators without packaging observations as near-term deployment",
+          "Create hydrogen, V2G, and grid-condition watchlists"
+        ],
+        "ja": [
+          "観察項目を短期導入として扱わず、追跡指標を残す",
+          "水素、V2G、系統条件のウォッチリストを作る"
+        ]
+      },
+      "requiredData": {
+        "zh": [
+          "加氫站位置",
+          "能源價格",
+          "車型供給",
+          "電網互動規範",
+          "服務能力"
+        ],
+        "en": [
+          "Hydrogen station locations",
+          "Energy prices",
+          "Vehicle supply",
+          "Grid-interaction rules",
+          "Service capability"
+        ],
+        "ja": [
+          "水素ステーション位置",
+          "エネルギー価格",
+          "車両供給",
+          "系統連携ルール",
+          "整備能力"
+        ]
+      },
+      "dealerEducationTasks": {
+        "zh": [
+          "教育追蹤與導入的差異",
+          "避免把國際訊號直接套用台灣市場"
+        ],
+        "en": [
+          "Explain the difference between tracking and implementation",
+          "Avoid transferring global signals directly into Taiwan-market claims"
+        ],
+        "ja": [
+          "追跡と導入の違いを説明する",
+          "海外信号を台湾市場へ直接当てはめない"
+        ]
+      },
+      "customerPocSuggestions": {
+        "zh": [
+          "僅在基礎設施與服務條件明確時設計封閉場域概念驗證"
+        ],
+        "en": [
+          "Design closed-site concept validation only when infrastructure and service conditions are clear"
+        ],
+        "ja": [
+          "インフラとサービス条件が明確な場合のみ、閉域で概念検証を設計する"
+        ]
+      },
+      "successMetrics": {
+        "zh": [
+          "基礎設施成熟度",
+          "政策明確度",
+          "TCO 條件變化",
+          "服務準備度"
+        ],
+        "en": [
+          "Infrastructure maturity",
+          "Policy clarity",
+          "TCO condition shift",
+          "Service readiness"
+        ],
+        "ja": [
+          "インフラ成熟度",
+          "政策明確度",
+          "TCO 条件変化",
+          "サービス準備度"
+        ]
+      },
+      "risks": {
+        "zh": [
+          "過早承諾會造成商品企劃與通路教育壓力"
+        ],
+        "en": [
+          "Premature commitment creates product-planning and dealer-education pressure"
+        ],
+        "ja": [
+          "早すぎる約束は商品企画と販売チャネル教育に負荷をかける"
+        ]
+      },
+      "validationNeeds": {
+        "zh": [
+          "需以最新政策、能源基礎設施、車型供給與服務能力覆核"
+        ],
+        "en": [
+          "Review against current policy, energy infrastructure, vehicle supply, and service capability"
+        ],
+        "ja": [
+          "最新政策、エネルギーインフラ、車両供給、整備能力で確認する"
+        ]
+      },
+      "glossaryTerms": [
+        "fcev",
+        "v2g",
+        "tco",
+        "poc"
+      ]
+    },
+    {
+      "id": "bounded_automation_observation",
+      "periodId": "2034_2035",
+      "startYear": 2034,
+      "endYear": 2035,
+      "theme": "safety",
+      "strategyTheme": {
+        "zh": "封閉場域自動化觀察",
+        "en": "Bounded automation observation",
+        "ja": "限定領域自動化の観察"
+      },
+      "targetSegments": {
+        "zh": [
+          "封閉物流園區",
+          "港區或廠區",
+          "固定低速任務"
+        ],
+        "en": [
+          "Closed logistics parks",
+          "Port or plant sites",
+          "Fixed low-speed missions"
+        ],
+        "ja": [
+          "閉域物流拠点",
+          "港湾・工場エリア",
+          "固定低速業務"
+        ]
+      },
+      "customerScenarios": {
+        "zh": [
+          "ODD 明確",
+          "低速固定動線",
+          "人車混流風險需管理"
+        ],
+        "en": [
+          "Defined ODD",
+          "Fixed low-speed paths",
+          "Managed mixed-traffic risk"
+        ],
+        "ja": [
+          "ODD が明確",
+          "固定低速経路",
+          "人車混在リスクの管理"
+        ]
+      },
+      "recommendedActions": {
+        "zh": [
+          "以 ODD、責任邊界與安全管理語言追蹤",
+          "不把封閉場域 demo 延伸成一般道路能力"
+        ],
+        "en": [
+          "Track ODD, responsibility boundaries, and safety-management language",
+          "Do not extend closed-site demos into general-road capability claims"
+        ],
+        "ja": [
+          "ODD、責任境界、安全管理の表現で追跡する",
+          "閉域 demo を一般道路能力の主張へ広げない"
+        ]
+      },
+      "requiredData": {
+        "zh": [
+          "場域動線",
+          "人車互動",
+          "速度限制",
+          "責任分工",
+          "法規邊界"
+        ],
+        "en": [
+          "Site paths",
+          "Human-vehicle interaction",
+          "Speed limits",
+          "Responsibility split",
+          "Regulatory boundary"
+        ],
+        "ja": [
+          "場内経路",
+          "人車相互作用",
+          "速度制限",
+          "責任分担",
+          "規制境界"
+        ]
+      },
+      "dealerEducationTasks": {
+        "zh": [
+          "清楚區分 ADAS、L4、ODD 與 AI 輔助決策"
+        ],
+        "en": [
+          "Differentiate ADAS, L4, ODD, and AI-assisted decisions"
+        ],
+        "ja": [
+          "ADAS、L4、ODD、AI 支援判断を区別する"
+        ]
+      },
+      "customerPocSuggestions": {
+        "zh": [
+          "若要 PoC，先限定封閉場域、速度、任務與安全監督條件"
+        ],
+        "en": [
+          "If a PoC is considered, constrain site, speed, mission, and safety supervision first"
+        ],
+        "ja": [
+          "PoC を検討する場合、場域、速度、業務、安全監督条件を先に限定する"
+        ]
+      },
+      "successMetrics": {
+        "zh": [
+          "ODD 文件完整度",
+          "風險審查紀錄",
+          "人工接管或監督規則"
+        ],
+        "en": [
+          "ODD documentation",
+          "Risk-review record",
+          "Human takeover or supervision rules"
+        ],
+        "ja": [
+          "ODD 文書完成度",
+          "リスク確認記録",
+          "人の介入・監督ルール"
+        ]
+      },
+      "risks": {
+        "zh": [
+          "過度描述會誤導為無限制自動駕駛能力"
+        ],
+        "en": [
+          "Overstatement can imply unrestricted autonomous capability"
+        ],
+        "ja": [
+          "過剰表現は無制限の自動運転能力を示唆する"
+        ]
+      },
+      "validationNeeds": {
+        "zh": [
+          "需安全、法規、保險、客戶現場與工程資料共同審查"
+        ],
+        "en": [
+          "Safety, regulation, insurance, customer-site, and engineering evidence should be reviewed together"
+        ],
+        "ja": [
+          "安全、規制、保険、顧客現場、技術資料を合わせて確認する"
+        ]
+      },
+      "glossaryTerms": [
+        "adas",
+        "odd",
+        "ai-governance",
+        "poc"
+      ]
+    }
+  ],
+  "guidedDemoSteps": [
+    {
+      "id": "home",
+      "targetId": "home",
+      "durationSeconds": 25,
+      "title": {
+        "zh": "定位：商用車策略實驗室",
+        "en": "Positioning: commercial vehicle strategy lab",
+        "ja": "位置づけ：商用車戦略ラボ"
+      },
+      "body": {
+        "zh": "先說明這是靜態作品集原型，所有數據都是 demo 假設，並保留 Home-only 著作權與創作動機。",
+        "en": "Start by framing the site as a static portfolio prototype with demo assumptions, while keeping the Home-only copyright and motivation content.",
+        "ja": "静的ポートフォリオ原型であり、すべて demo 仮定であることを先に説明します。Home 限定の著作権と動機も保ちます。"
+      }
+    },
+    {
+      "id": "trend",
+      "targetId": "trend-radar",
+      "durationSeconds": 35,
+      "title": {
+        "zh": "訊號：不是預測，而是排序",
+        "en": "Signals: prioritization, not prediction",
+        "ja": "信号：予測ではなく優先順位"
+      },
+      "body": {
+        "zh": "用趨勢雷達說明 BEV、FCEV、V2G、ADAS、FMS 與 ESG 等訊號如何先被當作企劃優先順序。",
+        "en": "Use Trend Radar to show how BEV, FCEV, V2G, ADAS, FMS, and ESG signals become planning priorities before claims.",
+        "ja": "Trend Radar で BEV、FCEV、V2G、ADAS、FMS、ESG などを主張ではなく企画優先度として扱うことを示します。"
+      }
+    },
+    {
+      "id": "maturity",
+      "targetId": "technology-maturity-map",
+      "durationSeconds": 35,
+      "title": {
+        "zh": "成熟度：避免 buzzword 化",
+        "en": "Maturity: avoid buzzword planning",
+        "ja": "成熟度：バズワード化を避ける"
+      },
+      "body": {
+        "zh": "用成熟度地圖把技術放進教育、PoC、追蹤或暫緩，而不是把每個新技術都說成必然導入。",
+        "en": "Use the maturity map to place technologies into education, PoC, tracking, or deferred observation rather than assuming adoption.",
+        "ja": "成熟度マップで技術を教育、PoC、追跡、保留に分け、すべてを導入前提にしないことを示します。"
+      }
+    },
+    {
+      "id": "scenario",
+      "targetId": "scenario-simulator",
+      "durationSeconds": 40,
+      "title": {
+        "zh": "情境：條件先於答案",
+        "en": "Scenario: conditions before answers",
+        "ja": "シナリオ：答えより条件が先"
+      },
+      "body": {
+        "zh": "展示路線、里程、載重、停車敏感度與基礎設施如何改變建議層級。",
+        "en": "Show how route, mileage, payload, downtime sensitivity, and infrastructure change recommendation layers.",
+        "ja": "ルート、走行距離、積載、停止感度、インフラが提案層を変えることを示します。"
+      }
+    },
+    {
+      "id": "energy",
+      "targetId": "energy-roadmap",
+      "durationSeconds": 35,
+      "title": {
+        "zh": "能源：以條件說明適配",
+        "en": "Energy: fit through conditions",
+        "ja": "エネルギー：条件で適合を説明"
+      },
+      "body": {
+        "zh": "用能源路線圖說明柴油、混合動力、BEV、FCEV、V2G 與充電條件的取捨。",
+        "en": "Use the Energy Roadmap to explain tradeoffs across diesel, hybrid, BEV, FCEV, V2G, and charging readiness.",
+        "ja": "Energy Roadmap でディーゼル、ハイブリッド、BEV、FCEV、V2G、充電準備度の条件を説明します。"
+      }
+    },
+    {
+      "id": "safety",
+      "targetId": "safety-adas-lab",
+      "durationSeconds": 30,
+      "title": {
+        "zh": "安全：把限制講清楚",
+        "en": "Safety: make limits explicit",
+        "ja": "安全：制約を明確にする"
+      },
+      "body": {
+        "zh": "說明 ADAS 教育、系統限制與不得過度承諾的品牌安全邊界。",
+        "en": "Explain ADAS education, system limits, and brand-safe non-overclaiming boundaries.",
+        "ja": "ADAS 教育、システム限界、過剰表現を避ける境界を説明します。"
+      }
+    },
+    {
+      "id": "fleet",
+      "targetId": "connected-fleet-lab",
+      "durationSeconds": 35,
+      "title": {
+        "zh": "車聯網：服務與治理並行",
+        "en": "Connected fleet: service and governance together",
+        "ja": "コネクテッド：サービスとガバナンスを並行"
+      },
+      "body": {
+        "zh": "展示 FMS 如何連到維修、資料治理、客戶報告與營運效率，但不收集真實資料。",
+        "en": "Show how FMS connects maintenance, governance, reporting, and operating efficiency without collecting real data.",
+        "ja": "FMS が整備、ガバナンス、レポート、運用効率につながる一方、実データは収集しないことを示します。"
+      }
+    },
+    {
+      "id": "esg",
+      "targetId": "esg-policy-dashboard",
+      "durationSeconds": 35,
+      "title": {
+        "zh": "ESG：來源與方法要驗證",
+        "en": "ESG: sources and methods need validation",
+        "ja": "ESG：出典と方法の検証が必要"
+      },
+      "body": {
+        "zh": "說明政策、補助與碳估算只是 demo 訊號，正式使用需最新來源、排放係數與人工審查。",
+        "en": "Explain that policy, subsidy, and carbon estimates are demo signals requiring current sources, emission factors, and human review.",
+        "ja": "政策、補助、炭素推計は demo 信号であり、最新出典、排出係数、人による確認が必要です。"
+      }
+    },
+    {
+      "id": "roadmap",
+      "targetId": "strategy-roadmap-studio",
+      "durationSeconds": 45,
+      "title": {
+        "zh": "輸出：路線圖不是上市承諾",
+        "en": "Output: roadmap is not a launch promise",
+        "ja": "出力：ロードマップは発売約束ではない"
+      },
+      "body": {
+        "zh": "最後把 2026 至 2035 的教育、PoC、成熟化與長期追蹤合併成可溝通的企劃節奏。",
+        "en": "Close by combining education, PoC, maturity, and long-term tracking into a communicable planning cadence.",
+        "ja": "最後に教育、PoC、成熟化、長期追跡を伝えやすい企画リズムへまとめます。"
+      }
+    }
+  ]
+}

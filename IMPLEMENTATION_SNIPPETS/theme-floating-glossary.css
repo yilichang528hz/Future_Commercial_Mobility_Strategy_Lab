@@ -1,0 +1,70 @@
+/* IMPLEMENTATION_SNIPPETS/theme-floating-glossary.css */
+body[data-theme="theme-a"] {
+  --bg: #fbf6ec;
+  --surface: #ffffff;
+  --text: #24302a;
+  --muted: #69746d;
+  --accent: #8bad79;
+  --accent-2: #f0c58f;
+  --gold: #d8b86f;
+  --warning: #a45f4e;
+}
+body[data-theme="theme-b"] {
+  --bg: #f4f8fb;
+  --surface: #ffffff;
+  --text: #23313c;
+  --muted: #6d7881;
+  --accent: #7fb9ad;
+  --accent-2: #efb27c;
+  --gold: #d8c58a;
+  --warning: #a96b58;
+}
+body[data-theme="theme-c"] {
+  --bg: #f7efe3;
+  --surface: #fffaf2;
+  --text: #2e2a22;
+  --muted: #756b5c;
+  --accent: #83956c;
+  --accent-2: #a87548;
+  --gold: #bf8c3f;
+  --warning: #8f5a42;
+}
+body[data-theme="theme-d"] {
+  --bg: #faf6ec;
+  --surface: #fffdf8;
+  --text: #2d3330;
+  --muted: #6f7771;
+  --accent: #8da18f;
+  --accent-2: #dca08e;
+  --gold: #d3b978;
+  --warning: #9d604f;
+}
+.floating-controls {
+  position: fixed;
+  right: clamp(14px, 2vw, 24px);
+  bottom: clamp(14px, 2vw, 24px);
+  z-index: 50;
+  display: grid;
+  gap: .5rem;
+}
+.floating-controls button,
+.glossary-term {
+  cursor: pointer;
+}
+.glossary-term {
+  border-bottom: 1px dotted currentColor;
+  color: var(--accent);
+}
+.glossary-modal[hidden] { display: none; }
+.glossary-modal {
+  position: fixed;
+  inset: auto 1rem 1rem auto;
+  max-width: min(420px, calc(100vw - 2rem));
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 18px;
+  box-shadow: 0 24px 80px rgba(0,0,0,.22);
+  padding: 1rem;
+  z-index: 80;
+}

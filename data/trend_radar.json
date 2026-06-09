@@ -1,0 +1,464 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "dataStatus": "demo_assumptions",
+    "moduleId": "trend-radar",
+    "sourceBasis": "Portfolio proposal strategy narrative, translated into illustrative planning assumptions.",
+    "scoring_model": {
+      "market_relevance": 0.2,
+      "technology_readiness": 0.2,
+      "cost_feasibility": 0.15,
+      "regulation_readiness": 0.15,
+      "customer_pain_fit": 0.15,
+      "dealer_education_value": 0.1,
+      "strategic_differentiation": 0.05
+    },
+    "source_limitations": {
+      "zh": "本雷達僅用於作品集示範。國際趨勢訊號必須加入台灣法規、基礎建設、客戶營運型態、能源價格與服務能力驗證後，才能作為正式企劃依據。",
+      "en": "This radar is for portfolio demonstration only. Global signals need Taiwan-specific validation across regulation, infrastructure, customer operations, energy pricing, and service readiness before they can support formal planning.",
+      "ja": "このレーダーはポートフォリオ用のデモです。国際的なシグナルは、台湾の規制、インフラ、顧客の運用、エネルギー価格、サービス体制で検証してから正式な企画判断に使う必要があります。"
+    }
+  },
+  "trends": [
+    {
+      "trend_id": "bev_urban_delivery",
+      "category": "energy_transition",
+      "name": {
+        "zh": "市區配送電池電動車",
+        "en": "Urban Delivery Battery Electric Vehicles",
+        "ja": "都市配送向けバッテリー電気自動車"
+      },
+      "shortName": {
+        "zh": "市區 BEV",
+        "en": "Urban BEV",
+        "ja": "都市 BEV"
+      },
+      "glossaryTerms": ["bev", "tco"],
+      "market_relevance": 84,
+      "technology_readiness": 78,
+      "cost_feasibility": 66,
+      "regulation_readiness": 70,
+      "customer_pain_fit": 82,
+      "dealer_education_value": 88,
+      "strategic_differentiation": 72,
+      "priority_score": 78,
+      "strategy_status": "near_term_poc",
+      "time_horizon": {
+        "startYear": 2026,
+        "endYear": 2030
+      },
+      "risk_level": "medium",
+      "data_confidence": 62,
+      "summary": {
+        "zh": "固定路線、回場充電與都市低噪音需求，使 BEV 適合先用小範圍路線驗證 TCO、充電排程與服務教育。",
+        "en": "Fixed routes, depot charging, and lower-noise urban operations make BEVs suitable for limited route trials that test TCO, charging schedules, and service education.",
+        "ja": "固定ルート、拠点充電、都市部の低騒音ニーズがあるため、BEV は TCO、充電スケジュール、サービス教育を小規模に検証しやすい領域です。"
+      },
+      "suggested_next_actions": {
+        "zh": ["選定回場型配送客戶做路線盤點", "建立充電時段與停車空間假設", "準備 TCO 與電池健康度教育素材"],
+        "en": ["Map depot-return delivery use cases", "Model charging windows and parking constraints", "Prepare TCO and battery-health education material"],
+        "ja": ["拠点に戻る配送ユースケースを整理する", "充電時間帯と駐車スペースの制約を仮置きする", "TCO と電池劣化に関する教育資料を準備する"]
+      }
+    },
+    {
+      "trend_id": "charging_infrastructure",
+      "category": "infrastructure",
+      "name": {
+        "zh": "商用車充電基礎建設",
+        "en": "Commercial Vehicle Charging Infrastructure",
+        "ja": "商用車向け充電インフラ"
+      },
+      "shortName": {
+        "zh": "充電建設",
+        "en": "Charging",
+        "ja": "充電"
+      },
+      "glossaryTerms": ["bev", "tco"],
+      "market_relevance": 88,
+      "technology_readiness": 72,
+      "cost_feasibility": 58,
+      "regulation_readiness": 68,
+      "customer_pain_fit": 90,
+      "dealer_education_value": 84,
+      "strategic_differentiation": 70,
+      "priority_score": 76,
+      "strategy_status": "foundation_enabler",
+      "time_horizon": {
+        "startYear": 2026,
+        "endYear": 2032
+      },
+      "risk_level": "medium",
+      "data_confidence": 58,
+      "summary": {
+        "zh": "充電不是單一設備採購，而是車輛導入、停車動線、電力容量、維修安全與客戶教育共同構成的基礎能力。",
+        "en": "Charging is not just equipment procurement. It connects vehicle rollout, parking flow, power capacity, service safety, and customer education.",
+        "ja": "充電は機器購入だけではありません。車両導入、駐車動線、電力容量、整備安全、顧客教育をつなぐ基礎能力です。"
+      },
+      "suggested_next_actions": {
+        "zh": ["把充電條件納入 BEV 銷售前問診", "建立場站電力與停車條件檢核表", "區分客戶自建、租賃與合作場站情境"],
+        "en": ["Add charging checks to BEV pre-sales discovery", "Create depot power and parking checklists", "Separate owned, leased, and partner-site scenarios"],
+        "ja": ["BEV 提案前の確認に充電条件を入れる", "拠点の電力と駐車条件のチェックリストを作る", "自社、賃借、提携拠点のシナリオを分ける"]
+      }
+    },
+    {
+      "trend_id": "adas_safety_education",
+      "category": "safety",
+      "name": {
+        "zh": "進階駕駛輔助系統教育",
+        "en": "Advanced Driver Assistance Systems Education",
+        "ja": "先進運転支援システム教育"
+      },
+      "shortName": {
+        "zh": "ADAS 教育",
+        "en": "ADAS Education",
+        "ja": "ADAS 教育"
+      },
+      "glossaryTerms": ["adas", "odd"],
+      "market_relevance": 82,
+      "technology_readiness": 86,
+      "cost_feasibility": 74,
+      "regulation_readiness": 78,
+      "customer_pain_fit": 80,
+      "dealer_education_value": 92,
+      "strategic_differentiation": 66,
+      "priority_score": 81,
+      "strategy_status": "education_now",
+      "time_horizon": {
+        "startYear": 2026,
+        "endYear": 2028
+      },
+      "risk_level": "low",
+      "data_confidence": 70,
+      "summary": {
+        "zh": "ADAS 的價值不只在配備表，而在能否清楚說明功能邊界、駕駛責任、適用情境與經銷端教育流程。",
+        "en": "The value of ADAS is not only the feature list. It depends on clear explanation of system limits, driver responsibility, operating conditions, and dealer education flow.",
+        "ja": "ADAS の価値は装備一覧だけではありません。機能の限界、運転者の責任、利用条件、販売店教育の流れを明確に説明できることが重要です。"
+      },
+      "suggested_next_actions": {
+        "zh": ["建立功能邊界與駕駛責任話術", "把 ADAS 納入交車與售後教育", "避免把輔助功能描述成自動駕駛"],
+        "en": ["Create system-limit and driver-responsibility scripts", "Add ADAS to delivery and after-sales education", "Avoid describing assistance features as automated driving"],
+        "ja": ["機能限界と運転者責任の説明文を整える", "納車時とアフターサービス教育に ADAS を入れる", "支援機能を自動運転として表現しない"]
+      }
+    },
+    {
+      "trend_id": "connected_fleet_fms",
+      "category": "data_services",
+      "name": {
+        "zh": "車隊管理系統與車聯網服務",
+        "en": "Fleet Management Systems and Connected Services",
+        "ja": "車隊管理システムとコネクテッドサービス"
+      },
+      "shortName": {
+        "zh": "FMS 車聯網",
+        "en": "FMS Services",
+        "ja": "FMS サービス"
+      },
+      "glossaryTerms": ["fms", "ota"],
+      "market_relevance": 80,
+      "technology_readiness": 82,
+      "cost_feasibility": 72,
+      "regulation_readiness": 74,
+      "customer_pain_fit": 84,
+      "dealer_education_value": 86,
+      "strategic_differentiation": 76,
+      "priority_score": 79,
+      "strategy_status": "service_package",
+      "time_horizon": {
+        "startYear": 2026,
+        "endYear": 2031
+      },
+      "risk_level": "medium",
+      "data_confidence": 66,
+      "summary": {
+        "zh": "FMS 可把車輛銷售延伸到稼動率、保養排程、路線效率與售後服務，但資料治理與客戶授權要先設計清楚。",
+        "en": "FMS can extend vehicle sales into uptime, maintenance planning, route efficiency, and after-sales service, but data governance and customer consent need to be designed early.",
+        "ja": "FMS は車両販売を稼働率、整備計画、ルート効率、アフターサービスへ広げますが、データガバナンスと顧客同意を先に設計する必要があります。"
+      },
+      "suggested_next_actions": {
+        "zh": ["定義車隊儀表板的最小可用 KPI", "設計客戶資料授權與告知流程", "把維修提醒與服務據點流程串接"],
+        "en": ["Define the minimum useful fleet dashboard KPIs", "Design customer consent and data notices", "Connect maintenance alerts with service-site workflows"],
+        "ja": ["最小限有用な車隊ダッシュボード KPI を定義する", "顧客同意とデータ通知の流れを設計する", "整備アラートとサービス拠点の業務をつなぐ"]
+      }
+    },
+    {
+      "trend_id": "hybrid_transition",
+      "category": "energy_transition",
+      "name": {
+        "zh": "油電混合轉換路徑",
+        "en": "Hybrid Transition Pathway",
+        "ja": "ハイブリッド移行パス"
+      },
+      "shortName": {
+        "zh": "Hybrid 過渡",
+        "en": "Hybrid Path",
+        "ja": "Hybrid 移行"
+      },
+      "glossaryTerms": ["hev", "tco"],
+      "market_relevance": 76,
+      "technology_readiness": 84,
+      "cost_feasibility": 78,
+      "regulation_readiness": 72,
+      "customer_pain_fit": 74,
+      "dealer_education_value": 82,
+      "strategic_differentiation": 55,
+      "priority_score": 77,
+      "strategy_status": "transition_support",
+      "time_horizon": {
+        "startYear": 2026,
+        "endYear": 2033
+      },
+      "risk_level": "low",
+      "data_confidence": 68,
+      "summary": {
+        "zh": "混合動力可作為部分營運情境的過渡選項，但不應被包裝成所有客戶的單一路徑。",
+        "en": "Hybrid powertrains can support selected transition cases, but they should not be framed as the single path for every customer.",
+        "ja": "ハイブリッドは一部の移行ケースを支えますが、すべての顧客に共通する唯一の道として扱うべきではありません。"
+      },
+      "suggested_next_actions": {
+        "zh": ["用路線型態區分適用客戶", "比較油耗、維修與殘值假設", "避免把過渡方案解讀為最終答案"],
+        "en": ["Segment fit by duty cycle and route type", "Compare fuel, maintenance, and residual-value assumptions", "Avoid treating the transition option as the final answer"],
+        "ja": ["稼働パターンとルート別に適合を分ける", "燃費、整備、残価の仮定を比較する", "移行案を最終解と見なさない"]
+      }
+    },
+    {
+      "trend_id": "ai_fleet_management",
+      "category": "data_services",
+      "name": {
+        "zh": "AI 輔助車隊管理",
+        "en": "AI-Assisted Fleet Management",
+        "ja": "AI 支援型車隊管理"
+      },
+      "shortName": {
+        "zh": "AI 車隊",
+        "en": "AI Fleet",
+        "ja": "AI 車隊"
+      },
+      "glossaryTerms": ["ai-governance", "fms", "kpi"],
+      "market_relevance": 72,
+      "technology_readiness": 64,
+      "cost_feasibility": 62,
+      "regulation_readiness": 54,
+      "customer_pain_fit": 78,
+      "dealer_education_value": 76,
+      "strategic_differentiation": 82,
+      "priority_score": 68,
+      "strategy_status": "guarded_experiment",
+      "time_horizon": {
+        "startYear": 2027,
+        "endYear": 2032
+      },
+      "risk_level": "medium",
+      "data_confidence": 52,
+      "summary": {
+        "zh": "AI 可協助整理異常、保養與路線訊號，但在資料品質、偏誤、責任歸屬與人審流程未明確前，應保持輔助定位。",
+        "en": "AI can help organize anomaly, maintenance, and route signals, but it should remain assistive until data quality, bias, accountability, and human review are clear.",
+        "ja": "AI は異常、整備、ルートのシグナル整理を助けますが、データ品質、偏り、責任、人による確認が明確になるまでは支援的な位置づけに留めるべきです。"
+      },
+      "suggested_next_actions": {
+        "zh": ["先建立人工審核與覆核紀錄", "限制 AI 建議的使用場景", "避免把模型輸出寫成已驗證決策"],
+        "en": ["Set human review and audit records first", "Limit where AI recommendations can be used", "Avoid presenting model output as verified decisions"],
+        "ja": ["人による確認と記録を先に設計する", "AI 推奨を使う場面を限定する", "モデル出力を検証済み判断として表現しない"]
+      }
+    },
+    {
+      "trend_id": "esg_carbon_policy",
+      "category": "policy_esg",
+      "name": {
+        "zh": "ESG 與碳政策訊號",
+        "en": "ESG and Carbon Policy Signals",
+        "ja": "ESG と炭素政策シグナル"
+      },
+      "shortName": {
+        "zh": "ESG 政策",
+        "en": "ESG Policy",
+        "ja": "ESG 政策"
+      },
+      "glossaryTerms": ["esg", "kpi"],
+      "market_relevance": 78,
+      "technology_readiness": 70,
+      "cost_feasibility": 68,
+      "regulation_readiness": 66,
+      "customer_pain_fit": 76,
+      "dealer_education_value": 74,
+      "strategic_differentiation": 68,
+      "priority_score": 72,
+      "strategy_status": "monitor_and_frame",
+      "time_horizon": {
+        "startYear": 2026,
+        "endYear": 2035
+      },
+      "risk_level": "medium",
+      "data_confidence": 56,
+      "summary": {
+        "zh": "ESG 與碳政策可影響大型客戶採購與車隊汰換節奏，但公開說法需清楚區分政策訊號、估算假設與已驗證數據。",
+        "en": "ESG and carbon policy can influence major customer procurement and replacement cycles, but public wording must separate policy signals, estimates, and verified data.",
+        "ja": "ESG と炭素政策は大口顧客の調達や車両更新に影響しますが、公的な表現では政策シグナル、推計、検証済みデータを分ける必要があります。"
+      },
+      "suggested_next_actions": {
+        "zh": ["建立政策訊號追蹤欄位", "把排放估算標示為假設", "準備客戶 ESG 問題的保守回答"],
+        "en": ["Create fields for tracking policy signals", "Label emissions estimates as assumptions", "Prepare conservative answers for customer ESG questions"],
+        "ja": ["政策シグナルを追跡する項目を作る", "排出量推計を仮定として明示する", "顧客の ESG 質問に対する慎重な回答を準備する"]
+      }
+    },
+    {
+      "trend_id": "logistics_automation",
+      "category": "automation",
+      "name": {
+        "zh": "物流自動化與封閉場域應用",
+        "en": "Logistics Automation and Closed-Site Applications",
+        "ja": "物流自動化と閉鎖エリアでの活用"
+      },
+      "shortName": {
+        "zh": "物流自動化",
+        "en": "Automation",
+        "ja": "物流自動化"
+      },
+      "glossaryTerms": ["odd", "poc"],
+      "market_relevance": 65,
+      "technology_readiness": 58,
+      "cost_feasibility": 50,
+      "regulation_readiness": 48,
+      "customer_pain_fit": 72,
+      "dealer_education_value": 70,
+      "strategic_differentiation": 78,
+      "priority_score": 61,
+      "strategy_status": "controlled_poc",
+      "time_horizon": {
+        "startYear": 2028,
+        "endYear": 2034
+      },
+      "risk_level": "high",
+      "data_confidence": 45,
+      "summary": {
+        "zh": "物流自動化較適合先在封閉場域或固定流程討論，公開敘事需避免把概念展示直接推論到一般道路部署。",
+        "en": "Logistics automation is better discussed first in closed sites or fixed processes. Public narratives should not jump from concept demos to general road deployment.",
+        "ja": "物流自動化はまず閉鎖エリアや固定プロセスで検討するのが現実的です。コンセプト展示から一般道路展開へ直接飛躍しない表現が必要です。"
+      },
+      "suggested_next_actions": {
+        "zh": ["以 ODD 定義可控場景", "用 PoC 驗證流程而非宣稱量產", "記錄人工接管與安全邊界"],
+        "en": ["Define controllable contexts through ODD", "Use PoCs to test processes rather than claim production readiness", "Record human takeover and safety boundaries"],
+        "ja": ["ODD で制御可能な場面を定義する", "量産準備ではなくプロセス検証として PoC を使う", "人の介入と安全境界を記録する"]
+      }
+    },
+    {
+      "trend_id": "v2g_depot_fleet",
+      "category": "energy_services",
+      "name": {
+        "zh": "回場車隊 V2G 能源服務",
+        "en": "Depot Fleet Vehicle-to-Grid Energy Services",
+        "ja": "拠点帰着型車隊の Vehicle-to-Grid エネルギーサービス"
+      },
+      "shortName": {
+        "zh": "V2G 車隊",
+        "en": "V2G Fleet",
+        "ja": "V2G 車隊"
+      },
+      "glossaryTerms": ["v2g", "bev"],
+      "market_relevance": 62,
+      "technology_readiness": 55,
+      "cost_feasibility": 42,
+      "regulation_readiness": 38,
+      "customer_pain_fit": 60,
+      "dealer_education_value": 74,
+      "strategic_differentiation": 80,
+      "priority_score": 56,
+      "strategy_status": "long_term_watch",
+      "time_horizon": {
+        "startYear": 2029,
+        "endYear": 2035
+      },
+      "risk_level": "high",
+      "data_confidence": 42,
+      "summary": {
+        "zh": "V2G 對回場車隊有想像空間，但需要雙向充電設備、電網規則、電池保固與收益模型同步成熟。",
+        "en": "V2G has potential for depot fleets, but bidirectional charging, grid rules, battery warranty, and revenue models need to mature together.",
+        "ja": "V2G は拠点帰着型車隊に可能性がありますが、双方向充電、電力系統ルール、電池保証、収益モデルが同時に成熟する必要があります。"
+      },
+      "suggested_next_actions": {
+        "zh": ["維持長期觀測與案例追蹤", "先釐清保固與電池健康度影響", "不以未驗證收益模型作為近期銷售承諾"],
+        "en": ["Keep long-term monitoring and case tracking", "Clarify warranty and battery-health effects first", "Do not use unvalidated revenue models as near-term sales promises"],
+        "ja": ["長期観測と事例追跡を続ける", "保証と電池健康度への影響を先に整理する", "未検証の収益モデルを短期の販売約束にしない"]
+      }
+    },
+    {
+      "trend_id": "fcev_long_haul",
+      "category": "energy_transition",
+      "name": {
+        "zh": "長途與高載重燃料電池車",
+        "en": "Long-Haul and High-Payload Fuel Cell Electric Vehicles",
+        "ja": "長距離・高積載向け燃料電池電気自動車"
+      },
+      "shortName": {
+        "zh": "長途 FCEV",
+        "en": "Long-Haul FCEV",
+        "ja": "長距離 FCEV"
+      },
+      "glossaryTerms": ["fcev", "tco"],
+      "market_relevance": 58,
+      "technology_readiness": 54,
+      "cost_feasibility": 38,
+      "regulation_readiness": 42,
+      "customer_pain_fit": 64,
+      "dealer_education_value": 68,
+      "strategic_differentiation": 82,
+      "priority_score": 55,
+      "strategy_status": "scenario_watch",
+      "time_horizon": {
+        "startYear": 2030,
+        "endYear": 2035
+      },
+      "risk_level": "high",
+      "data_confidence": 40,
+      "summary": {
+        "zh": "FCEV 對長途與高載重具策略觀測價值，但在氫能基礎建設與成本未明朗前，較適合作為情境追蹤。",
+        "en": "FCEVs have strategic monitoring value for long-haul and high-payload use, but until hydrogen infrastructure and cost are clearer, they fit better as scenario tracking.",
+        "ja": "FCEV は長距離・高積載用途で戦略的に観測する価値がありますが、水素インフラとコストが明確になるまではシナリオ追跡が適しています。"
+      },
+      "suggested_next_actions": {
+        "zh": ["追蹤氫能場站與示範案例", "保持長途與高載重情境資料", "避免把遠期選項提前寫成近期承諾"],
+        "en": ["Track hydrogen sites and demonstration cases", "Keep long-haul and high-payload scenario data", "Avoid turning a future option into a near-term promise"],
+        "ja": ["水素拠点と実証事例を追跡する", "長距離・高積載シナリオのデータを保つ", "将来選択肢を短期の約束として書かない"]
+      }
+    },
+    {
+      "trend_id": "vehicle_as_a_service",
+      "category": "business_model",
+      "name": {
+        "zh": "商用車服務化模式",
+        "en": "Commercial-Vehicle-as-a-Service Models",
+        "ja": "商用車サービス化モデル"
+      },
+      "shortName": {
+        "zh": "CV-as-a-Service",
+        "en": "CV-as-a-Service",
+        "ja": "CV-as-a-Service"
+      },
+      "glossaryTerms": ["fms", "tco", "kpi"],
+      "market_relevance": 70,
+      "technology_readiness": 66,
+      "cost_feasibility": 60,
+      "regulation_readiness": 58,
+      "customer_pain_fit": 78,
+      "dealer_education_value": 80,
+      "strategic_differentiation": 84,
+      "priority_score": 69,
+      "strategy_status": "business_design",
+      "time_horizon": {
+        "startYear": 2027,
+        "endYear": 2035
+      },
+      "risk_level": "medium",
+      "data_confidence": 50,
+      "summary": {
+        "zh": "服務化模式可把車輛、維修、資料與金融安排整合成營運方案，但需先確認合約、風險分攤與服務能力。",
+        "en": "Vehicle-as-a-service models can combine vehicles, maintenance, data, and financing into operating solutions, but contracts, risk sharing, and service capability must be clear first.",
+        "ja": "商用車のサービス化は、車両、整備、データ、金融を運用ソリューションとして組み合わせますが、契約、リスク分担、サービス能力を先に明確にする必要があります。"
+      },
+      "suggested_next_actions": {
+        "zh": ["分離租賃、維修、資料與保證項目", "用 KPI 定義服務成果", "先做小型客戶假設而非全面推出"],
+        "en": ["Separate leasing, maintenance, data, and guarantee items", "Use KPIs to define service outcomes", "Start with small customer assumptions rather than broad rollout"],
+        "ja": ["リース、整備、データ、保証項目を分ける", "KPI でサービス成果を定義する", "全面展開ではなく小規模な顧客仮説から始める"]
+      }
+    }
+  ]
+}

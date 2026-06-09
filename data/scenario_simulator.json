@@ -1,0 +1,563 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "dataStatus": "demo_dataset",
+    "moduleId": "scenario-simulator",
+    "sourceBasis": "Portfolio proposal strategy narrative converted into a static rule-based prototype simulation.",
+    "publicBoundary": {
+      "zh": "本模擬器僅為作品集展示，不是官方採購、工程、法務或產品上市建議工具。",
+      "en": "This simulator is a portfolio prototype only. It is not an official procurement, engineering, legal, or product-launch recommendation tool.",
+      "ja": "このシミュレーターはポートフォリオ用のプロトタイプです。公式な調達、技術、法務、製品導入の推奨ツールではありません。"
+    }
+  },
+  "scenarioPresets": [
+    {
+      "scenario_id": "urban_delivery",
+      "name": {
+        "zh": "市區配送",
+        "en": "Urban delivery",
+        "ja": "都市配送"
+      },
+      "inputs": {
+        "route_type": "urban_fixed",
+        "annual_mileage": "medium",
+        "payload_level": "light",
+        "depot_charging": "available",
+        "downtime_sensitivity": "high",
+        "esg_pressure": "medium",
+        "regulation_exposure": "medium",
+        "infrastructure_readiness": "medium"
+      }
+    },
+    {
+      "scenario_id": "cold_chain",
+      "name": {
+        "zh": "冷鏈物流",
+        "en": "Cold-chain logistics",
+        "ja": "コールドチェーン物流"
+      },
+      "inputs": {
+        "route_type": "regional_mixed",
+        "annual_mileage": "high",
+        "payload_level": "medium",
+        "depot_charging": "partial",
+        "downtime_sensitivity": "critical",
+        "esg_pressure": "high",
+        "regulation_exposure": "medium",
+        "infrastructure_readiness": "medium"
+      }
+    },
+    {
+      "scenario_id": "construction",
+      "name": {
+        "zh": "營建工程",
+        "en": "Construction",
+        "ja": "建設現場"
+      },
+      "inputs": {
+        "route_type": "site_variable",
+        "annual_mileage": "low",
+        "payload_level": "heavy",
+        "depot_charging": "limited",
+        "downtime_sensitivity": "high",
+        "esg_pressure": "low",
+        "regulation_exposure": "medium",
+        "infrastructure_readiness": "low"
+      }
+    },
+    {
+      "scenario_id": "bus_operation",
+      "name": {
+        "zh": "巴士營運",
+        "en": "Bus operation",
+        "ja": "バス運行"
+      },
+      "inputs": {
+        "route_type": "urban_fixed",
+        "annual_mileage": "high",
+        "payload_level": "passenger",
+        "depot_charging": "available",
+        "downtime_sensitivity": "critical",
+        "esg_pressure": "high",
+        "regulation_exposure": "high",
+        "infrastructure_readiness": "high"
+      }
+    },
+    {
+      "scenario_id": "long_haul",
+      "name": {
+        "zh": "長途幹線貨運",
+        "en": "Long-haul freight",
+        "ja": "長距離幹線輸送"
+      },
+      "inputs": {
+        "route_type": "long_haul",
+        "annual_mileage": "very_high",
+        "payload_level": "heavy",
+        "depot_charging": "limited",
+        "downtime_sensitivity": "high",
+        "esg_pressure": "medium",
+        "regulation_exposure": "medium",
+        "infrastructure_readiness": "low"
+      }
+    },
+    {
+      "scenario_id": "fleet_leasing",
+      "name": {
+        "zh": "車隊租賃",
+        "en": "Fleet leasing",
+        "ja": "車隊リース"
+      },
+      "inputs": {
+        "route_type": "mixed_portfolio",
+        "annual_mileage": "medium",
+        "payload_level": "mixed",
+        "depot_charging": "partial",
+        "downtime_sensitivity": "medium",
+        "esg_pressure": "medium",
+        "regulation_exposure": "medium",
+        "infrastructure_readiness": "medium"
+      }
+    },
+    {
+      "scenario_id": "closed_logistics_park",
+      "name": {
+        "zh": "封閉物流園區",
+        "en": "Closed logistics park",
+        "ja": "閉鎖物流パーク"
+      },
+      "inputs": {
+        "route_type": "closed_site",
+        "annual_mileage": "medium",
+        "payload_level": "medium",
+        "depot_charging": "available",
+        "downtime_sensitivity": "medium",
+        "esg_pressure": "high",
+        "regulation_exposure": "low",
+        "infrastructure_readiness": "high"
+      }
+    }
+  ],
+  "optionLabels": {
+    "route_type": ["urban_fixed", "regional_mixed", "site_variable", "long_haul", "mixed_portfolio", "closed_site"],
+    "annual_mileage": ["low", "medium", "high", "very_high"],
+    "payload_level": ["light", "medium", "heavy", "passenger", "mixed"],
+    "depot_charging": ["available", "partial", "limited"],
+    "downtime_sensitivity": ["medium", "high", "critical"],
+    "esg_pressure": ["low", "medium", "high"],
+    "regulation_exposure": ["low", "medium", "high"],
+    "infrastructure_readiness": ["low", "medium", "high"]
+  },
+  "rules": [
+    {
+      "rule_id": "bev_route_fit",
+      "conditions": {
+        "route_type": ["urban_fixed", "closed_site"],
+        "depot_charging": ["available"],
+        "infrastructure_readiness": ["medium", "high"]
+      },
+      "layers": {
+        "near": ["bev_basics", "tco_route_fit", "charging_safety"],
+        "medium": ["bev_route_poc"],
+        "long": ["battery_soh_tracking"],
+        "deferred": []
+      }
+    },
+    {
+      "rule_id": "bev_partial_charging",
+      "conditions": {
+        "depot_charging": ["partial"],
+        "infrastructure_readiness": ["medium"]
+      },
+      "layers": {
+        "near": ["charging_site_check", "tco_route_fit"],
+        "medium": ["charging_poc", "fms_energy_monitoring"],
+        "long": ["bev_route_poc"],
+        "deferred": []
+      }
+    },
+    {
+      "rule_id": "limited_infrastructure",
+      "conditions": {
+        "infrastructure_readiness": ["low"]
+      },
+      "layers": {
+        "near": ["infrastructure_discovery", "adas_safety_limit"],
+        "medium": ["fms_baseline_poc"],
+        "long": ["fcev_tracking", "charging_partnerships"],
+        "deferred": ["v2g_energy_service", "level4_automation"]
+      }
+    },
+    {
+      "rule_id": "high_downtime",
+      "conditions": {
+        "downtime_sensitivity": ["high", "critical"]
+      },
+      "layers": {
+        "near": ["uptime_service_education", "fms_kpi"],
+        "medium": ["predictive_maintenance_poc"],
+        "long": ["ai_fleet_assist"],
+        "deferred": []
+      }
+    },
+    {
+      "rule_id": "high_esg",
+      "conditions": {
+        "esg_pressure": ["high"]
+      },
+      "layers": {
+        "near": ["esg_data_boundary", "carbon_tracking_basics"],
+        "medium": ["carbon_tracking_poc"],
+        "long": ["v2g_energy_service"],
+        "deferred": []
+      }
+    },
+    {
+      "rule_id": "heavy_or_longhaul",
+      "conditions": {
+        "route_type": ["long_haul"],
+        "payload_level": ["heavy"]
+      },
+      "layers": {
+        "near": ["tco_payload_limits", "adas_safety_limit"],
+        "medium": ["fms_baseline_poc"],
+        "long": ["fcev_tracking", "hybrid_transition_review"],
+        "deferred": ["v2g_energy_service"]
+      }
+    },
+    {
+      "rule_id": "closed_site_automation",
+      "conditions": {
+        "route_type": ["closed_site"],
+        "regulation_exposure": ["low"],
+        "infrastructure_readiness": ["high"]
+      },
+      "layers": {
+        "near": ["odd_education", "safety_boundary_workshop"],
+        "medium": ["closed_site_automation_poc"],
+        "long": ["level4_automation"],
+        "deferred": []
+      }
+    },
+    {
+      "rule_id": "bus_operation",
+      "conditions": {
+        "payload_level": ["passenger"],
+        "depot_charging": ["available"]
+      },
+      "layers": {
+        "near": ["bev_basics", "adas_safety_limit", "charging_safety"],
+        "medium": ["bev_route_poc", "fms_energy_monitoring"],
+        "long": ["v2g_energy_service"],
+        "deferred": []
+      }
+    },
+    {
+      "rule_id": "mixed_leasing",
+      "conditions": {
+        "route_type": ["mixed_portfolio"]
+      },
+      "layers": {
+        "near": ["portfolio_segmentation", "tco_route_fit", "fms_kpi"],
+        "medium": ["fms_baseline_poc", "carbon_tracking_poc"],
+        "long": ["bev_route_poc", "fcev_tracking"],
+        "deferred": ["level4_automation"]
+      }
+    }
+  ],
+  "recommendationItems": {
+    "bev_basics": {
+      "glossaryTerms": ["bev", "tco"],
+      "text": {
+        "zh": "說明 BEV 的續航、載重、回場充電與 TCO 條件。",
+        "en": "Explain BEV range, payload, depot charging, and TCO conditions.",
+        "ja": "BEV の航続、積載、拠点充電、TCO 条件を説明します。"
+      }
+    },
+    "tco_route_fit": {
+      "glossaryTerms": ["tco"],
+      "text": {
+        "zh": "用路線與年度里程拆解 TCO，而不是只比較購車價格。",
+        "en": "Use route and annual mileage to discuss TCO instead of comparing purchase price only.",
+        "ja": "購入価格だけでなく、ルートと年間走行距離から TCO を整理します。"
+      }
+    },
+    "tco_payload_limits": {
+      "glossaryTerms": ["tco"],
+      "text": {
+        "zh": "把重載、長途、回場時間與能源補給限制納入 TCO 討論。",
+        "en": "Include payload, long-haul distance, depot return timing, and energy-refill limits in TCO discussion.",
+        "ja": "高積載、長距離、拠点帰着時間、エネルギー補給制約を TCO 議論に含めます。"
+      }
+    },
+    "charging_safety": {
+      "glossaryTerms": ["bev"],
+      "text": {
+        "zh": "建立充電安全、停車動線與場站電力盤點教育。",
+        "en": "Build education for charging safety, parking flow, and depot power checks.",
+        "ja": "充電安全、駐車動線、拠点電力確認の教育を整えます。"
+      }
+    },
+    "charging_site_check": {
+      "glossaryTerms": ["bev"],
+      "text": {
+        "zh": "先做場站電力、停車與充電時段檢核。",
+        "en": "Start with site checks for power capacity, parking, and charging windows.",
+        "ja": "電力容量、駐車、充電時間帯の拠点確認から始めます。"
+      }
+    },
+    "infrastructure_discovery": {
+      "glossaryTerms": ["bev", "fcev"],
+      "text": {
+        "zh": "把能源補給條件列為前期訪談核心，不急著推定動力方案。",
+        "en": "Make energy access a core discovery topic before narrowing the powertrain path.",
+        "ja": "動力案を急いで決めず、エネルギー補給条件を初期ヒアリングの中心にします。"
+      }
+    },
+    "adas_safety_limit": {
+      "glossaryTerms": ["adas", "odd"],
+      "text": {
+        "zh": "說明 ADAS 是輔助功能，需清楚界定駕駛責任與適用條件。",
+        "en": "Explain ADAS as assistance, with clear driver responsibility and operating conditions.",
+        "ja": "ADAS は支援機能であり、運転者責任と利用条件を明確に説明します。"
+      }
+    },
+    "uptime_service_education": {
+      "glossaryTerms": ["fms", "kpi"],
+      "text": {
+        "zh": "把停工敏感度轉成稼動率 KPI、保養提醒與服務回應教育。",
+        "en": "Translate downtime sensitivity into uptime KPIs, maintenance alerts, and service response education.",
+        "ja": "停止リスクを稼働率 KPI、整備通知、サービス対応教育へつなげます。"
+      }
+    },
+    "fms_kpi": {
+      "glossaryTerms": ["fms", "kpi"],
+      "text": {
+        "zh": "先定義 FMS 儀表板的最小可用 KPI。",
+        "en": "Define the minimum useful KPIs for an FMS dashboard.",
+        "ja": "FMS ダッシュボードに必要な最小 KPI を定義します。"
+      }
+    },
+    "esg_data_boundary": {
+      "glossaryTerms": ["esg", "carbon-accounting"],
+      "text": {
+        "zh": "區分 ESG 訊號、排放估算與已驗證資料。",
+        "en": "Separate ESG signals, emissions estimates, and verified data.",
+        "ja": "ESG シグナル、排出量推計、検証済みデータを分けます。"
+      }
+    },
+    "carbon_tracking_basics": {
+      "glossaryTerms": ["carbon-accounting", "esg"],
+      "text": {
+        "zh": "教育排放邊界、活動資料與係數假設，避免把 demo 數字當正式盤查。",
+        "en": "Educate on emissions boundaries, activity data, and factor assumptions so demo numbers are not treated as formal reporting.",
+        "ja": "排出境界、活動データ、係数仮定を説明し、デモ値を正式報告として扱わないようにします。"
+      }
+    },
+    "odd_education": {
+      "glossaryTerms": ["odd", "l4"],
+      "text": {
+        "zh": "先用 ODD 定義封閉場域、速度、路線與人工接管邊界。",
+        "en": "Use ODD to define closed-site scope, speed, routes, and human takeover boundaries.",
+        "ja": "ODD で閉鎖エリア、速度、ルート、人の介入境界を定義します。"
+      }
+    },
+    "safety_boundary_workshop": {
+      "glossaryTerms": ["l4", "poc"],
+      "text": {
+        "zh": "把安全邊界工作坊列為自動化 PoC 前置條件。",
+        "en": "Make a safety-boundary workshop a prerequisite for automation PoC planning.",
+        "ja": "自動化 PoC の前提として安全境界ワークショップを置きます。"
+      }
+    },
+    "portfolio_segmentation": {
+      "glossaryTerms": ["tco", "fms"],
+      "text": {
+        "zh": "先把租賃車隊依路線、里程、載重與能源條件分群。",
+        "en": "Segment leasing fleets by route, mileage, payload, and energy conditions first.",
+        "ja": "リース車隊をルート、走行距離、積載、エネルギー条件で先に分けます。"
+      }
+    },
+    "bev_route_poc": {
+      "glossaryTerms": ["bev", "poc", "tco", "soh"],
+      "text": {
+        "zh": "設計 BEV 路線 PoC，驗證 TCO、充電排程、SOH 與服務流程。",
+        "en": "Design a BEV route PoC to validate TCO, charging schedule, SOH, and service workflow.",
+        "ja": "BEV ルート PoC で TCO、充電スケジュール、SOH、サービス業務を検証します。"
+      }
+    },
+    "charging_poc": {
+      "glossaryTerms": ["bev", "poc"],
+      "text": {
+        "zh": "用小型場站 PoC 驗證停車、尖離峰充電與維修安全流程。",
+        "en": "Use a small-site PoC to test parking, peak/off-peak charging, and service-safety workflow.",
+        "ja": "小規模拠点 PoC で駐車、ピーク・オフピーク充電、整備安全を検証します。"
+      }
+    },
+    "fms_energy_monitoring": {
+      "glossaryTerms": ["fms", "bev"],
+      "text": {
+        "zh": "把 FMS 與能源監控連結，觀察電耗、停車與維修訊號。",
+        "en": "Connect FMS and energy monitoring to observe energy use, parking, and maintenance signals.",
+        "ja": "FMS とエネルギー監視をつなぎ、電費、駐車、整備シグナルを見ます。"
+      }
+    },
+    "fms_baseline_poc": {
+      "glossaryTerms": ["fms", "kpi", "poc"],
+      "text": {
+        "zh": "先做 FMS 基準 PoC，建立里程、稼動率、保養與停工資料。",
+        "en": "Start with an FMS baseline PoC for mileage, uptime, maintenance, and downtime data.",
+        "ja": "FMS 基準 PoC で走行距離、稼働率、整備、停止時間データを作ります。"
+      }
+    },
+    "predictive_maintenance_poc": {
+      "glossaryTerms": ["fms", "ai-governance", "poc"],
+      "text": {
+        "zh": "以人工覆核的預知保養 PoC 驗證異常訊號，不把 AI 輸出視為保證結果。",
+        "en": "Use a human-reviewed predictive maintenance PoC to validate anomaly signals without treating AI output as guaranteed results.",
+        "ja": "人が確認する予知保全 PoC で異常シグナルを検証し、AI 出力を保証結果として扱いません。"
+      }
+    },
+    "carbon_tracking_poc": {
+      "glossaryTerms": ["carbon-accounting", "esg", "poc"],
+      "text": {
+        "zh": "建立碳追蹤 PoC，先確認資料邊界、係數、里程與能源資料品質。",
+        "en": "Build a carbon-tracking PoC to verify boundaries, factors, mileage, and energy-data quality.",
+        "ja": "炭素追跡 PoC で境界、係数、走行距離、エネルギーデータ品質を確認します。"
+      }
+    },
+    "closed_site_automation_poc": {
+      "glossaryTerms": ["l4", "odd", "poc"],
+      "text": {
+        "zh": "以封閉場域流程驗證自動化 PoC，不延伸為一般道路部署承諾。",
+        "en": "Validate automation PoC within closed-site processes without extending it into general-road deployment promises.",
+        "ja": "閉鎖エリアの流れで自動化 PoC を検証し、一般道路展開の約束に広げません。"
+      }
+    },
+    "battery_soh_tracking": {
+      "glossaryTerms": ["soh", "bev"],
+      "text": {
+        "zh": "長期追蹤 SOH、保固、殘值與季節性能源表現。",
+        "en": "Track SOH, warranty, residual value, and seasonal energy performance over time.",
+        "ja": "SOH、保証、残価、季節別エネルギー性能を長期で追跡します。"
+      }
+    },
+    "fcev_tracking": {
+      "glossaryTerms": ["fcev", "tco"],
+      "text": {
+        "zh": "追蹤 FCEV、氫能場站與長途高載重案例，不提前承諾近期導入。",
+        "en": "Track FCEVs, hydrogen sites, and long-haul high-payload cases without promising near-term rollout.",
+        "ja": "FCEV、水素拠点、長距離高積載事例を追跡し、短期導入を約束しません。"
+      }
+    },
+    "hybrid_transition_review": {
+      "glossaryTerms": ["tco"],
+      "text": {
+        "zh": "視能源補給與載重條件評估過渡方案，不將其視為所有車隊的標準答案。",
+        "en": "Review transition options by energy access and payload, without treating one path as the standard answer for every fleet.",
+        "ja": "エネルギー補給と積載条件で移行案を見直し、一つの道を全車隊の標準解としません。"
+      }
+    },
+    "ai_fleet_assist": {
+      "glossaryTerms": ["ai-governance", "fms"],
+      "text": {
+        "zh": "長期觀測 AI 車隊輔助，前提是資料品質、人審與責任邊界清楚。",
+        "en": "Track AI fleet assistance long term, assuming data quality, human review, and accountability are clear.",
+        "ja": "データ品質、人による確認、責任範囲を前提に、AI 車隊支援を長期観測します。"
+      }
+    },
+    "v2g_energy_service": {
+      "glossaryTerms": ["v2g", "bev", "soh"],
+      "text": {
+        "zh": "把 V2G 放在長期或延後觀測，等待電網規則、雙向充電、保固與收益模型成熟。",
+        "en": "Keep V2G in long-term or deferred observation until grid rules, bidirectional charging, warranty, and revenue models mature.",
+        "ja": "系統ルール、双方向充電、保証、収益モデルが成熟するまで V2G は長期または保留観測に置きます。"
+      }
+    },
+    "level4_automation": {
+      "glossaryTerms": ["l4", "odd"],
+      "text": {
+        "zh": "Level 4 物流自動化需保留在受控場域與長期觀測，不可包裝成通用道路解法。",
+        "en": "Level 4 logistics automation should stay in controlled sites and long-term observation, not be framed as a general-road solution.",
+        "ja": "Level 4 物流自動化は制御された場域と長期観測に置き、一般道路の解決策として表現しません。"
+      }
+    },
+    "charging_partnerships": {
+      "glossaryTerms": ["bev"],
+      "text": {
+        "zh": "追蹤充電合作場站與能源服務夥伴，不把外部資源視為已到位。",
+        "en": "Track charging partner sites and energy-service partners without assuming external resources are already available.",
+        "ja": "充電提携拠点とエネルギーサービスパートナーを追跡し、外部資源が既にあると見なしません。"
+      }
+    }
+  },
+  "defaultLayers": {
+    "near": ["adas_safety_limit", "tco_route_fit"],
+    "medium": ["fms_baseline_poc"],
+    "long": ["fcev_tracking"],
+    "deferred": ["level4_automation", "v2g_energy_service"]
+  },
+  "narratives": {
+    "reasoning": {
+      "zh": "此原型依路線、里程、載重、能源補給、停工敏感度、ESG 壓力、法規暴露與基礎建設成熟度，組合出企劃討論順序。輸出代表下一步訪談與驗證重點，不代表採購或上市建議。",
+      "en": "This prototype combines route, mileage, payload, energy access, downtime sensitivity, ESG pressure, regulation exposure, and infrastructure readiness into a planning discussion order. Outputs indicate interview and validation priorities, not procurement or launch recommendations.",
+      "ja": "このプロトタイプは、ルート、走行距離、積載、エネルギー補給、停止感度、ESG 圧力、規制露出、インフラ成熟度から企画議論の順序を組み立てます。出力はヒアリングと検証の優先点であり、調達や導入の推奨ではありません。"
+    },
+    "dealerEducation": {
+      "zh": "通路教育應先聚焦客戶任務、系統限制、資料授權、服務回應與 TCO 溝通，避免把示範分數說成保證成效。",
+      "en": "Dealer education should focus first on customer mission, system limits, data consent, service response, and TCO communication, avoiding any claim that demo scores guarantee outcomes.",
+      "ja": "販売店教育では、顧客ミッション、システム限界、データ同意、サービス対応、TCO コミュニケーションを先に扱い、デモスコアを成果保証として語らないことが重要です。"
+    },
+    "interviewQuestions": {
+      "zh": [
+        "車輛每天是否回到固定場站？",
+        "停工一小時對營運成本的影響有多大？",
+        "路線、載重與溫控或乘客需求是否穩定？",
+        "客戶能否提供里程、油耗、維修與能源資料？",
+        "ESG 或法規壓力是已確定要求，還是未來觀測訊號？"
+      ],
+      "en": [
+        "Do vehicles return to a fixed depot every day?",
+        "How costly is one hour of downtime for the operation?",
+        "Are route, payload, temperature-control, or passenger needs stable?",
+        "Can the customer provide mileage, fuel, maintenance, and energy data?",
+        "Are ESG or regulatory pressures confirmed requirements or signals to monitor?"
+      ],
+      "ja": [
+        "車両は毎日固定拠点へ戻りますか？",
+        "停止 1 時間は運用コストにどれほど影響しますか？",
+        "ルート、積載、温度管理、乗客ニーズは安定していますか？",
+        "顧客は走行距離、燃料、整備、エネルギーデータを提供できますか？",
+        "ESG や規制圧力は確定要件ですか、それとも観測すべきシグナルですか？"
+      ]
+    },
+    "dataGaps": {
+      "zh": [
+        "實際路線與停車時間",
+        "年度里程與尖離峰使用",
+        "載重、冷鏈或乘客需求波動",
+        "場站電力與能源補給證據",
+        "維修、故障與停工歷史資料"
+      ],
+      "en": [
+        "Actual routes and parking time",
+        "Annual mileage and peak/off-peak usage",
+        "Payload, cold-chain, or passenger-demand variation",
+        "Depot power and energy-access evidence",
+        "Maintenance, fault, and downtime history"
+      ],
+      "ja": [
+        "実際のルートと駐車時間",
+        "年間走行距離とピーク・オフピーク利用",
+        "積載、冷鏈、乗客需要の変動",
+        "拠点電力とエネルギー補給の根拠",
+        "整備、故障、停止履歴"
+      ]
+    },
+    "humanReview": {
+      "zh": "人工審查需確認資料來源、法規時效、車型供應、通路能力與品牌安全。不得將原型輸出直接作為官方企劃、採購或法務結論。",
+      "en": "Human review must verify sources, regulatory currency, vehicle availability, channel capability, and brand safety. Prototype outputs must not be used directly as official planning, procurement, or legal conclusions.",
+      "ja": "人による確認では、出典、規制の最新性、車両供給、チャネル能力、ブランド安全性を検証する必要があります。プロトタイプ出力を公式な企画、調達、法務結論として直接使ってはいけません。"
+    }
+  }
+}

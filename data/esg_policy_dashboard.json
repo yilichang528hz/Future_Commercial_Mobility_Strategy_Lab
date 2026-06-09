@@ -1,0 +1,435 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "moduleId": "esg-policy-dashboard",
+    "dataStatus": "demo_assumptions",
+    "sourceBasis": "Portfolio proposal ESG, carbon tracking, energy-transition, policy-monitoring, and fleet decarbonization planning narrative converted into a static dashboard prototype.",
+    "publicBoundary": {
+      "zh": "本 ESG 與政策儀表板僅使用 demo 假設與來源檢核占位，不代表最新法規、補助資格、正式碳盤查或企業揭露結論。",
+      "en": "This ESG & Policy Dashboard uses demo assumptions and source-check placeholders only. It is not current legal, subsidy, carbon-accounting, or corporate-reporting advice.",
+      "ja": "この ESG・政策ダッシュボードはデモ仮定と出典確認用のプレースホルダーのみを使用します。最新法規、補助資格、正式な炭素会計、企業開示の助言ではありません。"
+    },
+    "accountingCaveat": {
+      "zh": "任何減碳估算都取決於燃料使用、電力排放係數、再生能源比例、任務循環、里程、載重與企業核准的盤查方法。",
+      "en": "Any carbon estimate depends on fuel use, electricity emission factors, renewable share, duty cycle, mileage, payload, and an enterprise-approved accounting method.",
+      "ja": "炭素推計は、燃料使用量、電力排出係数、再生可能電力比率、稼働サイクル、走行距離、積載、企業承認済みの算定方法に依存します。"
+    }
+  },
+  "carbonModel": {
+    "factors": {
+      "dieselKgCo2ePerLiterDemo": 2.68,
+      "electricityKgCo2ePerKwhDemo": 0.49
+    },
+    "inputs": [
+      {
+        "id": "annualMileage",
+        "unit": "km/year",
+        "default": "medium",
+        "options": [
+          { "id": "low", "value": 25000 },
+          { "id": "medium", "value": 55000 },
+          { "id": "high", "value": 90000 }
+        ]
+      },
+      {
+        "id": "dieselIntensity",
+        "unit": "L/100km",
+        "default": "medium",
+        "options": [
+          { "id": "light", "value": 12 },
+          { "id": "medium", "value": 21 },
+          { "id": "heavy", "value": 32 }
+        ]
+      },
+      {
+        "id": "electricIntensity",
+        "unit": "kWh/100km",
+        "default": "medium",
+        "options": [
+          { "id": "efficient", "value": 48 },
+          { "id": "medium", "value": 76 },
+          { "id": "heavy", "value": 116 }
+        ]
+      },
+      {
+        "id": "renewableShare",
+        "unit": "%",
+        "default": "medium",
+        "options": [
+          { "id": "low", "value": 0 },
+          { "id": "medium", "value": 30 },
+          { "id": "high", "value": 70 }
+        ]
+      },
+      {
+        "id": "replacementShare",
+        "unit": "%",
+        "default": "pilot",
+        "options": [
+          { "id": "pilot", "value": 15 },
+          { "id": "partial", "value": 35 },
+          { "id": "focused", "value": 60 }
+        ]
+      }
+    ]
+  },
+  "policySignals": [
+    {
+      "id": "policy_monitoring",
+      "category": "policy_check",
+      "sourceStatus": "latest_verification_required",
+      "sourceConfidence": "low",
+      "updateDatePlaceholder": "YYYY-MM-DD latest policy check required",
+      "glossaryTerms": ["esg", "kpi", "poc"],
+      "name": {
+        "zh": "政策與補助監測節點",
+        "en": "Policy and subsidy monitoring node",
+        "ja": "政策・補助モニタリングノード"
+      },
+      "summary": {
+        "zh": "把補助、車種資格、路權、能源建置與揭露要求列為需要定期查證的企劃輸入。",
+        "en": "Treats subsidy programs, vehicle eligibility, access rules, energy buildout, and disclosure requirements as planning inputs that need routine verification.",
+        "ja": "補助制度、車種適格性、通行条件、エネルギー整備、開示要件を、定期確認が必要な企画入力として扱います。"
+      },
+      "metrics": {
+        "policyReadiness": 46,
+        "carbonInfluence": 62,
+        "customerPressure": 70,
+        "dataReadiness": 48
+      },
+      "planningUse": {
+        "zh": "適合建立每季政策檢核表，而不是直接判斷採購或上市時點。",
+        "en": "Useful for building a quarterly policy checklist, not for making procurement or launch decisions by itself.",
+        "ja": "四半期ごとの政策確認リスト作成には有用ですが、調達や上市時期を単独で判断するものではありません。"
+      },
+      "limitation": {
+        "zh": "補助與法規可能快速變動，必須由最新官方來源與法務/合規人員覆核。",
+        "en": "Subsidies and rules can change quickly and must be checked against current official sources and legal or compliance review.",
+        "ja": "補助や規則は変わりやすく、最新の公式情報と法務・コンプライアンス確認が必要です。"
+      },
+      "actions": {
+        "zh": ["建立政策來源清單", "標記最後更新日期", "把資格條件拆成車型、用途、能源與申請流程"],
+        "en": ["Create a source checklist", "Record last update date", "Split eligibility into vehicle, use case, energy, and application steps"],
+        "ja": ["出典チェックリストを作る", "最終更新日を記録する", "適格条件を車型、用途、エネルギー、申請手順に分ける"]
+      }
+    },
+    {
+      "id": "carbon_reporting_pressure",
+      "category": "reporting_need",
+      "sourceStatus": "demo_assumption",
+      "sourceConfidence": "medium",
+      "updateDatePlaceholder": "Demo reporting need placeholder",
+      "glossaryTerms": ["esg", "co2", "carbon-accounting", "kpi"],
+      "name": {
+        "zh": "客戶碳揭露壓力",
+        "en": "Customer carbon-reporting pressure",
+        "ja": "顧客の炭素開示圧力"
+      },
+      "summary": {
+        "zh": "將企業永續揭露、供應鏈要求與車隊營運資料需求連結起來，提醒產品企劃先定義資料邊界。",
+        "en": "Connects sustainability disclosure, supply-chain requests, and fleet operating data needs so product planning defines data boundaries first.",
+        "ja": "サステナビリティ開示、サプライチェーン要請、フリート運用データを結び、商品企画が先にデータ境界を定義する必要性を示します。"
+      },
+      "metrics": {
+        "policyReadiness": 58,
+        "carbonInfluence": 82,
+        "customerPressure": 86,
+        "dataReadiness": 54
+      },
+      "planningUse": {
+        "zh": "可支援客戶訪談、報告欄位設計與 connected fleet 服務優先順序。",
+        "en": "Supports customer interviews, report field design, and connected-fleet service prioritization.",
+        "ja": "顧客インタビュー、レポート項目設計、コネクテッドフリートサービスの優先順位づけに役立ちます。"
+      },
+      "limitation": {
+        "zh": "沒有企業核准的盤查方法與排放係數時，不應宣稱已驗證減量。",
+        "en": "Do not claim verified reductions without an enterprise-approved accounting method and verified emission factors.",
+        "ja": "企業承認済みの算定方法と確認済み排出係数がない場合、検証済み削減と主張してはいけません。"
+      },
+      "actions": {
+        "zh": ["定義 CO2/CO2e 欄位", "確認活動數據來源", "把 demo 報告與正式揭露分開"],
+        "en": ["Define CO2/CO2e fields", "Confirm activity-data sources", "Separate demo reports from formal disclosure"],
+        "ja": ["CO2/CO2e 項目を定義する", "活動データの出典を確認する", "デモレポートと正式開示を分ける"]
+      }
+    },
+    {
+      "id": "diesel_replacement_signal",
+      "category": "energy_transition",
+      "sourceStatus": "demo_assumption",
+      "sourceConfidence": "medium",
+      "updateDatePlaceholder": "Demo 2026-2035 planning signal",
+      "glossaryTerms": ["bev", "fcev", "co2", "tco"],
+      "name": {
+        "zh": "柴油替代與能源轉型訊號",
+        "en": "Diesel replacement and energy-transition signal",
+        "ja": "ディーゼル代替とエネルギー転換シグナル"
+      },
+      "summary": {
+        "zh": "把柴油替代討論放回路線穩定、載重、能源補給、維修網絡與 TCO 交叉條件。",
+        "en": "Places diesel replacement back into route stability, payload, energy access, service network, and TCO crossover conditions.",
+        "ja": "ディーゼル代替を、ルート安定性、積載、エネルギー補給、整備ネットワーク、TCO 交差条件の中で捉えます。"
+      },
+      "metrics": {
+        "policyReadiness": 52,
+        "carbonInfluence": 78,
+        "customerPressure": 64,
+        "dataReadiness": 60
+      },
+      "planningUse": {
+        "zh": "適合連結 Energy Roadmap 與 Scenario Simulator，判斷教育或 PoC 條件。",
+        "en": "Useful for linking the Energy Roadmap and Scenario Simulator to decide education or PoC conditions.",
+        "ja": "Energy Roadmap と Scenario Simulator を結び、教育や PoC 条件を判断するのに有用です。"
+      },
+      "limitation": {
+        "zh": "不能以能源名稱直接推論總碳排；需看實際任務、能源來源與使用方法。",
+        "en": "A powertrain name alone cannot prove total carbon impact; actual duty, energy source, and use pattern matter.",
+        "ja": "パワートレイン名だけで総炭素影響は判断できません。実際の任務、エネルギー源、使い方が重要です。"
+      },
+      "actions": {
+        "zh": ["整理高穩定路線", "標記載重與停車時間", "評估 BEV/FCEV 教育與 PoC 條件"],
+        "en": ["Map stable routes", "Tag payload and parking windows", "Assess BEV/FCEV education and PoC conditions"],
+        "ja": ["安定ルートを整理する", "積載と駐車時間を記録する", "BEV/FCEV 教育と PoC 条件を評価する"]
+      }
+    },
+    {
+      "id": "renewable_electricity_share",
+      "category": "energy_factor",
+      "sourceStatus": "source_placeholder",
+      "sourceConfidence": "low",
+      "updateDatePlaceholder": "Electricity factor and renewable share must be refreshed",
+      "glossaryTerms": ["v2g", "co2", "esg", "carbon-accounting"],
+      "name": {
+        "zh": "再生能源比例與電力係數",
+        "en": "Renewable share and electricity factor",
+        "ja": "再生可能電力比率と電力係数"
+      },
+      "summary": {
+        "zh": "提醒產品企劃不要只看尾管排放，也要確認充電來源、電力排放係數與是否可追溯。",
+        "en": "Reminds planners not to look only at tailpipe emissions; charging source, electricity factor, and traceability also matter.",
+        "ja": "テールパイプ排出だけでなく、充電電源、電力排出係数、追跡可能性も確認すべきことを示します。"
+      },
+      "metrics": {
+        "policyReadiness": 44,
+        "carbonInfluence": 88,
+        "customerPressure": 66,
+        "dataReadiness": 42
+      },
+      "planningUse": {
+        "zh": "適合設計能源資料欄位、場站訪談與 V2G 長期追蹤議題。",
+        "en": "Useful for designing energy data fields, depot interviews, and longer-term V2G tracking topics.",
+        "ja": "エネルギーデータ項目、拠点ヒアリング、V2G の長期追跡テーマ設計に役立ちます。"
+      },
+      "limitation": {
+        "zh": "電力係數與再生能源證明若未更新，demo 估算不能進入正式報告。",
+        "en": "If electricity factors and renewable certificates are not current, demo estimates must not enter formal reporting.",
+        "ja": "電力係数や再生可能電力証書が最新でない場合、デモ推計を正式報告に使ってはいけません。"
+      },
+      "actions": {
+        "zh": ["建立電力係數更新節奏", "確認場站充電來源", "追蹤再生能源憑證或合約資料"],
+        "en": ["Set an electricity-factor refresh cadence", "Confirm depot charging sources", "Track renewable certificates or contracts"],
+        "ja": ["電力係数更新の周期を決める", "拠点充電の電源を確認する", "再エネ証書や契約情報を追跡する"]
+      }
+    },
+    {
+      "id": "subsidy_eligibility_watch",
+      "category": "subsidy_check",
+      "sourceStatus": "latest_verification_required",
+      "sourceConfidence": "low",
+      "updateDatePlaceholder": "Latest subsidy program check required",
+      "glossaryTerms": ["bev", "fcev", "poc", "kpi"],
+      "name": {
+        "zh": "補助資格與申請條件觀察",
+        "en": "Subsidy eligibility and application-condition watch",
+        "ja": "補助適格性と申請条件の観察"
+      },
+      "summary": {
+        "zh": "把補助資格拆成車型、車重、用途、能源設備、申請文件與時程，不把補助視為必然條件。",
+        "en": "Breaks subsidy eligibility into vehicle type, weight, use case, energy equipment, documents, and timing without treating subsidies as guaranteed.",
+        "ja": "補助適格性を車型、重量、用途、エネルギー設備、書類、時期に分け、補助を確実な前提として扱いません。"
+      },
+      "metrics": {
+        "policyReadiness": 40,
+        "carbonInfluence": 55,
+        "customerPressure": 72,
+        "dataReadiness": 50
+      },
+      "planningUse": {
+        "zh": "適合建立客戶諮詢清單與 PoC 條件，不適合直接承諾補助取得。",
+        "en": "Useful for customer consultation checklists and PoC conditions, not for promising subsidy approval.",
+        "ja": "顧客相談チェックリストや PoC 条件には有用ですが、補助取得を約束するものではありません。"
+      },
+      "limitation": {
+        "zh": "補助來源、資格與預算皆須最新驗證，且需分開處理地方與中央條件。",
+        "en": "Subsidy sources, eligibility, and budget must be verified with current information, with local and national rules separated.",
+        "ja": "補助の出典、適格性、予算は最新確認が必要で、地方条件と国レベル条件を分ける必要があります。"
+      },
+      "actions": {
+        "zh": ["列出最新補助來源", "標記資格不確定項", "把補助資訊放入人工覆核流程"],
+        "en": ["List current subsidy sources", "Flag uncertain eligibility items", "Place subsidy information into human review"],
+        "ja": ["最新補助の出典を列挙する", "不確実な適格項目を示す", "補助情報を人による確認フローに入れる"]
+      }
+    },
+    {
+      "id": "customer_reporting_need",
+      "category": "customer_reporting",
+      "sourceStatus": "simulated_source",
+      "sourceConfidence": "medium",
+      "updateDatePlaceholder": "Customer interview placeholder",
+      "glossaryTerms": ["esg", "kpi", "co2", "fms"],
+      "name": {
+        "zh": "客戶營運報告需求",
+        "en": "Customer operating-report need",
+        "ja": "顧客運用レポート需要"
+      },
+      "summary": {
+        "zh": "把營運效率、能源使用、碳追蹤、妥善率與改善行動包成客戶可理解的 reporting service。",
+        "en": "Packages operating efficiency, energy use, carbon tracking, uptime, and improvement actions into customer-readable reporting service concepts.",
+        "ja": "運用効率、エネルギー使用、炭素追跡、稼働率、改善行動を、顧客が読めるレポーティングサービス概念へまとめます。"
+      },
+      "metrics": {
+        "policyReadiness": 60,
+        "carbonInfluence": 70,
+        "customerPressure": 82,
+        "dataReadiness": 58
+      },
+      "planningUse": {
+        "zh": "可延伸 Connected Fleet Lab，但必須清楚分隔 demo 報告、內部管理報告與正式永續揭露。",
+        "en": "Can extend the Connected Fleet Lab, but demo reports, internal management reports, and formal sustainability disclosure must stay clearly separated.",
+        "ja": "Connected Fleet Lab を拡張できますが、デモレポート、内部管理レポート、正式なサステナビリティ開示は明確に分ける必要があります。"
+      },
+      "limitation": {
+        "zh": "報告不能暗示即時遙測或真實資料收集；所有欄位需有同意與保存規則。",
+        "en": "Reports must not imply live telemetry or real data collection; every field needs consent and retention rules.",
+        "ja": "レポートはライブテレメトリーや実データ収集を示唆してはいけません。すべての項目に同意と保存ルールが必要です。"
+      },
+      "actions": {
+        "zh": ["設計客戶訪談題目", "定義 KPI 與資料欄位", "把正式揭露欄位交由人工覆核"],
+        "en": ["Design customer interview questions", "Define KPIs and data fields", "Route formal disclosure fields to human review"],
+        "ja": ["顧客インタビュー項目を設計する", "KPI とデータ項目を定義する", "正式開示項目を人による確認へ回す"]
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "year": "2026",
+      "status": "source_placeholder",
+      "label": {
+        "zh": "來源盤點與資料欄位定義",
+        "en": "Source inventory and data-field definition",
+        "ja": "出典棚卸しとデータ項目定義"
+      }
+    },
+    {
+      "year": "2027",
+      "status": "demo_assumption",
+      "label": {
+        "zh": "客戶 reporting need 訪談",
+        "en": "Customer reporting-need interviews",
+        "ja": "顧客レポート需要ヒアリング"
+      }
+    },
+    {
+      "year": "2028",
+      "status": "latest_verification_required",
+      "label": {
+        "zh": "補助與政策條件複核",
+        "en": "Subsidy and policy-condition review",
+        "ja": "補助・政策条件の再確認"
+      }
+    },
+    {
+      "year": "2029",
+      "status": "demo_assumption",
+      "label": {
+        "zh": "BEV 路線與場站能源 PoC",
+        "en": "BEV route and depot-energy PoC",
+        "ja": "BEV ルートと拠点エネルギー PoC"
+      }
+    },
+    {
+      "year": "2030",
+      "status": "source_placeholder",
+      "label": {
+        "zh": "電力係數與再生能源證明更新",
+        "en": "Electricity factor and renewable proof refresh",
+        "ja": "電力係数と再エネ証明の更新"
+      }
+    },
+    {
+      "year": "2032",
+      "status": "demo_assumption",
+      "label": {
+        "zh": "車隊減碳壓力與服務包裝",
+        "en": "Fleet decarbonization pressure and service packaging",
+        "ja": "フリート脱炭素圧力とサービス化"
+      }
+    },
+    {
+      "year": "2035",
+      "status": "latest_verification_required",
+      "label": {
+        "zh": "長期政策與能源條件再驗證",
+        "en": "Long-term policy and energy-condition revalidation",
+        "ja": "長期政策とエネルギー条件の再検証"
+      }
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "source_check_cadence",
+      "glossaryTerms": ["esg", "kpi"],
+      "title": {
+        "zh": "建立來源檢核節奏",
+        "en": "Set a source-check cadence",
+        "ja": "出典確認の周期を設定"
+      },
+      "body": {
+        "zh": "把政策、補助、電力係數與企業揭露要求分成月檢、季檢與正式覆核項目。",
+        "en": "Separate policy, subsidy, electricity-factor, and disclosure requirements into monthly checks, quarterly checks, and formal review items.",
+        "ja": "政策、補助、電力係数、開示要件を月次確認、四半期確認、正式確認項目に分けます。"
+      }
+    },
+    {
+      "id": "carbon_data_contract",
+      "glossaryTerms": ["co2", "carbon-accounting"],
+      "title": {
+        "zh": "先定義碳資料合約",
+        "en": "Define the carbon data contract first",
+        "ja": "先に炭素データ契約を定義"
+      },
+      "body": {
+        "zh": "確認燃料、電力、里程、載重、任務循環、排放係數與資料保存規則，再談報告功能。",
+        "en": "Confirm fuel, electricity, mileage, payload, duty cycle, emission factors, and retention rules before discussing reporting features.",
+        "ja": "レポート機能を議論する前に、燃料、電力、走行距離、積載、稼働サイクル、排出係数、保存ルールを確認します。"
+      }
+    },
+    {
+      "id": "customer_interview",
+      "glossaryTerms": ["fms", "esg", "kpi"],
+      "title": {
+        "zh": "把 ESG 轉成客戶訪談題",
+        "en": "Turn ESG into customer interview questions",
+        "ja": "ESG を顧客ヒアリング項目へ変換"
+      },
+      "body": {
+        "zh": "訪談客戶的 reporting owner、資料來源、審核流程與希望看到的 fleet KPI。",
+        "en": "Interview customers on reporting ownership, data sources, approval flow, and the fleet KPIs they expect to see.",
+        "ja": "レポート責任者、データ出典、承認フロー、期待するフリート KPI を顧客に確認します。"
+      }
+    },
+    {
+      "id": "poc_boundary",
+      "glossaryTerms": ["bev", "fcev", "poc"],
+      "title": {
+        "zh": "PoC 邊界要比口號更清楚",
+        "en": "Make PoC boundaries clearer than slogans",
+        "ja": "PoC の境界をスローガンより明確に"
+      },
+      "body": {
+        "zh": "用路線、載重、充電/加氫條件、維修支援與客戶資料同意來界定 PoC。",
+        "en": "Define PoCs by route, payload, charging or hydrogen conditions, service support, and customer data consent.",
+        "ja": "ルート、積載、充電・水素条件、整備支援、顧客データ同意で PoC を定義します。"
+      }
+    }
+  ]
+}

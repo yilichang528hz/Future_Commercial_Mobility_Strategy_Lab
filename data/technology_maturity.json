@@ -1,0 +1,351 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "dataStatus": "demo_assumptions",
+    "moduleId": "technology-maturity-map",
+    "sourceBasis": "Portfolio proposal strategy narrative, converted into illustrative technology-readiness planning assumptions.",
+    "axis": {
+      "x": "maturity_score",
+      "y": "business_value_score",
+      "bubbleSize": "implementation_cost",
+      "color": "regulation_risk"
+    },
+    "source_limitations": {
+      "zh": "本成熟度地圖是作品集示範，不代表正式技術評估。實際企劃需加入車型供應、台灣法規、路線與載重、能源補給、售後能力、成本與通路教育驗證。",
+      "en": "This maturity map is a portfolio demonstration, not a formal technology assessment. Real planning needs validation against vehicle supply, Taiwan regulation, routes and payloads, energy access, after-sales capability, cost, and dealer education.",
+      "ja": "この成熟度マップはポートフォリオ用のデモであり、正式な技術評価ではありません。実際の企画では、車両供給、台湾の規制、ルートと積載、エネルギー補給、アフターサービス能力、コスト、販売店教育を検証する必要があります。"
+    }
+  },
+  "technologies": [
+    {
+      "technology_id": "fms_platform",
+      "category": "data_services",
+      "name": {
+        "zh": "車隊管理系統平台",
+        "en": "Fleet Management System Platform",
+        "ja": "車隊管理システムプラットフォーム"
+      },
+      "shortName": {
+        "zh": "FMS 平台",
+        "en": "FMS Platform",
+        "ja": "FMS 基盤"
+      },
+      "glossaryTerms": ["fms", "kpi", "dealer"],
+      "maturity_score": 82,
+      "business_value_score": 84,
+      "implementation_cost": 58,
+      "regulation_risk": 42,
+      "dealer_training_difficulty": 64,
+      "service_readiness": 78,
+      "recommended_status": "near_term_education",
+      "risk_level": "medium",
+      "suitable_scenarios": {
+        "zh": ["固定或半固定路線車隊", "重視稼動率與保養排程的客戶", "需要售後服務可視化的營運場景"],
+        "en": ["Fixed or semi-fixed route fleets", "Customers focused on uptime and maintenance scheduling", "Operations that need more visible after-sales workflows"],
+        "ja": ["固定または半固定ルートの車隊", "稼働率と整備計画を重視する顧客", "アフターサービスの可視化が必要な運用"]
+      },
+      "planning_notes": {
+        "zh": "適合先從客戶教育、KPI 定義與服務流程設計開始，避免一開始就承諾完整資料平台成效。",
+        "en": "Start with customer education, KPI definition, and service workflow design before promising full platform outcomes.",
+        "ja": "最初は顧客教育、KPI 定義、サービス業務設計から始め、完全なデータ基盤効果を早期に約束しないことが重要です。"
+      }
+    },
+    {
+      "technology_id": "predictive_maintenance",
+      "category": "data_services",
+      "name": {
+        "zh": "預知保養",
+        "en": "Predictive Maintenance",
+        "ja": "予知保全"
+      },
+      "shortName": {
+        "zh": "預知保養",
+        "en": "Predictive Maintenance",
+        "ja": "予知保全"
+      },
+      "glossaryTerms": ["fms", "ai-governance", "kpi"],
+      "maturity_score": 68,
+      "business_value_score": 78,
+      "implementation_cost": 62,
+      "regulation_risk": 46,
+      "dealer_training_difficulty": 68,
+      "service_readiness": 62,
+      "recommended_status": "poc_planning",
+      "risk_level": "medium",
+      "suitable_scenarios": {
+        "zh": ["高里程車隊", "停車損失敏感的物流客戶", "願意提供維修與故障資料的合作客戶"],
+        "en": ["High-mileage fleets", "Logistics customers sensitive to downtime", "Partner customers willing to share maintenance and fault data"],
+        "ja": ["高走行距離の車隊", "停止時間に敏感な物流顧客", "整備・故障データを共有できる協力顧客"]
+      },
+      "planning_notes": {
+        "zh": "可進入 PoC，但必須先界定資料品質、人審流程與責任邊界，避免把模型建議說成保證維修結果。",
+        "en": "Suitable for PoC planning, but data quality, human review, and accountability boundaries must be defined before model suggestions are used.",
+        "ja": "PoC には適していますが、モデル提案を使う前にデータ品質、人による確認、責任範囲を定義する必要があります。"
+      }
+    },
+    {
+      "technology_id": "bev_commercial_vehicles",
+      "category": "energy_transition",
+      "name": {
+        "zh": "商用電池電動車",
+        "en": "Battery Electric Commercial Vehicles",
+        "ja": "商用バッテリー電気自動車"
+      },
+      "shortName": {
+        "zh": "商用 BEV",
+        "en": "Commercial BEV",
+        "ja": "商用 BEV"
+      },
+      "glossaryTerms": ["bev", "tco", "soh"],
+      "maturity_score": 76,
+      "business_value_score": 82,
+      "implementation_cost": 70,
+      "regulation_risk": 50,
+      "dealer_training_difficulty": 74,
+      "service_readiness": 64,
+      "recommended_status": "poc_planning",
+      "risk_level": "medium",
+      "suitable_scenarios": {
+        "zh": ["回場充電的都市配送", "固定里程與可預測載重", "有 ESG 採購壓力的企業客戶"],
+        "en": ["Urban delivery with depot charging", "Predictable mileage and payload", "Enterprise customers facing ESG procurement pressure"],
+        "ja": ["拠点充電が可能な都市配送", "走行距離と積載が予測しやすい運用", "ESG 調達圧力がある企業顧客"]
+      },
+      "planning_notes": {
+        "zh": "適合以路線盤點、TCO、電池健康度與充電條件做 PoC，尚不宜用單一案例推論所有車隊適用。",
+        "en": "Use route mapping, TCO, battery health, and charging conditions for PoC design. One successful case should not be generalized to every fleet.",
+        "ja": "ルート整理、TCO、電池状態、充電条件を使って PoC を設計します。一つの成功例をすべての車隊へ一般化しないことが大切です。"
+      }
+    },
+    {
+      "technology_id": "hydrogen_trucks",
+      "category": "energy_transition",
+      "name": {
+        "zh": "氫燃料電池卡車",
+        "en": "Hydrogen Fuel Cell Trucks",
+        "ja": "水素燃料電池トラック"
+      },
+      "shortName": {
+        "zh": "氫能卡車",
+        "en": "Hydrogen Trucks",
+        "ja": "水素トラック"
+      },
+      "glossaryTerms": ["fcev", "tco"],
+      "maturity_score": 46,
+      "business_value_score": 62,
+      "implementation_cost": 88,
+      "regulation_risk": 72,
+      "dealer_training_difficulty": 70,
+      "service_readiness": 36,
+      "recommended_status": "long_term_tracking",
+      "risk_level": "high",
+      "suitable_scenarios": {
+        "zh": ["長途或高載重情境觀測", "有氫能供應證據的示範走廊", "政策或大型客戶推動的中長期方案"],
+        "en": ["Long-haul or high-payload scenario tracking", "Demonstration corridors with hydrogen supply evidence", "Mid- to long-term programs driven by policy or major customers"],
+        "ja": ["長距離または高積載用途の観測", "水素供給の根拠がある実証回廊", "政策または大口顧客により進む中長期案"]
+      },
+      "planning_notes": {
+        "zh": "應維持長期追蹤，聚焦基礎建設、燃料成本、維修安全與車型供應，避免提前包裝成近期主力方案。",
+        "en": "Keep it in long-term tracking and focus on infrastructure, fuel cost, service safety, and vehicle availability before near-term positioning.",
+        "ja": "長期追跡に置き、インフラ、燃料コスト、整備安全、車両供給を確認してから短期の主力案として扱うべきです。"
+      }
+    },
+    {
+      "technology_id": "v2g_depot_energy",
+      "category": "energy_services",
+      "name": {
+        "zh": "回場車隊 V2G",
+        "en": "Depot Fleet Vehicle-to-Grid",
+        "ja": "拠点帰着型車隊の Vehicle-to-Grid"
+      },
+      "shortName": {
+        "zh": "V2G 回場",
+        "en": "Depot V2G",
+        "ja": "拠点 V2G"
+      },
+      "glossaryTerms": ["v2g", "bev", "soh"],
+      "maturity_score": 42,
+      "business_value_score": 58,
+      "implementation_cost": 78,
+      "regulation_risk": 76,
+      "dealer_training_difficulty": 68,
+      "service_readiness": 38,
+      "recommended_status": "long_term_tracking",
+      "risk_level": "high",
+      "suitable_scenarios": {
+        "zh": ["大型回場車隊", "電價與需量管理壓力明確的場站", "電網規則與雙向充電設備成熟後的能源服務"],
+        "en": ["Large depot-return fleets", "Sites with clear power-demand management pressure", "Energy services after grid rules and bidirectional charging mature"],
+        "ja": ["大規模な拠点帰着型車隊", "電力需要管理の圧力が明確な拠点", "系統ルールと双方向充電が成熟した後のエネルギーサービス"]
+      },
+      "planning_notes": {
+        "zh": "先追蹤雙向充電、保固與收益模型，不宜把未驗證收益作為近期銷售或服務承諾。",
+        "en": "Track bidirectional charging, warranty, and revenue models first. Unvalidated revenue should not become a near-term sales or service promise.",
+        "ja": "双方向充電、保証、収益モデルを先に追跡します。未検証の収益を短期の販売・サービス約束にしないことが重要です。"
+      }
+    },
+    {
+      "technology_id": "level4_logistics_automation",
+      "category": "automation",
+      "name": {
+        "zh": "Level 4 物流自動化",
+        "en": "Level 4 Logistics Automation",
+        "ja": "Level 4 物流自動化"
+      },
+      "shortName": {
+        "zh": "L4 物流",
+        "en": "L4 Logistics",
+        "ja": "L4 物流"
+      },
+      "glossaryTerms": ["l4", "odd", "poc"],
+      "maturity_score": 38,
+      "business_value_score": 64,
+      "implementation_cost": 86,
+      "regulation_risk": 82,
+      "dealer_training_difficulty": 78,
+      "service_readiness": 32,
+      "recommended_status": "deferred_observation",
+      "risk_level": "high",
+      "suitable_scenarios": {
+        "zh": ["封閉場域", "固定低速物流流程", "安全邊界可明確定義的 PoC"],
+        "en": ["Closed sites", "Fixed low-speed logistics processes", "PoCs with clearly defined safety boundaries"],
+        "ja": ["閉鎖エリア", "固定された低速物流プロセス", "安全境界を明確に定義できる PoC"]
+      },
+      "planning_notes": {
+        "zh": "適合觀測與小範圍概念驗證，不應從展示案例跳到一般道路或量產部署結論。",
+        "en": "Suitable for observation and narrow concept validation. A demo case should not be translated into general-road or production deployment claims.",
+        "ja": "観測と限定的な概念検証に適しています。展示事例から一般道路や量産展開の結論へ飛躍しないことが必要です。"
+      }
+    },
+    {
+      "technology_id": "adas_safety_package",
+      "category": "safety",
+      "name": {
+        "zh": "ADAS 安全教育套件",
+        "en": "ADAS Safety Education Package",
+        "ja": "ADAS 安全教育パッケージ"
+      },
+      "shortName": {
+        "zh": "ADAS 教育",
+        "en": "ADAS Education",
+        "ja": "ADAS 教育"
+      },
+      "glossaryTerms": ["adas", "odd", "dealer"],
+      "maturity_score": 86,
+      "business_value_score": 80,
+      "implementation_cost": 46,
+      "regulation_risk": 38,
+      "dealer_training_difficulty": 76,
+      "service_readiness": 82,
+      "recommended_status": "near_term_education",
+      "risk_level": "low",
+      "suitable_scenarios": {
+        "zh": ["新車交車教育", "經銷與售後訓練", "安全配備說明與客戶誤解管理"],
+        "en": ["New-vehicle delivery education", "Dealer and after-sales training", "Safety-feature explanation and customer expectation management"],
+        "ja": ["新車納車時の教育", "販売店とアフターサービスの研修", "安全機能説明と顧客期待値の管理"]
+      },
+      "planning_notes": {
+        "zh": "可立即進入教育與內容標準化，但須持續說明輔助功能邊界與駕駛責任。",
+        "en": "Ready for education and content standardization, while continuing to explain assistance limits and driver responsibility.",
+        "ja": "教育と内容標準化にすぐ進めますが、支援機能の限界と運転者責任を説明し続ける必要があります。"
+      }
+    },
+    {
+      "technology_id": "connected_fleet_services",
+      "category": "data_services",
+      "name": {
+        "zh": "車聯網車隊服務",
+        "en": "Connected Fleet Services",
+        "ja": "コネクテッド車隊サービス"
+      },
+      "shortName": {
+        "zh": "車聯網服務",
+        "en": "Connected Fleet",
+        "ja": "コネクテッド車隊"
+      },
+      "glossaryTerms": ["fms", "ota", "ai-governance"],
+      "maturity_score": 78,
+      "business_value_score": 82,
+      "implementation_cost": 60,
+      "regulation_risk": 52,
+      "dealer_training_difficulty": 70,
+      "service_readiness": 74,
+      "recommended_status": "near_term_education",
+      "risk_level": "medium",
+      "suitable_scenarios": {
+        "zh": ["需要遠端診斷的車隊", "重視保養提醒與稼動率的客戶", "可接受資料授權流程的營運情境"],
+        "en": ["Fleets needing remote diagnostics", "Customers focused on maintenance reminders and uptime", "Operations that can support data-consent workflows"],
+        "ja": ["遠隔診断が必要な車隊", "整備通知と稼働率を重視する顧客", "データ同意の流れを扱える運用"]
+      },
+      "planning_notes": {
+        "zh": "適合從服務包與資料授權教育開始，先把資料使用、售後流程與客戶價值說清楚。",
+        "en": "Start from service packages and data-consent education, clarifying data use, after-sales workflow, and customer value.",
+        "ja": "サービスパッケージとデータ同意教育から始め、データ利用、アフターサービスの流れ、顧客価値を明確にします。"
+      }
+    },
+    {
+      "technology_id": "charging_infrastructure",
+      "category": "infrastructure",
+      "name": {
+        "zh": "商用車充電基礎建設",
+        "en": "Commercial Vehicle Charging Infrastructure",
+        "ja": "商用車向け充電インフラ"
+      },
+      "shortName": {
+        "zh": "充電建設",
+        "en": "Charging Infrastructure",
+        "ja": "充電インフラ"
+      },
+      "glossaryTerms": ["bev", "tco", "dealer"],
+      "maturity_score": 70,
+      "business_value_score": 86,
+      "implementation_cost": 82,
+      "regulation_risk": 58,
+      "dealer_training_difficulty": 72,
+      "service_readiness": 58,
+      "recommended_status": "poc_planning",
+      "risk_level": "medium",
+      "suitable_scenarios": {
+        "zh": ["回場型 BEV 導入", "有停車與電力容量可盤點的場站", "需要整合車輛、充電與維修安全的客戶"],
+        "en": ["Depot-based BEV rollout", "Sites where parking and power capacity can be assessed", "Customers needing integrated vehicle, charging, and service-safety planning"],
+        "ja": ["拠点型 BEV 導入", "駐車と電力容量を確認できる拠点", "車両、充電、整備安全を統合して考える顧客"]
+      },
+      "planning_notes": {
+        "zh": "是 BEV 企劃的基礎能力，適合納入 PoC 前問診與場站檢核，而不是只當設備採購題。",
+        "en": "A foundation for BEV planning. Treat it as pre-PoC discovery and site checking, not only equipment procurement.",
+        "ja": "BEV 企画の基礎能力です。機器購入だけでなく、PoC 前の確認と拠点チェックとして扱います。"
+      }
+    },
+    {
+      "technology_id": "carbon_tracking",
+      "category": "policy_esg",
+      "name": {
+        "zh": "車隊碳追蹤",
+        "en": "Fleet Carbon Tracking",
+        "ja": "車隊カーボントラッキング"
+      },
+      "shortName": {
+        "zh": "碳追蹤",
+        "en": "Carbon Tracking",
+        "ja": "炭素追跡"
+      },
+      "glossaryTerms": ["carbon-accounting", "esg", "kpi"],
+      "maturity_score": 66,
+      "business_value_score": 72,
+      "implementation_cost": 54,
+      "regulation_risk": 60,
+      "dealer_training_difficulty": 58,
+      "service_readiness": 64,
+      "recommended_status": "near_term_education",
+      "risk_level": "medium",
+      "suitable_scenarios": {
+        "zh": ["大型企業客戶", "需要 ESG 採購回覆的車隊", "有油耗、里程或能源資料可整理的營運場景"],
+        "en": ["Large enterprise customers", "Fleets that need ESG procurement responses", "Operations with fuel, mileage, or energy data that can be organized"],
+        "ja": ["大企業顧客", "ESG 調達への回答が必要な車隊", "燃料、走行距離、エネルギーデータを整理できる運用"]
+      },
+      "planning_notes": {
+        "zh": "可先做教育與資料欄位設計，但排放係數、邊界與計算方法必須標示來源與假設。",
+        "en": "Useful for education and data-field design now, but emission factors, boundaries, and calculation methods must disclose sources and assumptions.",
+        "ja": "教育とデータ項目設計から始められますが、排出係数、境界、計算方法は出典と仮定を明示する必要があります。"
+      }
+    }
+  ]
+}

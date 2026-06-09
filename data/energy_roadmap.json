@@ -1,0 +1,245 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "moduleId": "energy-roadmap",
+    "dataStatus": "demo_assumptions",
+    "sourceBasis": "Portfolio proposal energy-strategy narrative converted into a static product-planning prototype.",
+    "publicBoundary": {
+      "zh": "本能源路線圖僅為作品集 demo 假設，不是採購、工程、法務、排放申報或產品上市建議。",
+      "en": "This energy roadmap uses portfolio demo assumptions only. It is not a procurement, engineering, legal, emissions-reporting, or product-launch recommendation.",
+      "ja": "このエネルギーロードマップはポートフォリオ用のデモ仮定です。調達、設計、法務、排出量報告、製品導入の公式判断ではありません。"
+    }
+  },
+  "defaultInputs": {
+    "route_predictability": "high",
+    "annual_mileage": "high",
+    "payload_level": "medium",
+    "depot_charging": "partial",
+    "energy_price_stability": "medium",
+    "service_readiness": "medium",
+    "esg_pressure": "medium",
+    "policy_support": "medium"
+  },
+  "optionLabels": {
+    "route_predictability": ["low", "medium", "high"],
+    "annual_mileage": ["low", "medium", "high", "very_high"],
+    "payload_level": ["light", "medium", "heavy", "passenger"],
+    "depot_charging": ["limited", "partial", "available"],
+    "energy_price_stability": ["low", "medium", "high"],
+    "service_readiness": ["low", "medium", "high"],
+    "esg_pressure": ["low", "medium", "high"],
+    "policy_support": ["low", "medium", "high"]
+  },
+  "powertrains": [
+    {
+      "id": "diesel",
+      "glossaryTerms": ["ice", "tco", "esg"],
+      "name": {
+        "zh": "柴油 / ICE 基準線",
+        "en": "Diesel / ICE baseline",
+        "ja": "ディーゼル / ICE 基準線"
+      },
+      "role": {
+        "zh": "在基礎設施不足、重載或停工容忍度低時，仍是近期營運教育與 TCO 比較基準。",
+        "en": "A near-term operating and TCO baseline when infrastructure is limited, payload is high, or downtime tolerance is low.",
+        "ja": "インフラが不足し、高積載または停止許容度が低い場合の、近期運用と TCO 比較の基準です。"
+      },
+      "status": "short_term_education",
+      "baseFit": 68,
+      "serviceReadiness": 88,
+      "residualValueWatch": 55,
+      "carbonRelative": 100,
+      "sohRelevance": 0,
+      "dependencies": ["fuel_price", "emissions_policy", "maintenance_network", "payload"],
+      "risks": {
+        "zh": ["碳政策與 ESG 壓力可能推高營運成本。", "若只看購車價格，容易低估能源與政策風險。"],
+        "en": ["Carbon policy and ESG pressure may raise operating cost.", "Purchase-price-only comparison can understate energy and policy risk."],
+        "ja": ["カーボン政策と ESG 圧力により運用コストが上がる可能性があります。", "購入価格だけの比較では、エネルギーと政策リスクを過小評価しやすくなります。"]
+      },
+      "dealerEducation": {
+        "zh": ["用 TCO 拆解油耗、保養、停工與殘值。", "說明減碳壓力下柴油仍可作為短期基準，而非唯一答案。"],
+        "en": ["Break down fuel, maintenance, downtime, and residual value through TCO.", "Explain diesel as a short-term baseline under decarbonization pressure, not the only answer."],
+        "ja": ["燃料、整備、停止時間、残価を TCO で整理します。", "脱炭素圧力下では短期基準であり、唯一の答えではないと説明します。"]
+      },
+      "customerSuitability": {
+        "zh": "重載、路線變動大、外部能源基礎設施不足、服務網絡需要高度即時性的客戶。",
+        "en": "High payload, variable routes, limited external energy infrastructure, and customers requiring highly immediate service support.",
+        "ja": "高積載、変動ルート、外部エネルギーインフラ不足、即応性の高いサービス支援が必要な顧客。"
+      }
+    },
+    {
+      "id": "hybrid",
+      "glossaryTerms": ["hev", "tco", "esg"],
+      "name": {
+        "zh": "油電 / Hybrid 過渡路徑",
+        "en": "Hybrid transition path",
+        "ja": "ハイブリッド移行経路"
+      },
+      "role": {
+        "zh": "在充電條件尚未成熟、但希望降低油耗與教育新能源使用情境時，可作為過渡選項。",
+        "en": "A bridge option when charging is not mature but fleets want lower fuel use and gradual new-energy education.",
+        "ja": "充電条件が成熟していない一方、燃費低減と新エネルギー教育を進めたい場合の橋渡し選択肢です。"
+      },
+      "status": "short_term_education",
+      "baseFit": 64,
+      "serviceReadiness": 72,
+      "residualValueWatch": 62,
+      "carbonRelative": 78,
+      "sohRelevance": 36,
+      "dependencies": ["route_mix", "driver_behavior", "service_training", "energy_price"],
+      "risks": {
+        "zh": ["若被視為永久解方，可能延後基礎設施與資料能力建立。", "維修教育需同時涵蓋 ICE 與電氣系統。"],
+        "en": ["If treated as a permanent answer, it may delay infrastructure and data capability building.", "Service education must cover both ICE and electric systems."],
+        "ja": ["恒久的な解と見なすと、インフラとデータ能力の構築が遅れる可能性があります。", "整備教育では ICE と電動システムの双方を扱う必要があります。"]
+      },
+      "dealerEducation": {
+        "zh": ["說明適用於混合路線與中等里程，而非所有車隊。", "把油耗改善、駕駛行為與保養條件一起談。"],
+        "en": ["Explain suitability for mixed routes and medium mileage, not every fleet.", "Discuss fuel improvement, driver behavior, and maintenance conditions together."],
+        "ja": ["混合ルートと中程度の走行距離に向くことを説明し、すべてのフリート向けとはしません。", "燃費改善、運転行動、整備条件を一緒に議論します。"]
+      },
+      "customerSuitability": {
+        "zh": "路線混合、充電不穩定、希望降低油耗但尚未準備 BEV PoC 的客戶。",
+        "en": "Mixed-route customers with unstable charging access who want lower fuel use but are not ready for a BEV PoC.",
+        "ja": "充電アクセスが不安定で、燃費低減を望むが BEV PoC にはまだ早い混合ルート顧客。"
+      }
+    },
+    {
+      "id": "bev",
+      "glossaryTerms": ["bev", "tco", "soh", "poc"],
+      "name": {
+        "zh": "BEV 場站充電路徑",
+        "en": "BEV depot-charging path",
+        "ja": "BEV 拠点充電経路"
+      },
+      "role": {
+        "zh": "當路線穩定、年里程足夠、回場充電可規劃、服務與 SOH 管理成熟時，可進入 PoC 與分段導入討論。",
+        "en": "A PoC and staged-deployment candidate when routes are stable, mileage is sufficient, depot charging is plannable, and service plus SOH management are ready.",
+        "ja": "ルートが安定し、走行距離が十分で、拠点充電を計画でき、サービスと SOH 管理が整った場合の PoC・段階導入候補です。"
+      },
+      "status": "medium_term_poc",
+      "baseFit": 72,
+      "serviceReadiness": 58,
+      "residualValueWatch": 68,
+      "carbonRelative": 44,
+      "sohRelevance": 92,
+      "dependencies": ["route_stability", "depot_power", "charging_window", "battery_soh", "service_training"],
+      "risks": {
+        "zh": ["若場站電力、停車動線或充電時窗不足，TCO 交叉點會延後。", "殘值、保固與 SOH 管理需要長期資料。"],
+        "en": ["If depot power, parking flow, or charging windows are weak, TCO crossover is delayed.", "Residual value, warranty, and SOH management need long-term data."],
+        "ja": ["拠点電力、駐車動線、充電時間帯が弱い場合、TCO クロスオーバーは遅れます。", "残価、保証、SOH 管理には長期データが必要です。"]
+      },
+      "dealerEducation": {
+        "zh": ["先教回場充電、路線盤點、TCO 與 SOH，不直接承諾全車隊替換。", "把能源資料、維修流程與客戶停工成本放進 PoC。"],
+        "en": ["Teach depot charging, route mapping, TCO, and SOH before promising fleet-wide replacement.", "Include energy data, service workflow, and downtime cost in the PoC."],
+        "ja": ["全車隊置換を約束する前に、拠点充電、ルート把握、TCO、SOH を教育します。", "PoC にはエネルギーデータ、整備フロー、停止コストを含めます。"]
+      },
+      "customerSuitability": {
+        "zh": "固定路線、市區配送、場站可充電、高里程且 ESG 壓力明確的客戶。",
+        "en": "Fixed routes, urban delivery, depot charging, high mileage, and customers with clear ESG pressure.",
+        "ja": "固定ルート、都市配送、拠点充電、高走行距離、明確な ESG 圧力を持つ顧客。"
+      }
+    },
+    {
+      "id": "fcev",
+      "glossaryTerms": ["fcev", "tco", "poc"],
+      "name": {
+        "zh": "FCEV 氫能長期追蹤",
+        "en": "FCEV hydrogen long-term tracking",
+        "ja": "FCEV 水素長期追跡"
+      },
+      "role": {
+        "zh": "在長途、高載重、補能速度重要且氫能站點成熟之前，較適合作為長期追蹤與有限 PoC 題目。",
+        "en": "Better treated as long-term tracking and limited PoC work until hydrogen sites mature for long-haul, high-payload, fast-refueling needs.",
+        "ja": "長距離・高積載・短時間補給の用途で水素拠点が成熟するまでは、長期追跡と限定 PoC が中心です。"
+      },
+      "status": "long_term_tracking",
+      "baseFit": 48,
+      "serviceReadiness": 34,
+      "residualValueWatch": 42,
+      "carbonRelative": 38,
+      "sohRelevance": 18,
+      "dependencies": ["hydrogen_station", "fuel_supply", "safety_training", "policy_support", "payload"],
+      "risks": {
+        "zh": ["氫能站點、燃料來源與維修安全教育不足時，不宜包裝成近期量產解方。", "成本與供應穩定性需以實證資料覆核。"],
+        "en": ["Without hydrogen sites, fuel supply, and safety-service education, it should not be framed as a near-term rollout answer.", "Cost and supply stability need evidence-based review."],
+        "ja": ["水素拠点、燃料供給、安全・整備教育が不足する場合、近期展開の解として扱うべきではありません。", "コストと供給安定性は実証データで確認する必要があります。"]
+      },
+      "dealerEducation": {
+        "zh": ["以安全、補能基礎設施與適用任務為主，不做廣泛道路承諾。", "把氫能定位為追蹤題，而非短期全市場答案。"],
+        "en": ["Focus on safety, refueling infrastructure, and mission fit instead of broad road-deployment promises.", "Position hydrogen as a tracking topic, not a short-term answer for the whole market."],
+        "ja": ["安全、補給インフラ、用途適合性を中心に説明し、広範な道路展開を約束しません。", "水素は追跡テーマであり、短期の全市場回答ではないと位置づけます。"]
+      },
+      "customerSuitability": {
+        "zh": "長途、高載重、回場充電困難且氫能補給站點具體可驗證的客戶。",
+        "en": "Long-haul, high-payload customers with difficult depot charging and verifiable hydrogen refueling access.",
+        "ja": "長距離・高積載で拠点充電が難しく、水素補給アクセスを確認できる顧客。"
+      }
+    },
+    {
+      "id": "v2g",
+      "glossaryTerms": ["v2g", "bev", "soh", "tco"],
+      "name": {
+        "zh": "V2G 與能源管理服務",
+        "en": "V2G and energy-management service",
+        "ja": "V2G とエネルギーマネジメントサービス"
+      },
+      "role": {
+        "zh": "在雙向充電、電網規則、保固、SOH 與收益模式成熟前，適合放在長期追蹤或暫緩觀察。",
+        "en": "A long-term tracking or deferred topic until bidirectional charging, grid rules, warranty, SOH, and revenue models mature.",
+        "ja": "双方向充電、電網ルール、保証、SOH、収益モデルが成熟するまでは、長期追跡または保留観察のテーマです。"
+      },
+      "status": "deferred_observation",
+      "baseFit": 38,
+      "serviceReadiness": 26,
+      "residualValueWatch": 46,
+      "carbonRelative": 30,
+      "sohRelevance": 95,
+      "dependencies": ["grid_rule", "bidirectional_charger", "battery_warranty", "energy_market", "data_governance"],
+      "risks": {
+        "zh": ["若未釐清保固、電池壽命與收益分配，容易造成客戶誤解。", "需避免把示意收益當作已可落地的商業模式。"],
+        "en": ["Without warranty, battery-life, and revenue-sharing clarity, customers can misunderstand the value proposition.", "Illustrative revenue should not be treated as an already deployable business model."],
+        "ja": ["保証、電池寿命、収益配分が明確でないと、顧客が価値を誤解しやすくなります。", "示意的な収益を、すぐ実装できる事業モデルとして扱わないようにします。"]
+      },
+      "dealerEducation": {
+        "zh": ["先教育 V2G 的限制、SOH 影響與法規前提。", "把能源服務和車輛銷售分開說明，避免過度承諾。"],
+        "en": ["Teach V2G limits, SOH impact, and regulatory prerequisites first.", "Separate energy-service discussion from vehicle sales to avoid overcommitment."],
+        "ja": ["まず V2G の制約、SOH への影響、規制前提を教育します。", "エネルギーサービスと車両販売を分けて説明し、過度な約束を避けます。"]
+      },
+      "customerSuitability": {
+        "zh": "具備成熟場站能源管理、電池資料治理、雙向充電設備與人員覆核能力的封閉場域。",
+        "en": "Closed sites with mature depot energy management, battery-data governance, bidirectional equipment, and human review capability.",
+        "ja": "成熟した拠点エネルギー管理、電池データガバナンス、双方向設備、人による確認能力を持つ閉域サイト。"
+      }
+    }
+  ],
+  "roadmapSegments": [
+    { "powertrainId": "diesel", "type": "education", "start": 2026, "end": 2028 },
+    { "powertrainId": "diesel", "type": "tracking", "start": 2029, "end": 2035 },
+    { "powertrainId": "hybrid", "type": "education", "start": 2026, "end": 2029 },
+    { "powertrainId": "hybrid", "type": "poc", "start": 2027, "end": 2031 },
+    { "powertrainId": "bev", "type": "education", "start": 2026, "end": 2028 },
+    { "powertrainId": "bev", "type": "poc", "start": 2027, "end": 2032 },
+    { "powertrainId": "bev", "type": "tracking", "start": 2031, "end": 2035 },
+    { "powertrainId": "fcev", "type": "tracking", "start": 2026, "end": 2035 },
+    { "powertrainId": "fcev", "type": "poc", "start": 2030, "end": 2034 },
+    { "powertrainId": "v2g", "type": "defer", "start": 2026, "end": 2029 },
+    { "powertrainId": "v2g", "type": "tracking", "start": 2030, "end": 2035 }
+  ],
+  "crossoverModel": {
+    "years": [2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035],
+    "series": {
+      "diesel": { "start": 100, "annual": 8.2, "carbonPenalty": 2.4 },
+      "hybrid": { "start": 112, "annual": 6.5, "carbonPenalty": 1.4 },
+      "bev": { "start": 130, "annual": 4.7, "infraPenalty": 8.5, "mileageBenefit": 4.2 },
+      "fcev": { "start": 158, "annual": 5.8, "infraPenalty": 14.0, "policyBenefit": 3.8 }
+    }
+  },
+  "carbonPanel": {
+    "baselineUnit": "demo relative lifecycle operating signal",
+    "notes": {
+      "zh": "碳影響為示意相對值，正式盤查需使用邊界、活動數據、能源係數與現行法規。",
+      "en": "Carbon impact is an illustrative relative value. Formal accounting requires boundaries, activity data, energy factors, and current regulation.",
+      "ja": "炭素影響は相対的なデモ値です。正式な算定には境界、活動データ、エネルギー係数、最新規制が必要です。"
+    }
+  }
+}

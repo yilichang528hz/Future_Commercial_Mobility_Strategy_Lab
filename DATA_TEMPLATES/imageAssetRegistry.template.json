@@ -1,0 +1,31 @@
+[
+  {
+    "fileName": "hero-future-mobility-strategy-lab.jpg",
+    "path": "images/hero-future-mobility-strategy-lab.jpg",
+    "altZh": "商用車未來移動策略實驗室主視覺，呈現新能源、車聯網、智慧安全與策略路線圖。",
+    "altEn": "Hero image for a future commercial mobility strategy lab showing energy transition, connected fleets, safety, and roadmap planning.",
+    "altJa": "新エネルギー、コネクテッドフリート、安全、ロードマップを示す未来商用モビリティ戦略ラボのメインビジュアル。",
+    "promptPath": "prompts/static/hero-future-mobility-strategy-lab.txt",
+    "phaseName": "Phase 11",
+    "moduleId": "home",
+    "conversionStatus": "pending_generation",
+    "usedInFiles": [
+      "index.html"
+    ]
+  },
+  {
+    "fileName": "trend-radar.jpg",
+    "path": "images/trend-radar.jpg",
+    "altZh": "商用車未來趨勢雷達，呈現 BEV、FCEV、ADAS、車聯網、ESG 與 V2G 的策略優先度。",
+    "altEn": "Future commercial vehicle trend radar comparing BEV, FCEV, ADAS, connected fleet, ESG, and V2G priorities.",
+    "altJa": "BEV、FCEV、ADAS、コネクテッドフリート、ESG、V2Gの優先度を比較する商用車トレンドレーダー。",
+    "promptPath": "prompts/static/trend-radar.txt",
+    "phaseName": "Phase 11",
+    "moduleId": "trend-radar",
+    "conversionStatus": "pending_generation",
+    "usedInFiles": [
+      "index.html",
+      "pages/trend-radar.html"
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "project_id": "project_05_future_mobility_strategy_lab",
+  "title_en": "Future Commercial Mobility Strategy Lab",
+  "title_zh": "商用車未來移動與新能源策略實驗室",
+  "repo_name": "portfolio-05-future-mobility-strategy-lab",
+  "site_type": "static_github_pages_portfolio",
+  "technical_boundary": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "JSON",
+    "Markdown",
+    "local images"
+  ],
+  "forbidden": [
+    "backend",
+    "database",
+    "API key",
+    "npm required build",
+    "official brand logo",
+    "real customer data"
+  ],
+  "core_pages": [
+    "Home",
+    "Trend Radar",
+    "Technology Maturity Map",
+    "Scenario Simulator",
+    "Energy Roadmap",
+    "Safety & ADAS Lab",
+    "Connected Fleet Lab",
+    "ESG & Policy Dashboard",
+    "Strategy Roadmap Studio"
+  ],
+  "image_prompt_generation": "phase_11_only"
+}

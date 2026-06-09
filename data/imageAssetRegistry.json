@@ -1,0 +1,256 @@
+{
+  "schemaName": "Project 5 Image Asset Registry",
+  "schemaVersion": "1.0.0",
+  "pathPolicy": {
+    "finalImageFormat": "jpg-first",
+    "preferredPublicDirectory": "images/",
+    "publicPathRule": "Use relative paths. Do not expose prompt paths or registry internals in visible public UI.",
+    "brandSafetyRule": "Use generic commercial vehicle and strategy visuals only. No official logos, dealer marks, real license plates, customer records, or official UI screenshots."
+  },
+  "requiredFields": [
+    "fileName",
+    "path",
+    "altZh",
+    "altEn",
+    "altJa",
+    "promptPath",
+    "phaseName",
+    "moduleId",
+    "conversionStatus",
+    "usedInFiles"
+  ],
+  "assets": [
+    {
+      "fileName": "favicon.svg",
+      "path": "./favicon.svg",
+      "altZh": "商用車未來移動策略網站的介面識別圖示。",
+      "altEn": "Interface mark for the future commercial mobility strategy site.",
+      "altJa": "商用車の未来モビリティ戦略サイトのインターフェース識別アイコン。",
+      "promptPath": "not-generated",
+      "phaseName": "global-ux",
+      "moduleId": "site-shell",
+      "conversionStatus": "interface-svg",
+      "usedInFiles": [
+        "index.html"
+      ]
+    },
+    {
+      "fileName": "hero-future-mobility-strategy-lab.jpg",
+      "path": "images/hero-future-mobility-strategy-lab.jpg",
+      "altZh": "商用車商品企劃團隊在明亮策略室中整理能源、車聯網、安全與 ESG 路線圖。",
+      "altEn": "Commercial vehicle product planners in a bright strategy room organizing energy, connected fleet, safety, and ESG roadmap signals.",
+      "altJa": "明るい戦略室で商用車の商品企画チームがエネルギー、コネクテッドフリート、安全、ESG のロードマップ信号を整理している。",
+      "promptPath": "prompts/static/hero-future-mobility-strategy-lab.md",
+      "phaseName": "Phase 11",
+      "moduleId": "home",
+      "conversionStatus": "pending_generation",
+      "usedInFiles": [
+        "index.html"
+      ]
+    },
+    {
+      "fileName": "scenario-simulator-planning-workshop.jpg",
+      "path": "images/scenario-simulator-planning-workshop.jpg",
+      "altZh": "商品企劃人員與客戶在工作坊中比較路線、載重、停車時間與基礎設施條件。",
+      "altEn": "Product planners and a customer workshop comparing route, payload, downtime, and infrastructure conditions.",
+      "altJa": "商品企画担当と顧客がワークショップでルート、積載、停止時間、インフラ条件を比較している。",
+      "promptPath": "prompts/static/scenario-simulator-planning-workshop.md",
+      "phaseName": "Phase 11",
+      "moduleId": "scenario-simulator",
+      "conversionStatus": "pending_generation",
+      "usedInFiles": [
+        "index.html"
+      ]
+    },
+    {
+      "fileName": "energy-roadmap-depot-strategy.jpg",
+      "path": "images/energy-roadmap-depot-strategy.jpg",
+      "altZh": "泛用商用車停在明亮場站旁，團隊檢視充電、電池健康、TCO 與氫能追蹤條件。",
+      "altEn": "Generic commercial vehicles at a bright depot while planners review charging, battery health, TCO, and hydrogen-tracking conditions.",
+      "altJa": "明るい拠点で汎用商用車を前に、企画担当が充電、電池状態、TCO、水素追跡条件を確認している。",
+      "promptPath": "prompts/static/energy-roadmap-depot-strategy.md",
+      "phaseName": "Phase 11",
+      "moduleId": "energy-roadmap",
+      "conversionStatus": "pending_generation",
+      "usedInFiles": [
+        "index.html"
+      ]
+    },
+    {
+      "fileName": "safety-adas-education-lab.jpg",
+      "path": "images/safety-adas-education-lab.jpg",
+      "altZh": "通路教育場景中以泛用商用車示範 ADAS 限制、安全溝通與駕駛教育。",
+      "altEn": "Dealer education scene using a generic commercial vehicle to explain ADAS limits, safety communication, and driver education.",
+      "altJa": "販売チャネル教育の場面で、汎用商用車を使って ADAS の限界、安全コミュニケーション、ドライバー教育を説明している。",
+      "promptPath": "prompts/static/safety-adas-education-lab.md",
+      "phaseName": "Phase 11",
+      "moduleId": "safety-adas-lab",
+      "conversionStatus": "pending_generation",
+      "usedInFiles": [
+        "index.html"
+      ]
+    },
+    {
+      "fileName": "connected-fleet-service-lab.jpg",
+      "path": "images/connected-fleet-service-lab.jpg",
+      "altZh": "車聯網服務團隊在明亮營運室中檢視遠端診斷、保養排程與客戶報告。",
+      "altEn": "Connected-fleet service team in a bright operations room reviewing remote diagnostics, maintenance scheduling, and customer reports.",
+      "altJa": "明るい運用室でコネクテッドフリートのサービスチームが遠隔診断、保守計画、顧客レポートを確認している。",
+      "promptPath": "prompts/static/connected-fleet-service-lab.md",
+      "phaseName": "Phase 11",
+      "moduleId": "connected-fleet-lab",
+      "conversionStatus": "pending_generation",
+      "usedInFiles": [
+        "index.html"
+      ]
+    },
+    {
+      "fileName": "esg-policy-strategy-dashboard.jpg",
+      "path": "images/esg-policy-strategy-dashboard.jpg",
+      "altZh": "策略團隊在顧問式儀表板前討論 ESG、政策來源、碳估算與人工審查。",
+      "altEn": "Strategy team discussing ESG, policy sources, carbon estimation, and human review in front of a consulting-style dashboard.",
+      "altJa": "コンサルティング風のダッシュボードの前で、戦略チームが ESG、政策出典、炭素推計、人による確認を議論している。",
+      "promptPath": "prompts/static/esg-policy-strategy-dashboard.md",
+      "phaseName": "Phase 11",
+      "moduleId": "esg-policy-dashboard",
+      "conversionStatus": "pending_generation",
+      "usedInFiles": [
+        "index.html"
+      ]
+    },
+    {
+      "fileName": "strategy-roadmap-studio-workshop.jpg",
+      "path": "images/strategy-roadmap-studio-workshop.jpg",
+      "altZh": "商品企劃團隊把 2026 至 2035 的教育、PoC、成熟化與長期追蹤整理成策略路線圖。",
+      "altEn": "Product-planning team organizing education, PoC, maturity, and long-term tracking into a 2026 to 2035 strategy roadmap.",
+      "altJa": "商品企画チームが教育、PoC、成熟化、長期追跡を 2026 から 2035 年の戦略ロードマップに整理している。",
+      "promptPath": "prompts/static/strategy-roadmap-studio-workshop.md",
+      "phaseName": "Phase 11",
+      "moduleId": "strategy-roadmap-studio",
+      "conversionStatus": "pending_generation",
+      "usedInFiles": [
+        "index.html"
+      ]
+    },
+    {
+      "fileName": "trend-radar-animation.svg",
+      "path": "inline-svg-canvas",
+      "altZh": "互動式資料視覺以抽象圖形呈現商用車策略假設、限制與人工審查。",
+      "altEn": "Interactive data visual using abstract graphics to show commercial vehicle strategy assumptions, limits, and human review.",
+      "altJa": "抽象的な図形で商用車戦略の仮説、制約、人による確認を示すインタラクティブなデータビジュアル。",
+      "promptPath": "prompts/dynamic/trend-radar-animation.md",
+      "phaseName": "Phase 11",
+      "moduleId": "trend-radar",
+      "conversionStatus": "dynamic_prompt_ready",
+      "usedInFiles": [
+        "index.html",
+        "assets/js/trend-radar.js"
+      ]
+    },
+    {
+      "fileName": "technology-maturity-quadrant-animation.svg",
+      "path": "inline-svg-canvas",
+      "altZh": "互動式資料視覺以抽象圖形呈現商用車策略假設、限制與人工審查。",
+      "altEn": "Interactive data visual using abstract graphics to show commercial vehicle strategy assumptions, limits, and human review.",
+      "altJa": "抽象的な図形で商用車戦略の仮説、制約、人による確認を示すインタラクティブなデータビジュアル。",
+      "promptPath": "prompts/dynamic/technology-maturity-quadrant-animation.md",
+      "phaseName": "Phase 11",
+      "moduleId": "technology-maturity-map",
+      "conversionStatus": "dynamic_prompt_ready",
+      "usedInFiles": [
+        "index.html",
+        "assets/js/technology-maturity.js"
+      ]
+    },
+    {
+      "fileName": "scenario-simulator-interactive-map.html5",
+      "path": "inline-svg-canvas",
+      "altZh": "互動式資料視覺以抽象圖形呈現商用車策略假設、限制與人工審查。",
+      "altEn": "Interactive data visual using abstract graphics to show commercial vehicle strategy assumptions, limits, and human review.",
+      "altJa": "抽象的な図形で商用車戦略の仮説、制約、人による確認を示すインタラクティブなデータビジュアル。",
+      "promptPath": "prompts/dynamic/scenario-simulator-interactive-map.md",
+      "phaseName": "Phase 11",
+      "moduleId": "scenario-simulator",
+      "conversionStatus": "dynamic_prompt_ready",
+      "usedInFiles": [
+        "index.html",
+        "assets/js/scenario-simulator.js"
+      ]
+    },
+    {
+      "fileName": "energy-roadmap-crossover-animation.canvas",
+      "path": "inline-svg-canvas",
+      "altZh": "互動式資料視覺以抽象圖形呈現商用車策略假設、限制與人工審查。",
+      "altEn": "Interactive data visual using abstract graphics to show commercial vehicle strategy assumptions, limits, and human review.",
+      "altJa": "抽象的な図形で商用車戦略の仮説、制約、人による確認を示すインタラクティブなデータビジュアル。",
+      "promptPath": "prompts/dynamic/energy-roadmap-crossover-animation.md",
+      "phaseName": "Phase 11",
+      "moduleId": "energy-roadmap",
+      "conversionStatus": "dynamic_prompt_ready",
+      "usedInFiles": [
+        "index.html",
+        "assets/js/energy-roadmap.js"
+      ]
+    },
+    {
+      "fileName": "safety-adas-risk-education-animation.svg",
+      "path": "inline-svg-canvas",
+      "altZh": "互動式資料視覺以抽象圖形呈現商用車策略假設、限制與人工審查。",
+      "altEn": "Interactive data visual using abstract graphics to show commercial vehicle strategy assumptions, limits, and human review.",
+      "altJa": "抽象的な図形で商用車戦略の仮説、制約、人による確認を示すインタラクティブなデータビジュアル。",
+      "promptPath": "prompts/dynamic/safety-adas-risk-education-animation.md",
+      "phaseName": "Phase 11",
+      "moduleId": "safety-adas-lab",
+      "conversionStatus": "dynamic_prompt_ready",
+      "usedInFiles": [
+        "index.html",
+        "assets/js/safety-adas.js"
+      ]
+    },
+    {
+      "fileName": "connected-fleet-data-flow-animation.svg",
+      "path": "inline-svg-canvas",
+      "altZh": "互動式資料視覺以抽象圖形呈現商用車策略假設、限制與人工審查。",
+      "altEn": "Interactive data visual using abstract graphics to show commercial vehicle strategy assumptions, limits, and human review.",
+      "altJa": "抽象的な図形で商用車戦略の仮説、制約、人による確認を示すインタラクティブなデータビジュアル。",
+      "promptPath": "prompts/dynamic/connected-fleet-data-flow-animation.md",
+      "phaseName": "Phase 11",
+      "moduleId": "connected-fleet-lab",
+      "conversionStatus": "dynamic_prompt_ready",
+      "usedInFiles": [
+        "index.html",
+        "assets/js/connected-fleet.js"
+      ]
+    },
+    {
+      "fileName": "esg-policy-carbon-signal-animation.svg",
+      "path": "inline-svg-canvas",
+      "altZh": "互動式資料視覺以抽象圖形呈現商用車策略假設、限制與人工審查。",
+      "altEn": "Interactive data visual using abstract graphics to show commercial vehicle strategy assumptions, limits, and human review.",
+      "altJa": "抽象的な図形で商用車戦略の仮説、制約、人による確認を示すインタラクティブなデータビジュアル。",
+      "promptPath": "prompts/dynamic/esg-policy-carbon-signal-animation.md",
+      "phaseName": "Phase 11",
+      "moduleId": "esg-policy-dashboard",
+      "conversionStatus": "dynamic_prompt_ready",
+      "usedInFiles": [
+        "index.html",
+        "assets/js/esg-policy.js"
+      ]
+    },
+    {
+      "fileName": "strategy-roadmap-timeline-animation.svg",
+      "path": "inline-svg-canvas",
+      "altZh": "互動式資料視覺以抽象圖形呈現商用車策略假設、限制與人工審查。",
+      "altEn": "Interactive data visual using abstract graphics to show commercial vehicle strategy assumptions, limits, and human review.",
+      "altJa": "抽象的な図形で商用車戦略の仮説、制約、人による確認を示すインタラクティブなデータビジュアル。",
+      "promptPath": "prompts/dynamic/strategy-roadmap-timeline-animation.md",
+      "phaseName": "Phase 11",
+      "moduleId": "strategy-roadmap-studio",
+      "conversionStatus": "dynamic_prompt_ready",
+      "usedInFiles": [
+        "index.html",
+        "assets/js/strategy-roadmap.js"
+      ]
+    }
+  ]
+}

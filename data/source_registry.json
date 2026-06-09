@@ -1,0 +1,60 @@
+{
+  "registryType": "demo-source-registry",
+  "lastUpdated": "2026-06-02",
+  "publicRule": "All generated site data is demo data unless a source entry explicitly supports a public claim.",
+  "sources": [
+    {
+      "source_id": "project_proposal_docx",
+      "source_name": "Portfolio_05_Future_Mobility_Strategy_Lab.docx",
+      "source_type": "user_provided_project_proposal",
+      "confidence_tier": "portfolio_planning_source",
+      "last_updated": "2026-06-02",
+      "supported_claims": [
+        "project positioning",
+        "site information architecture",
+        "demo scoring model structure",
+        "module intent"
+      ],
+      "limitations": [
+        "not a live market source",
+        "not official company data",
+        "requires human review before public claims"
+      ],
+      "allowed_outputs": [
+        "portfolio narrative",
+        "demo data structure",
+        "strategy framework labels"
+      ],
+      "restricted_outputs": [
+        "official market forecast",
+        "official product launch plan",
+        "verified regulatory claim"
+      ]
+    },
+    {
+      "source_id": "demo_dataset_placeholder",
+      "source_name": "Generated demo datasets",
+      "source_type": "demo_data",
+      "confidence_tier": "demo_requires_validation",
+      "last_updated": "2026-06-02",
+      "supported_claims": [
+        "interface behavior demonstration",
+        "methodology demonstration"
+      ],
+      "limitations": [
+        "scores are illustrative",
+        "not suitable for business decisions without validation"
+      ],
+      "allowed_outputs": [
+        "demo labels",
+        "sample cards",
+        "prototype charts"
+      ],
+      "restricted_outputs": [
+        "fact claim",
+        "customer recommendation",
+        "regulatory conclusion"
+      ]
+    }
+  ]
+}

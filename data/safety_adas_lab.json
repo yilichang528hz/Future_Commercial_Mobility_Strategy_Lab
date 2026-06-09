@@ -1,0 +1,568 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "moduleId": "safety-adas-lab",
+    "dataStatus": "demo_assumptions",
+    "sourceBasis": "Portfolio proposal safety and ADAS education narrative converted into a static product-planning prototype.",
+    "publicBoundary": {
+      "zh": "本安全與 ADAS 實驗室僅為作品集 demo 假設，不是官方安全認證、法規解讀、事故責任判斷或車輛功能承諾。",
+      "en": "This Safety & ADAS Lab uses portfolio demo assumptions only. It is not an official safety certification, legal interpretation, accident-liability assessment, or vehicle-feature commitment.",
+      "ja": "この安全・ADAS ラボはポートフォリオ用のデモ仮定です。公式の安全認証、法規解釈、事故責任判断、車両機能の約束ではありません。"
+    }
+  },
+  "riskMetrics": ["overrelianceRisk", "sensingBoundary", "trainingNeed", "dataGovernance", "scenarioComplexity"],
+  "modules": [
+    {
+      "id": "aeb_collision_mitigation",
+      "category": "collision_mitigation",
+      "riskLevel": "medium",
+      "glossaryTerms": ["adas", "aeb"],
+      "name": {
+        "zh": "AEB 前方碰撞緩解",
+        "en": "AEB forward collision mitigation",
+        "ja": "AEB 前方衝突被害軽減"
+      },
+      "technicalFunction": {
+        "zh": "使用前向感測器偵測可能碰撞風險，於特定條件下提醒駕駛並輔助煞車。",
+        "en": "Uses forward sensing to detect potential collision risk and, under defined conditions, warn the driver and assist braking.",
+        "ja": "前方センサーで衝突リスクを検知し、定められた条件下で警報と制動支援を行います。"
+      },
+      "customerValue": {
+        "zh": "可作為高里程、市區配送與車隊安全教育的核心功能，但價值取決於場景、車速、載重與駕駛反應。",
+        "en": "Can support safety education for high-mileage, urban-delivery, and fleet operations, while value depends on scene, speed, payload, and driver response.",
+        "ja": "高走行距離、都市配送、フリート運用の安全教育を支援しますが、価値は場面、速度、積載、運転者反応に左右されます。"
+      },
+      "driverEducationValue": {
+        "zh": "教育重點是系統為輔助，不取代安全距離、預判與駕駛責任。",
+        "en": "Education should frame the system as assistance, not a replacement for safe distance, anticipation, and driver responsibility.",
+        "ja": "安全距離、予測運転、運転者責任を置き換えるものではなく、支援機能として説明します。"
+      },
+      "vehicleSegments": {
+        "zh": ["市區配送車", "中小型貨車", "巴士與接駁車"],
+        "en": ["Urban delivery trucks", "Light and medium trucks", "Buses and shuttles"],
+        "ja": ["都市配送車", "小中型トラック", "バス・シャトル"]
+      },
+      "scenarios": {
+        "zh": ["市區跟車", "低速壅塞", "配送巷口", "固定路線訓練"],
+        "en": ["Urban following", "Low-speed congestion", "Delivery intersections", "Fixed-route training"],
+        "ja": ["都市部の追従", "低速渋滞", "配送交差点", "固定ルート訓練"]
+      },
+      "limitations": {
+        "zh": ["感測器視線、天候、路面、車速與載重會影響效果。", "不應承諾能避免所有碰撞或取代駕駛判斷。"],
+        "en": ["Sensor line-of-sight, weather, road surface, speed, and payload can affect performance.", "It should not be claimed to prevent all collisions or replace driver judgment."],
+        "ja": ["センサー視界、天候、路面、速度、積載が性能に影響します。", "すべての衝突を防ぐ、または運転判断を置き換えると説明してはいけません。"]
+      },
+      "doNotOverclaim": {
+        "zh": ["避免使用「零事故」或「自動駕駛煞車」等說法。", "不可暗示系統在所有車速、載重與天候下都同樣有效。"],
+        "en": ["Avoid phrases such as \"zero accidents\" or \"autonomous braking.\".", "Do not imply equal effectiveness across every speed, payload, and weather condition."],
+        "ja": ["「事故ゼロ」や「自動運転ブレーキ」のような表現を避けます。", "すべての速度、積載、天候で同じ効果があると示唆しません。"]
+      },
+      "planningImplications": {
+        "zh": ["把 AEB 放入交車教育與駕駛訓練，而不是只列為規格配備。", "PoC 應蒐集誤警報、駕駛接受度、保養校正與場景限制。"],
+        "en": ["Place AEB in handover education and driver training, not only in the specification list.", "A PoC should collect false-warning feedback, driver acceptance, calibration service needs, and scene limits."],
+        "ja": ["AEB を仕様表だけでなく、納車教育と運転者訓練に組み込みます。", "PoC では誤警報、運転者受容、校正整備、場面制約を収集します。"]
+      },
+      "dealerEducationMaterials": {
+        "zh": ["一頁式系統限制說明", "交車檢核表", "駕駛情境問答卡"],
+        "en": ["One-page system-limit sheet", "Delivery checklist", "Driver scenario FAQ card"],
+        "ja": ["システム限界の1枚資料", "納車チェックリスト", "運転場面 FAQ カード"]
+      },
+      "customerFAQ": [
+        {
+          "q": { "zh": "AEB 能避免所有追撞嗎？", "en": "Can AEB prevent every rear-end collision?", "ja": "AEB はすべての追突を防げますか？" },
+          "a": { "zh": "不能這樣承諾。它是在特定條件下提供警示與煞車輔助，駕駛仍需保持安全距離與注意。", "en": "No. It provides warning and braking assistance under defined conditions; the driver must still keep distance and attention.", "ja": "そのような約束はできません。定められた条件下で警報と制動支援を行う機能であり、運転者は距離と注意を維持する必要があります。" }
+        }
+      ],
+      "riskScores": {
+        "overrelianceRisk": 78,
+        "sensingBoundary": 74,
+        "trainingNeed": 82,
+        "dataGovernance": 36,
+        "scenarioComplexity": 70
+      }
+    },
+    {
+      "id": "blind_spot_detection",
+      "category": "side_awareness",
+      "riskLevel": "medium",
+      "glossaryTerms": ["adas"],
+      "name": {
+        "zh": "盲點偵測與側向警示",
+        "en": "Blind spot detection and side warning",
+        "ja": "死角検知と側方警報"
+      },
+      "technicalFunction": {
+        "zh": "偵測車側或後側區域的物體與車輛，提醒變換車道或轉彎時的側向風險。",
+        "en": "Detects objects or vehicles near the side and rear-side zones to warn of lateral risk during lane changes or turns.",
+        "ja": "側方・後側方の物体や車両を検知し、車線変更や右左折時の側方リスクを知らせます。"
+      },
+      "customerValue": {
+        "zh": "對車身長、視野死角多、常進出市區或工地的商用車有教育價值。",
+        "en": "Useful for educating fleets with longer bodies, larger blind zones, urban access, or construction-site movement.",
+        "ja": "車体が長く死角が大きい車両、都市部や建設現場を出入りするフリートの教育に有効です。"
+      },
+      "driverEducationValue": {
+        "zh": "強調後視鏡、轉頭確認與系統警示需並行使用，不應只依賴燈號或聲響。",
+        "en": "Emphasize mirror use, shoulder checks, and system alerts together; drivers should not rely only on lights or sounds.",
+        "ja": "ミラー確認、目視確認、システム警報を併用し、ランプや音だけに依存しないよう説明します。"
+      },
+      "vehicleSegments": {
+        "zh": ["廂式貨車", "冷鏈車", "工地車", "巴士"],
+        "en": ["Box trucks", "Cold-chain vehicles", "Construction vehicles", "Buses"],
+        "ja": ["箱型トラック", "冷蔵・冷凍車", "建設車両", "バス"]
+      },
+      "scenarios": {
+        "zh": ["市區轉彎", "機車與自行車混流", "工地進出", "車道變換"],
+        "en": ["Urban turns", "Mixed motorcycle and bicycle traffic", "Site entry and exit", "Lane changes"],
+        "ja": ["都市部の右左折", "二輪・自転車混在交通", "現場出入り", "車線変更"]
+      },
+      "limitations": {
+        "zh": ["小型物體、遮蔽、惡劣天候與感測器髒污會影響偵測。", "警示不等於駕駛可不確認周邊。"],
+        "en": ["Small objects, occlusion, severe weather, and dirty sensors can affect detection.", "A warning does not mean the driver can skip surrounding checks."],
+        "ja": ["小さな物体、遮蔽、悪天候、センサー汚れが検知に影響します。", "警報があるから周囲確認を省略できるわけではありません。"]
+      },
+      "doNotOverclaim": {
+        "zh": ["避免宣稱能消除所有轉彎事故。", "不可把警示功能描述成自動避讓。"],
+        "en": ["Avoid claiming it eliminates every turning accident.", "Do not describe warning as automatic avoidance."],
+        "ja": ["すべての右左折事故をなくすと表現しません。", "警報機能を自動回避として説明しません。"]
+      },
+      "planningImplications": {
+        "zh": ["適合與車身視野、鏡位調整、駕駛訓練一起規劃。", "客戶訪談需確認常見混流場景與事故近失事件。"],
+        "en": ["Plan it with body visibility, mirror adjustment, and driver training.", "Customer interviews should verify mixed-traffic scenes and near-miss history."],
+        "ja": ["車体視界、ミラー調整、運転者訓練と一緒に企画します。", "顧客ヒアリングでは混在交通場面とヒヤリハット履歴を確認します。"]
+      },
+      "dealerEducationMaterials": {
+        "zh": ["側向風險情境圖", "感測器清潔提醒", "試乘示範話術"],
+        "en": ["Side-risk scenario diagram", "Sensor-cleaning reminder", "Demo-drive talk track"],
+        "ja": ["側方リスク場面図", "センサー清掃リマインダー", "試乗説明トーク"]
+      },
+      "customerFAQ": [
+        {
+          "q": { "zh": "警示亮起時可以直接轉向嗎？", "en": "Can the driver turn as soon as the alert clears?", "ja": "警報が消えたらすぐ曲がってよいですか？" },
+          "a": { "zh": "不建議這樣教。警示只是輔助資訊，仍需鏡面、目視與路況確認。", "en": "No. The alert is supporting information; mirror, visual, and road-condition checks remain necessary.", "ja": "そのようには教えません。警報は補助情報であり、ミラー、目視、道路状況の確認が必要です。" }
+        }
+      ],
+      "riskScores": {
+        "overrelianceRisk": 72,
+        "sensingBoundary": 70,
+        "trainingNeed": 76,
+        "dataGovernance": 28,
+        "scenarioComplexity": 82
+      }
+    },
+    {
+      "id": "surround_view_maneuvering",
+      "category": "low_speed_awareness",
+      "riskLevel": "low",
+      "glossaryTerms": ["adas"],
+      "name": {
+        "zh": "環景影像與低速機動輔助",
+        "en": "Surround view and low-speed maneuvering assist",
+        "ja": "周囲表示と低速取り回し支援"
+      },
+      "technicalFunction": {
+        "zh": "整合多個攝影機影像，協助駕駛理解車輛周圍與停車/倒車空間。",
+        "en": "Combines camera views to help the driver understand surroundings during parking, reversing, and low-speed maneuvers.",
+        "ja": "複数カメラ映像を統合し、駐車、後退、低速取り回し時の周囲把握を支援します。"
+      },
+      "customerValue": {
+        "zh": "可降低低速操作壓力，適合配送、冷鏈、停車空間狹窄與駕駛輪替頻繁的車隊。",
+        "en": "Can reduce low-speed maneuvering stress for delivery, cold-chain, tight parking, and fleets with frequent driver rotation.",
+        "ja": "配送、冷蔵・冷凍、狭い駐車場、運転者交替が多いフリートの低速操作ストレスを下げる可能性があります。"
+      },
+      "driverEducationValue": {
+        "zh": "教育影像比例、盲區、鏡頭清潔與下車確認條件。",
+        "en": "Teach image scale, blind zones, camera cleaning, and when physical confirmation is required.",
+        "ja": "映像の距離感、死角、カメラ清掃、必要な下車確認条件を教育します。"
+      },
+      "vehicleSegments": {
+        "zh": ["市區配送車", "冷鏈車", "租賃車隊", "巴士"],
+        "en": ["Urban delivery vehicles", "Cold-chain vehicles", "Leasing fleets", "Buses"],
+        "ja": ["都市配送車", "冷蔵・冷凍車", "リースフリート", "バス"]
+      },
+      "scenarios": {
+        "zh": ["倒車入庫", "狹窄巷弄", "裝卸區", "夜間停車"],
+        "en": ["Reversing into docks", "Narrow lanes", "Loading areas", "Night parking"],
+        "ja": ["バック入庫", "狭い路地", "積み下ろしエリア", "夜間駐車"]
+      },
+      "limitations": {
+        "zh": ["鏡頭汙損、光線、雨霧與顯示延遲會影響判讀。", "畫面不是完整安全保證，仍需低速與確認。"],
+        "en": ["Dirty cameras, lighting, rain, fog, and display delay can affect interpretation.", "The view is not a full safety guarantee; low speed and confirmation remain necessary."],
+        "ja": ["カメラ汚れ、光、雨霧、表示遅延が判断に影響します。", "画面は完全な安全保証ではなく、低速操作と確認が必要です。"]
+      },
+      "doNotOverclaim": {
+        "zh": ["避免說成沒有盲區。", "不可宣稱可取代倒車導引或現場安全員。"],
+        "en": ["Do not claim there are no blind spots.", "Do not claim it replaces spotters or site safety staff."],
+        "ja": ["死角がないと説明しません。", "誘導員や現場安全担当を置き換えると説明しません。"]
+      },
+      "planningImplications": {
+        "zh": ["可作為入門安全教育素材，降低新手駕駛學習負擔。", "需規劃鏡頭維護、顯示介面與夜間/雨天情境說明。"],
+        "en": ["Can serve as entry-level safety education and reduce new-driver learning burden.", "Plan camera maintenance, display interface, and night/rain explanation."],
+        "ja": ["初級安全教育素材として、新人運転者の学習負担を下げられます。", "カメラ保守、表示 UI、夜間・雨天説明を計画します。"]
+      },
+      "dealerEducationMaterials": {
+        "zh": ["環景校正檢核", "倒車教學卡", "鏡頭清潔 SOP"],
+        "en": ["Surround-view calibration check", "Reversing education card", "Camera-cleaning SOP"],
+        "ja": ["周囲表示校正チェック", "後退教育カード", "カメラ清掃 SOP"]
+      },
+      "customerFAQ": [
+        {
+          "q": { "zh": "環景影像是否代表完全沒有死角？", "en": "Does surround view mean there are no blind spots?", "ja": "周囲表示なら死角は完全になくなりますか？" },
+          "a": { "zh": "不是。它改善低速判讀，但鏡頭、顯示與現場條件仍有邊界。", "en": "No. It improves low-speed interpretation, but cameras, display, and site conditions still have boundaries.", "ja": "いいえ。低速時の把握を助けますが、カメラ、表示、現場条件には限界があります。" }
+        }
+      ],
+      "riskScores": {
+        "overrelianceRisk": 58,
+        "sensingBoundary": 64,
+        "trainingNeed": 62,
+        "dataGovernance": 20,
+        "scenarioComplexity": 62
+      }
+    },
+    {
+      "id": "fatigue_warning",
+      "category": "driver_condition",
+      "riskLevel": "medium",
+      "glossaryTerms": ["adas"],
+      "name": {
+        "zh": "疲勞警示與駕駛狀態提醒",
+        "en": "Fatigue warning and driver-state reminder",
+        "ja": "疲労警報と運転状態リマインダー"
+      },
+      "technicalFunction": {
+        "zh": "依方向盤操作、行駛型態或駕駛狀態訊號，提醒可能疲勞或注意力下降。",
+        "en": "Uses steering, driving pattern, or driver-state signals to remind drivers of possible fatigue or reduced attention.",
+        "ja": "操舵、走行パターン、運転状態信号から、疲労や注意低下の可能性を知らせます。"
+      },
+      "customerValue": {
+        "zh": "適合長工時、夜間、巴士、長途與高頻配送車隊作為安全管理溝通題材。",
+        "en": "Useful for safety-management communication in long-hour, night, bus, long-haul, and high-frequency delivery operations.",
+        "ja": "長時間、夜間、バス、長距離、高頻度配送の安全管理コミュニケーションに有効です。"
+      },
+      "driverEducationValue": {
+        "zh": "把提醒連到休息制度與班表管理，不應當成監控或懲罰工具。",
+        "en": "Connect reminders to rest policy and scheduling, not surveillance or punishment.",
+        "ja": "警報を休憩制度と勤務計画につなげ、監視や罰則の道具として扱わないよう説明します。"
+      },
+      "vehicleSegments": {
+        "zh": ["長途貨運", "巴士", "冷鏈", "高頻配送"],
+        "en": ["Long-haul freight", "Buses", "Cold chain", "High-frequency delivery"],
+        "ja": ["長距離貨物", "バス", "冷蔵・冷凍", "高頻度配送"]
+      },
+      "scenarios": {
+        "zh": ["夜間行駛", "長時間班次", "高速道路", "多點配送"],
+        "en": ["Night driving", "Long shifts", "Highways", "Multi-stop delivery"],
+        "ja": ["夜間走行", "長時間シフト", "高速道路", "多地点配送"]
+      },
+      "limitations": {
+        "zh": ["提醒不是醫療判斷，也不能單獨代表駕駛狀態真相。", "資料收集需處理同意、隱私與管理邊界。"],
+        "en": ["A warning is not a medical judgment and cannot alone represent the driver's condition.", "Data collection needs consent, privacy, and management boundaries."],
+        "ja": ["警報は医学的判断ではなく、運転者状態の真実を単独で示すものではありません。", "データ収集では同意、プライバシー、管理境界が必要です。"]
+      },
+      "doNotOverclaim": {
+        "zh": ["避免宣稱可完全防止疲勞事故。", "不可把提醒資料當成唯一績效或懲處依據。"],
+        "en": ["Avoid claiming it fully prevents fatigue-related accidents.", "Do not use reminder data as the sole performance or disciplinary basis."],
+        "ja": ["疲労事故を完全に防ぐと表現しません。", "警報データを唯一の評価・処分根拠にしません。"]
+      },
+      "planningImplications": {
+        "zh": ["需和班表、休息、駕駛溝通與資料治理一起設計。", "若導入 FMS 或 AI 分析，需建立人員覆核與資料使用規則。"],
+        "en": ["Design it with scheduling, rest policy, driver communication, and data governance.", "If connected to FMS or AI analysis, establish human review and data-use rules."],
+        "ja": ["勤務計画、休憩制度、運転者コミュニケーション、データガバナンスと一緒に設計します。", "FMS や AI 分析と接続する場合、人による確認とデータ利用ルールを設けます。"]
+      },
+      "dealerEducationMaterials": {
+        "zh": ["疲勞提醒說明卡", "資料同意說明", "車隊管理對話稿"],
+        "en": ["Fatigue-warning explanation card", "Data-consent note", "Fleet-management conversation guide"],
+        "ja": ["疲労警報説明カード", "データ同意説明", "フリート管理対話ガイド"]
+      },
+      "customerFAQ": [
+        {
+          "q": { "zh": "疲勞警示能判定駕駛是否違規嗎？", "en": "Can fatigue warning determine whether a driver violated policy?", "ja": "疲労警報で運転者の違反を判断できますか？" },
+          "a": { "zh": "不應單獨這樣使用。它是提醒與管理輔助，仍需制度、情境與人工覆核。", "en": "It should not be used alone that way. It is a reminder and management aid that still needs policy, context, and human review.", "ja": "単独でそのように使うべきではありません。警報は管理支援であり、制度、文脈、人による確認が必要です。" }
+        }
+      ],
+      "riskScores": {
+        "overrelianceRisk": 66,
+        "sensingBoundary": 68,
+        "trainingNeed": 74,
+        "dataGovernance": 86,
+        "scenarioComplexity": 62
+      }
+    },
+    {
+      "id": "v2x_cooperative_alert",
+      "category": "connected_safety",
+      "riskLevel": "high",
+      "glossaryTerms": ["v2x", "adas", "poc"],
+      "name": {
+        "zh": "V2X 協同安全警示",
+        "en": "V2X cooperative safety alerts",
+        "ja": "V2X 協調安全警報"
+      },
+      "technicalFunction": {
+        "zh": "透過車輛、路側或基礎設施訊號交換，提供交叉口、施工區或車隊協同警示。",
+        "en": "Uses vehicle, roadside, or infrastructure signal exchange to support intersection, work-zone, or fleet-coordination alerts.",
+        "ja": "車両、路側、インフラとの信号交換により、交差点、工事区間、フリート協調の警報を支援します。"
+      },
+      "customerValue": {
+        "zh": "適合封閉場域、港區、園區或固定路線 PoC，不宜直接說成全面道路解方。",
+        "en": "Suitable for closed-site, port, campus, or fixed-route PoCs, but not as a broad-road solution without validation.",
+        "ja": "閉域、港湾、構内、固定ルート PoC に向きますが、検証なしに広範な道路解として扱うべきではありません。"
+      },
+      "driverEducationValue": {
+        "zh": "教育訊號來源、延遲、覆蓋範圍與駕駛仍需觀察現場。",
+        "en": "Teach signal source, latency, coverage, and that drivers still need to observe the scene.",
+        "ja": "信号源、遅延、カバレッジ、運転者が現場確認を続ける必要性を教育します。"
+      },
+      "vehicleSegments": {
+        "zh": ["封閉園區物流", "港區牽引", "巴士固定路線", "工地車隊"],
+        "en": ["Closed logistics parks", "Port tractors", "Fixed-route buses", "Construction fleets"],
+        "ja": ["閉域物流園区", "港湾牽引", "固定ルートバス", "建設フリート"]
+      },
+      "scenarios": {
+        "zh": ["交叉口預警", "施工區提醒", "園區車隊協同", "固定路線通行"],
+        "en": ["Intersection alerts", "Work-zone reminders", "Campus fleet coordination", "Fixed-route movement"],
+        "ja": ["交差点警報", "工事区間リマインダー", "構内フリート協調", "固定ルート走行"]
+      },
+      "limitations": {
+        "zh": ["依賴基礎設施、通訊品質、資料標準與場域管理。", "外部道路導入需法規與系統互通驗證。"],
+        "en": ["Depends on infrastructure, communication quality, data standards, and site management.", "Public-road deployment needs regulatory and interoperability validation."],
+        "ja": ["インフラ、通信品質、データ標準、サイト管理に依存します。", "公道導入には規制と相互運用性の検証が必要です。"]
+      },
+      "doNotOverclaim": {
+        "zh": ["避免說成車輛已具自動駕駛能力。", "不可把封閉場域 PoC 外推成全市場成熟。"],
+        "en": ["Avoid framing it as autonomous driving capability.", "Do not extrapolate a closed-site PoC into full-market maturity."],
+        "ja": ["自動運転能力として説明しません。", "閉域 PoC を全市場成熟と外挿しません。"]
+      },
+      "planningImplications": {
+        "zh": ["先以封閉場域與固定路線 PoC 驗證資料交換、警示邏輯與責任邊界。", "需與法規、資安、維運與客戶 IT 能力一起評估。"],
+        "en": ["Start with closed-site and fixed-route PoCs to validate data exchange, alert logic, and responsibility boundaries.", "Evaluate regulation, cybersecurity, operations, and customer IT capability together."],
+        "ja": ["閉域・固定ルート PoC でデータ交換、警報ロジック、責任境界を検証します。", "規制、サイバーセキュリティ、運用、顧客 IT 能力を合わせて評価します。"]
+      },
+      "dealerEducationMaterials": {
+        "zh": ["V2X PoC 邊界圖", "場域角色分工表", "資安與資料流程說明"],
+        "en": ["V2X PoC boundary diagram", "Site-role responsibility table", "Cybersecurity and data-flow note"],
+        "ja": ["V2X PoC 境界図", "サイト役割分担表", "サイバーセキュリティ・データフロー説明"]
+      },
+      "customerFAQ": [
+        {
+          "q": { "zh": "V2X 是否等於車輛會自動處理所有風險？", "en": "Does V2X mean the vehicle automatically handles all risks?", "ja": "V2X は車両がすべてのリスクを自動処理するという意味ですか？" },
+          "a": { "zh": "不是。它是協同資訊與警示能力，仍受通訊、場域與駕駛判斷限制。", "en": "No. It is cooperative information and alert capability, still limited by communication, site conditions, and driver judgment.", "ja": "いいえ。協調情報と警報機能であり、通信、サイト条件、運転判断に制約されます。" }
+        }
+      ],
+      "riskScores": {
+        "overrelianceRisk": 74,
+        "sensingBoundary": 76,
+        "trainingNeed": 82,
+        "dataGovernance": 88,
+        "scenarioComplexity": 90
+      }
+    },
+    {
+      "id": "driver_behavior_analytics",
+      "category": "fleet_safety",
+      "riskLevel": "high",
+      "glossaryTerms": ["fms", "ai-governance", "adas"],
+      "name": {
+        "zh": "駕駛行為分析與車隊安全回饋",
+        "en": "Driver behavior analytics and fleet safety feedback",
+        "ja": "運転行動分析とフリート安全フィードバック"
+      },
+      "technicalFunction": {
+        "zh": "透過 FMS、車載訊號或事件資料，整理急煞、急加速、怠速、警示事件與安全訓練線索。",
+        "en": "Uses FMS, vehicle signals, or event data to summarize harsh braking, acceleration, idling, alerts, and safety-training cues.",
+        "ja": "FMS、車両信号、イベントデータにより、急制動、急加速、アイドリング、警報、安全教育の手がかりを整理します。"
+      },
+      "customerValue": {
+        "zh": "可把安全從單次配備銷售延伸到車隊教育、服務與管理討論。",
+        "en": "Can extend safety from one-time feature sales into fleet education, service, and management discussion.",
+        "ja": "安全を単発の装備販売から、フリート教育、サービス、管理議論へ広げられます。"
+      },
+      "driverEducationValue": {
+        "zh": "需以改善與共識為核心，避免把資料變成單向監控或懲罰。",
+        "en": "Should focus on improvement and shared understanding, not one-way surveillance or punishment.",
+        "ja": "改善と合意形成を中心にし、一方的な監視や罰則にしないことが重要です。"
+      },
+      "vehicleSegments": {
+        "zh": ["租賃車隊", "物流車隊", "巴士", "冷鏈"],
+        "en": ["Leasing fleets", "Logistics fleets", "Buses", "Cold chain"],
+        "ja": ["リースフリート", "物流フリート", "バス", "冷蔵・冷凍"]
+      },
+      "scenarios": {
+        "zh": ["安全週報", "教育回饋", "保養預警", "駕駛共識會議"],
+        "en": ["Safety weekly reports", "Training feedback", "Maintenance alerts", "Driver alignment meetings"],
+        "ja": ["安全週報", "教育フィードバック", "整備警報", "運転者合意会議"]
+      },
+      "limitations": {
+        "zh": ["資料品質、情境脈絡、駕駛同意與 AI 解釋性會影響可用性。", "事件分數不應直接等同個人責任。"],
+        "en": ["Data quality, context, driver consent, and AI explainability affect usefulness.", "Event scores should not directly equal personal fault."],
+        "ja": ["データ品質、文脈、運転者同意、AI の説明可能性が有用性に影響します。", "イベントスコアを個人責任と直結させるべきではありません。"]
+      },
+      "doNotOverclaim": {
+        "zh": ["避免宣稱 AI 能準確判斷所有危險行為。", "不可在未建立資料治理前推廣成績效考核工具。"],
+        "en": ["Avoid claiming AI can accurately judge every risky behavior.", "Do not promote it as a performance tool before data governance is established."],
+        "ja": ["AI がすべての危険行動を正確に判断できると説明しません。", "データガバナンス前に評価ツールとして売り込まないようにします。"]
+      },
+      "planningImplications": {
+        "zh": ["需建立資料同意、事件覆核、指標定義與教育流程。", "應和售後服務、FMS 儀表板與車隊管理顧問服務一起設計。"],
+        "en": ["Needs data consent, event review, metric definitions, and education workflow.", "Should be designed with aftersales service, FMS dashboards, and fleet-management advisory work."],
+        "ja": ["データ同意、イベント確認、指標定義、教育フローが必要です。", "アフターサービス、FMS ダッシュボード、フリート管理助言と一緒に設計します。"]
+      },
+      "dealerEducationMaterials": {
+        "zh": ["資料治理說明", "安全回饋報告範本", "駕駛溝通話術"],
+        "en": ["Data-governance note", "Safety feedback report template", "Driver communication talk track"],
+        "ja": ["データガバナンス説明", "安全フィードバック報告テンプレート", "運転者コミュニケーション台本"]
+      },
+      "customerFAQ": [
+        {
+          "q": { "zh": "這套分析可以直接拿來懲處駕駛嗎？", "en": "Can this analysis be used directly to discipline drivers?", "ja": "この分析をそのまま運転者処分に使えますか？" },
+          "a": { "zh": "不建議。它應先作為教育與改善工具，並搭配資料同意、情境覆核與管理規則。", "en": "Not recommended. It should first be an education and improvement tool, paired with consent, context review, and management rules.", "ja": "推奨しません。まず教育・改善ツールとして使い、同意、文脈確認、管理ルールと組み合わせます。" }
+        }
+      ],
+      "riskScores": {
+        "overrelianceRisk": 72,
+        "sensingBoundary": 58,
+        "trainingNeed": 84,
+        "dataGovernance": 96,
+        "scenarioComplexity": 78
+      }
+    },
+    {
+      "id": "edge_sensing_work_zone",
+      "category": "edge_sensing",
+      "riskLevel": "high",
+      "glossaryTerms": ["adas", "ai-governance", "poc"],
+      "name": {
+        "zh": "邊緣感測與工地安全觀察",
+        "en": "Edge sensing and work-zone safety observation",
+        "ja": "エッジセンシングと作業エリア安全観察"
+      },
+      "technicalFunction": {
+        "zh": "在車側或場域邊緣透過感測器或邊緣運算觀察人員、障礙物與低速移動風險。",
+        "en": "Uses vehicle-side or site-edge sensing and edge computing to observe workers, obstacles, and low-speed movement risk.",
+        "ja": "車側または現場エッジのセンサーとエッジ計算で、作業者、障害物、低速移動リスクを観察します。"
+      },
+      "customerValue": {
+        "zh": "較適合作為工地、封閉場域或港區 PoC，用於定義安全邊界與教育流程。",
+        "en": "Better suited for construction, closed-site, or port PoCs that define safety boundaries and education workflow.",
+        "ja": "建設、閉域、港湾 PoC で安全境界と教育フローを定義する用途に向きます。"
+      },
+      "driverEducationValue": {
+        "zh": "教育低速、停等、現場安全員與警示資訊如何分工。",
+        "en": "Teach how low-speed operation, stopping, site staff, and alert information share responsibility.",
+        "ja": "低速操作、停止、現場安全担当、警報情報の役割分担を教育します。"
+      },
+      "vehicleSegments": {
+        "zh": ["工地車", "封閉園區車", "港區車", "特殊用途車"],
+        "en": ["Construction vehicles", "Closed-site vehicles", "Port vehicles", "Special-purpose vehicles"],
+        "ja": ["建設車両", "閉域車両", "港湾車両", "特殊用途車"]
+      },
+      "scenarios": {
+        "zh": ["工地倒車", "人車混行", "低速裝卸", "封閉場域測試"],
+        "en": ["Work-zone reversing", "Mixed people-vehicle movement", "Low-speed loading", "Closed-site testing"],
+        "ja": ["作業エリア後退", "人車混在", "低速積み下ろし", "閉域テスト"]
+      },
+      "limitations": {
+        "zh": ["需要清楚定義感測範圍、警示責任、現場 SOP 與資料保存。", "未經驗證不可視為通用道路功能。"],
+        "en": ["Requires clear sensing range, alert responsibility, site SOP, and data-retention rules.", "Without validation, it should not be treated as a general-road feature."],
+        "ja": ["検知範囲、警報責任、現場 SOP、データ保存を明確にする必要があります。", "検証なしに一般道路機能として扱いません。"]
+      },
+      "doNotOverclaim": {
+        "zh": ["不可宣稱能取代現場安全管理。", "不可把邊緣 AI 說成能辨識所有人員與障礙物。"],
+        "en": ["Do not claim it replaces site safety management.", "Do not claim edge AI can identify every worker and obstacle."],
+        "ja": ["現場安全管理を置き換えると説明しません。", "エッジ AI がすべての作業者と障害物を認識できると説明しません。"]
+      },
+      "planningImplications": {
+        "zh": ["需先做場域盤點、危害分析與 PoC 邊界定義。", "應設定人工覆核與現場 SOP，而不是單靠模型輸出。"],
+        "en": ["Start with site inventory, hazard analysis, and PoC boundary definition.", "Set human review and site SOP instead of relying only on model output."],
+        "ja": ["サイト棚卸し、危険分析、PoC 境界定義から始めます。", "モデル出力だけに頼らず、人による確認と現場 SOP を設定します。"]
+      },
+      "dealerEducationMaterials": {
+        "zh": ["場域安全邊界圖", "PoC 觀察表", "現場 SOP 對照表"],
+        "en": ["Site safety boundary map", "PoC observation sheet", "Site SOP comparison table"],
+        "ja": ["サイト安全境界図", "PoC 観察シート", "現場 SOP 対照表"]
+      },
+      "customerFAQ": [
+        {
+          "q": { "zh": "邊緣感測是否代表工地可以減少安全員？", "en": "Does edge sensing mean the site can reduce safety staff?", "ja": "エッジセンシングで現場安全担当を減らせますか？" },
+          "a": { "zh": "不應這樣承諾。它可作為觀察與提醒輔助，現場管理與人員分工仍必要。", "en": "That should not be promised. It can assist observation and reminders, while site management and staffing remain necessary.", "ja": "そのような約束はできません。観察とリマインダーを支援しますが、現場管理と人員分担は必要です。" }
+        }
+      ],
+      "riskScores": {
+        "overrelianceRisk": 80,
+        "sensingBoundary": 88,
+        "trainingNeed": 86,
+        "dataGovernance": 82,
+        "scenarioComplexity": 92
+      }
+    },
+    {
+      "id": "commercial_safety_education",
+      "category": "education_system",
+      "riskLevel": "low",
+      "glossaryTerms": ["adas", "fms", "aeb", "v2x"],
+      "name": {
+        "zh": "商用車安全教育套件",
+        "en": "Commercial vehicle safety education kit",
+        "ja": "商用車安全教育キット"
+      },
+      "technicalFunction": {
+        "zh": "把 ADAS、車隊資料、交車檢核、駕駛訓練與限制說明整理成可交付的教育材料。",
+        "en": "Turns ADAS, fleet data, handover checks, driver training, and limitation notes into deliverable education material.",
+        "ja": "ADAS、フリートデータ、納車確認、運転者訓練、制約説明を、提供可能な教育資料に整理します。"
+      },
+      "customerValue": {
+        "zh": "讓安全功能從規格文字變成客戶可理解、可訓練、可覆核的使用流程。",
+        "en": "Moves safety features from specification text into customer-understandable, trainable, and reviewable usage workflows.",
+        "ja": "安全機能を仕様表から、顧客が理解・訓練・確認できる利用フローへ移します。"
+      },
+      "driverEducationValue": {
+        "zh": "建立「系統輔助、駕駛負責、情境限制、資料需覆核」的共同語言。",
+        "en": "Creates shared language: system assistance, driver responsibility, contextual limits, and data requiring review.",
+        "ja": "「システム支援、運転者責任、場面制約、データ確認」という共通言語を作ります。"
+      },
+      "vehicleSegments": {
+        "zh": ["所有商用車隊", "租賃車隊", "新車交付", "PoC 客戶"],
+        "en": ["All commercial fleets", "Leasing fleets", "New-vehicle delivery", "PoC customers"],
+        "ja": ["すべての商用フリート", "リースフリート", "新車納車", "PoC 顧客"]
+      },
+      "scenarios": {
+        "zh": ["交車教育", "通路訓練", "客戶安全會議", "PoC 啟動"],
+        "en": ["Vehicle handover", "Dealer training", "Customer safety meetings", "PoC kickoff"],
+        "ja": ["納車教育", "販売店研修", "顧客安全会議", "PoC キックオフ"]
+      },
+      "limitations": {
+        "zh": ["教育材料需隨實際車型、規格、法規與客戶場景更新。", "不能用通用文字取代正式車主手冊或法規文件。"],
+        "en": ["Education material must be updated for actual vehicle models, specifications, regulations, and customer scenarios.", "Generic copy cannot replace official owner manuals or regulatory documents."],
+        "ja": ["教育資料は実車型、仕様、規制、顧客場面に合わせて更新が必要です。", "一般的な文面は正式な取扱説明書や法規文書を置き換えません。"]
+      },
+      "doNotOverclaim": {
+        "zh": ["避免把教育套件說成安全保證。", "不可暗示所有功能在所有車型上都可用。"],
+        "en": ["Avoid framing an education kit as a safety guarantee.", "Do not imply every function is available on every vehicle model."],
+        "ja": ["教育キットを安全保証として説明しません。", "すべての機能がすべての車型で使えると示唆しません。"]
+      },
+      "planningImplications": {
+        "zh": ["適合作為通路教育、客戶訪談與 PoC 啟動的共用底稿。", "需和車型規格、實車手冊、售後流程與客戶場域一起校正。"],
+        "en": ["Useful as a shared base for dealer education, customer interviews, and PoC kickoff.", "Must be calibrated with model specifications, official manuals, aftersales workflow, and customer sites."],
+        "ja": ["販売店教育、顧客ヒアリング、PoC 開始の共通土台として使えます。", "車型仕様、正式マニュアル、アフターサービス、顧客サイトに合わせて校正します。"]
+      },
+      "dealerEducationMaterials": {
+        "zh": ["功能限制矩陣", "交車教育腳本", "客戶 FAQ 範本", "PoC 風險清單"],
+        "en": ["Feature-limit matrix", "Handover education script", "Customer FAQ template", "PoC risk checklist"],
+        "ja": ["機能制約マトリクス", "納車教育スクリプト", "顧客 FAQ テンプレート", "PoC リスクチェックリスト"]
+      },
+      "customerFAQ": [
+        {
+          "q": { "zh": "這份教育套件是否能取代車主手冊？", "en": "Can this education kit replace the owner manual?", "ja": "この教育キットは取扱説明書の代わりになりますか？" },
+          "a": { "zh": "不能。它是產品規劃與教育溝通輔助，正式操作仍以實車手冊與法規為準。", "en": "No. It supports product-planning and education communication; formal operation still follows official manuals and regulation.", "ja": "いいえ。商品企画と教育コミュニケーションを支援するもので、正式な操作は取扱説明書と規制に従います。" }
+        }
+      ],
+      "riskScores": {
+        "overrelianceRisk": 46,
+        "sensingBoundary": 40,
+        "trainingNeed": 68,
+        "dataGovernance": 48,
+        "scenarioComplexity": 54
+      }
+    }
+  ]
+}

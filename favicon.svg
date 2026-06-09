@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Future mobility strategy mark">
+  <rect width="64" height="64" rx="12" fill="#fbf7ef"/>
+  <path d="M14 42c8-14 18-20 36-20" fill="none" stroke="#526f47" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="20" cy="44" r="5" fill="#7f9a6f"/>
+  <circle cx="48" cy="22" r="5" fill="#e7b974"/>
+  <path d="M22 32h18" fill="none" stroke="#a85e4c" stroke-width="3" stroke-linecap="round"/>
+</svg>

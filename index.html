@@ -1,0 +1,1194 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Future Commercial Mobility Strategy Lab is a static portfolio prototype for commercial vehicle product planning, energy transition, connected fleet strategy, safety education, ESG signals, and roadmap thinking."
+    >
+    <title>Future Commercial Mobility Strategy Lab</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+  </head>
+  <body data-theme="theme-a" data-page="home">
+    <a class="skip-link" href="#main" data-i18n="accessibility.skipToContent">Skip to content</a>
+
+    <header class="site-header" data-site-header>
+      <div class="site-header__inner">
+        <a class="brand" href="#home" aria-label="Future Commercial Mobility Strategy Lab">
+          <span class="brand__mark" aria-hidden="true">FM</span>
+          <span class="brand__text">
+            <span class="brand__name" data-i18n="site.title">Future Commercial Mobility Strategy Lab</span>
+            <span class="brand__meta" data-i18n="site.prototypeLabel">Portfolio strategy prototype</span>
+          </span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          data-nav-toggle
+          aria-controls="primaryNavigation"
+          aria-expanded="false"
+          data-i18n-aria-label="nav.toggle"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="primary-nav" id="primaryNavigation" data-primary-nav aria-label="Primary">
+          <a href="#home" data-i18n="nav.home">Home</a>
+          <a href="#trend-radar" data-i18n="nav.trendRadar">Trend Radar</a>
+          <a href="#technology-maturity-map" data-i18n="nav.maturityMap">Maturity Map</a>
+          <a href="#scenario-simulator" data-i18n="nav.scenarioSimulator">Scenario Simulator</a>
+          <a href="#energy-roadmap" data-i18n="nav.energyRoadmap">Energy Roadmap</a>
+          <a href="#esg-policy-dashboard" data-i18n="nav.esgPolicy">ESG</a>
+          <a href="#strategy-roadmap-studio" data-i18n="nav.roadmapStudio">Roadmap</a>
+          <a href="#glossary" data-i18n="nav.glossary">Glossary</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="home" class="hero section-band" data-toc-key="toc.home">
+        <p class="home-legal-notice" data-i18n="home.legalNotice">
+          Copyright © 2026 張義豊(Yi-Li, Chang) All Rights Reserved.
+        </p>
+        <div class="hero__inner">
+          <div class="hero__copy">
+            <p class="section-label" data-i18n="home.label">Commercial vehicle strategy lab</p>
+            <h1 data-i18n="home.title">Future Commercial Mobility Strategy Lab</h1>
+            <p class="hero__lead" data-i18n="home.subtitle">
+              A static portfolio prototype for future commercial vehicle product planning, energy transition,
+              connected fleets, safety education, ESG signals, and 2026 to 2035 roadmap thinking.
+            </p>
+            <div class="hero__actions">
+              <a class="button button--primary" href="#modules" data-i18n="home.ctaPrimary">View strategy modules</a>
+              <a class="button button--secondary" href="#governance" data-i18n="home.ctaSecondary">Review governance</a>
+            </div>
+            <div class="home-guardrails" aria-label="Portfolio guardrails">
+              <span data-i18n="home.guardrailDemo">Demo data</span>
+              <span data-i18n="home.guardrailHypothesis">Planning hypothesis</span>
+              <span data-i18n="home.guardrailReview">Human review required</span>
+            </div>
+          </div>
+
+          <div class="hero__system" aria-label="Strategy operating model" data-i18n-aria-label="home.systemPreviewAria">
+            <div class="hero__system-header">
+              <span data-i18n="home.systemTitle">Strategy operating model</span>
+              <span data-i18n="home.systemYears">2026-2035</span>
+            </div>
+            <div class="system-map">
+              <button class="system-map__node system-map__node--strong" type="button" data-lightbox-src="./assets/images/static/hero-future-mobility-strategy-lab.jpg">
+                <img src="./assets/images/static/hero-future-mobility-strategy-lab.jpg" alt="Commercial vehicle planning team reviewing future mobility strategy." loading="eager" />
+                <span class="system-map__label" data-lightbox-caption-text data-i18n="system.customerMission">Customer mission</span>
+              </button>
+              <button class="system-map__node" type="button" data-lightbox-src="./assets/images/static/energy-roadmap-depot-strategy.jpg">
+                <img src="./assets/images/static/energy-roadmap-depot-strategy.jpg" alt="Commercial vehicle energy roadmap workshop with depot charging planning." loading="lazy" />
+                <span class="system-map__label" data-lightbox-caption-text data-i18n="system.energy">Energy path</span>
+              </button>
+              <button class="system-map__node" type="button" data-lightbox-src="./assets/images/static/safety-adas-education-lab.jpg">
+                <img src="./assets/images/static/safety-adas-education-lab.jpg" alt="Safety and ADAS education planning lab for commercial vehicles." loading="lazy" />
+                <span class="system-map__label" data-lightbox-caption-text data-i18n="system.safety">Safety education</span>
+              </button>
+              <button class="system-map__node" type="button" data-lightbox-src="./assets/images/static/connected-fleet-service-lab.jpg">
+                <img src="./assets/images/static/connected-fleet-service-lab.jpg" alt="Connected fleet service planning room with vehicle data dashboards." loading="lazy" />
+                <span class="system-map__label" data-lightbox-caption-text data-i18n="system.fleetData">Fleet data</span>
+              </button>
+              <button class="system-map__node" type="button" data-lightbox-src="./assets/images/static/esg-policy-strategy-dashboard.jpg">
+                <img src="./assets/images/static/esg-policy-strategy-dashboard.jpg" alt="ESG and policy strategy dashboard review for commercial fleet planning." loading="lazy" />
+                <span class="system-map__label" data-lightbox-caption-text data-i18n="system.esg">ESG signals</span>
+              </button>
+              <button class="system-map__node" type="button" data-lightbox-src="./assets/images/static/strategy-roadmap-studio-workshop.jpg">
+                <img src="./assets/images/static/strategy-roadmap-studio-workshop.jpg" alt="Strategy roadmap studio workshop for 2026 to 2035 commercial mobility timing." loading="lazy" />
+                <span class="system-map__label" data-lightbox-caption-text data-i18n="system.roadmap">Roadmap timing</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="creative-motivation" class="creative-motivation content-section" data-toc-key="toc.creativeMotivation">
+        <div class="creative-motivation__inner">
+          <div>
+            <p class="section-label" data-i18n="home.creativeMotivation.label">Home-only note</p>
+            <h2 data-i18n="home.creativeMotivation.title">Creative Motivation</h2>
+          </div>
+          <p data-i18n="home.creativeMotivation.body">
+            This lab turns future mobility signals into practical planning tools for commercial vehicles, linking Taiwan-based operating contexts, energy transition, human-centered logistics, safety, connected fleets, ESG, and responsible AI strategy.
+          </p>
+        </div>
+      </section>
+
+      <section id="governance" class="content-section" data-toc-key="toc.governance">
+        <div class="section-heading">
+          <p class="section-label" data-i18n="governance.label">Global operating rules</p>
+          <h2 data-i18n="governance.title">Static portfolio architecture with demo-data discipline</h2>
+          <p data-i18n="governance.body">
+            The site separates strategy hypotheses from verified facts, keeps generated data clearly labeled,
+            and avoids official-brand confusion.
+          </p>
+        </div>
+
+        <div class="insight-grid insight-grid--three">
+          <article class="insight-card">
+            <h3 data-i18n="governance.i18n.title">Trilingual UI</h3>
+            <p data-i18n="governance.i18n.body">Every public label, control, chart caption, disclaimer, and glossary entry is driven by language keys.</p>
+          </article>
+          <article class="insight-card">
+            <h3 data-i18n="governance.theme.title">Four themes</h3>
+            <p data-i18n="governance.theme.body">Theme switching uses stable body theme tokens without resetting content or interactive state.</p>
+          </article>
+          <article class="insight-card">
+            <h3 data-i18n="governance.disclaimer.title">Demo data first</h3>
+            <p data-i18n="governance.disclaimer.body">Scores and scenarios are illustrative unless the source registry explicitly supports a claim.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="modules" class="content-section content-section--muted" data-toc-key="toc.modules">
+        <div class="section-heading">
+          <p class="section-label" data-i18n="modules.label">Strategy surfaces</p>
+          <h2 data-i18n="modules.title">Module shells ready for deeper content sections</h2>
+          <p data-i18n="modules.body">
+            Each module inherits the same language, theme, glossary, image-governance, and writing-safeguard systems.
+          </p>
+        </div>
+
+        <div class="module-grid">
+          <article class="module-card" id="trend-radar-entry">
+            <span class="module-card__kicker" data-i18n="module.trend.category">Signal ranking</span>
+            <h3 data-i18n="module.trend.title">Trend Radar</h3>
+            <p data-i18n="module.trend.body">Compares BEV, FCEV, ADAS, connected fleet, V2G, logistics automation, and ESG signals through planning criteria.</p>
+            <button type="button" class="text-button" data-disclosure-target="trendDetails" data-i18n="control.seeMore">See more</button>
+            <div class="module-card__details" id="trendDetails" hidden>
+              <p data-i18n="module.trend.details">Priority scores should remain demo-labeled until source support and Taiwan-specific validation are added.</p>
+            </div>
+            <a class="module-card__link" href="#trend-radar" data-i18n="trend.openModule">Open Trend Radar</a>
+          </article>
+
+          <article class="module-card" id="technology-maturity-map-entry">
+            <span class="module-card__kicker" data-i18n="module.maturity.category">Readiness mapping</span>
+            <h3 data-i18n="module.maturity.title">Technology Maturity Map</h3>
+            <p data-i18n="module.maturity.body">Places technologies by maturity, product-planning value, cost, regulation risk, service readiness, and dealer education needs.</p>
+            <a class="module-card__link" href="#technology-maturity-map" data-i18n="maturity.openModule">Open Technology Maturity Map</a>
+          </article>
+
+          <article class="module-card" id="scenario-simulator-entry">
+            <span class="module-card__kicker" data-i18n="module.scenario.category">Customer context</span>
+            <h3 data-i18n="module.scenario.title">Scenario Simulator</h3>
+            <p data-i18n="module.scenario.body">Frames routes, mileage, payload, charging access, downtime sensitivity, and ESG pressure into strategy recommendations.</p>
+            <a class="module-card__link" href="#scenario-simulator" data-i18n="scenario.openModule">Open Scenario Simulator</a>
+          </article>
+
+          <article class="module-card" id="energy-roadmap-entry">
+            <span class="module-card__kicker" data-i18n="module.energy.category">Powertrain pathway</span>
+            <h3 data-i18n="module.energy.title">Energy Roadmap</h3>
+            <p data-i18n="module.energy.body">Compares diesel, hybrid, BEV, FCEV, depot charging, battery SOH, and V2G under route and infrastructure constraints.</p>
+            <a class="module-card__link" href="#energy-roadmap" data-i18n="energy.openModule">Open Energy Roadmap</a>
+          </article>
+
+          <article class="module-card" id="safety-adas-lab-entry">
+            <span class="module-card__kicker" data-i18n="module.adas.category">Safety education</span>
+            <h3 data-i18n="module.adas.title">Safety & ADAS Lab</h3>
+            <p>
+              <span data-i18n="module.adas.body.before">Turns</span>
+              <span data-glossary-term="adas">ADAS</span>
+              <span data-i18n="module.adas.body.after">features into careful customer education, system-limit explanations, and dealer training material.</span>
+            </p>
+            <a class="module-card__link" href="#safety-adas-lab" data-i18n="safety.openModule">Open Safety & ADAS Lab</a>
+          </article>
+
+          <article class="module-card" id="connected-fleet-lab-entry">
+            <span class="module-card__kicker" data-i18n="module.fleet.category">Service model</span>
+            <h3 data-i18n="module.fleet.title">Connected Fleet Lab</h3>
+            <p>
+              <span data-i18n="module.fleet.body.before">Connects</span>
+              <span data-glossary-term="fms">FMS</span>
+              <span data-i18n="module.fleet.body.after">remote diagnostics, predictive maintenance, route optimization, uptime, and service planning.</span>
+            </p>
+            <a class="module-card__link" href="#connected-fleet-lab" data-i18n="fleet.openModule">Open Connected Fleet Lab</a>
+          </article>
+
+          <article class="module-card" id="esg-policy-dashboard-entry">
+            <span class="module-card__kicker" data-i18n="module.esg.category">Policy signals</span>
+            <h3 data-i18n="module.esg.title">ESG & Policy Dashboard</h3>
+            <p>
+              <span data-glossary-term="esg">ESG</span>
+              <span data-i18n="module.esg.body">and policy signals are treated as planning inputs that require current-source validation.</span>
+            </p>
+            <a class="module-card__link" href="#esg-policy-dashboard" data-i18n="esg.openModule">Open ESG & Policy Dashboard</a>
+          </article>
+
+          <article class="module-card" id="strategy-roadmap-studio-entry">
+            <span class="module-card__kicker" data-i18n="module.roadmap.category">2026-2035 timing</span>
+            <h3 data-i18n="module.roadmap.title">Strategy Roadmap Studio</h3>
+            <p data-i18n="module.roadmap.body">Organizes near-term education, medium-term PoC work, long-term tracking, and deferred technologies into a planning roadmap.</p>
+            <a class="module-card__link" href="#strategy-roadmap-studio" data-i18n="module.link">Module anchor</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="trend-radar" class="trend-radar content-section" data-toc-key="toc.trendRadar" data-trend-radar-root aria-labelledby="trendRadarTitle">
+        <div class="section-heading section-heading--wide">
+          <p class="section-label" data-i18n="trend.label">Signal prioritization</p>
+          <h2 id="trendRadarTitle" data-i18n="trend.title">Trend Radar</h2>
+          <p data-i18n="trend.subtitle">
+            Compares commercial mobility signals as planning priorities, not predictions.
+          </p>
+          <div class="trend-radar__badges" aria-label="Trend Radar data labels">
+            <span data-i18n="trend.demoLabel">Demo assumptions</span>
+            <span data-i18n="trend.taiwanCaveat">Global signals require Taiwan validation.</span>
+          </div>
+        </div>
+
+        <div class="trend-radar__toolbar" data-trend-filters aria-label="Trend category filters"></div>
+
+        <div class="trend-radar__overview">
+          <article class="trend-summary-card" data-trend-selected>
+            <p class="section-label" data-i18n="trend.selectedLabel">Selected signal</p>
+            <h3 data-trend-selected-name data-i18n="trend.loading">Loading trend data</h3>
+            <p data-trend-selected-summary data-i18n="trend.loadingBody">Loading the demo assumptions and scoring model.</p>
+            <div class="trend-score-strip" data-trend-selected-metrics></div>
+            <div class="trend-term-list" data-trend-selected-terms></div>
+            <div class="trend-actions">
+              <h4 data-i18n="trend.actionsTitle">Suggested next actions</h4>
+              <ul data-trend-selected-actions></ul>
+            </div>
+          </article>
+
+          <article class="trend-method-card">
+            <p class="section-label" data-i18n="trend.methodLabel">Method</p>
+            <h3 data-i18n="trend.methodTitle">Weighted planning score</h3>
+            <p data-i18n="trend.methodBody">
+              Priority score weights market relevance, technology readiness, cost feasibility, regulation readiness, customer pain fit, dealer education value, and strategic differentiation.
+            </p>
+            <dl class="trend-method-list" data-trend-method-list></dl>
+          </article>
+        </div>
+
+        <div class="trend-visual-grid">
+          <article class="trend-visual-card">
+            <div class="trend-visual-card__header">
+              <h3 data-i18n="trend.radarTitle">Selected-signal radar</h3>
+              <span data-i18n="trend.svgLabel">SVG</span>
+            </div>
+            <div class="trend-chart trend-chart--radar" data-trend-radar-chart role="img" aria-live="polite"></div>
+            <p class="trend-accessible-summary" data-trend-radar-summary></p>
+          </article>
+
+          <article class="trend-visual-card">
+            <div class="trend-visual-card__header">
+              <h3 data-i18n="trend.bubbleTitle">Maturity bubble view</h3>
+              <span data-i18n="trend.svgLabel">SVG</span>
+            </div>
+            <div class="trend-chart trend-chart--bubble" data-trend-bubble-chart role="img" aria-live="polite"></div>
+            <p class="trend-accessible-summary" data-trend-bubble-summary></p>
+          </article>
+
+          <article class="trend-visual-card trend-visual-card--wide">
+            <div class="trend-visual-card__header">
+              <h3 data-i18n="trend.heatTitle">Risk and readiness heat grid</h3>
+              <span data-i18n="trend.tableLabel">Table</span>
+            </div>
+            <div class="trend-heat-grid" data-trend-heat-grid></div>
+            <p class="trend-accessible-summary" data-trend-heat-summary></p>
+          </article>
+
+          <article class="trend-visual-card trend-visual-card--wide">
+            <div class="trend-visual-card__header">
+              <h3 data-i18n="trend.timelineTitle">2026 to 2035 signal timeline</h3>
+              <span data-i18n="trend.htmlLabel">HTML</span>
+            </div>
+            <div class="trend-timeline" data-trend-timeline></div>
+            <p class="trend-accessible-summary" data-trend-timeline-summary></p>
+          </article>
+        </div>
+
+        <article class="embedded-module">
+          <div class="embedded-module__header">
+            <p class="section-label" data-i18n="visual.dynamicModuleLabel">Interactive visual module</p>
+            <h3 data-i18n="dynamic.trend.title">Trend Radar animation</h3>
+          </div>
+          <iframe class="embedded-module__frame" src="./assets/images/dynamic_web_modules/trend-radar-animation/index.html" title="Trend Radar animation"></iframe>
+        </article>
+
+        <div class="trend-radar__notes">
+          <article>
+            <h3 data-i18n="trend.sourceLimitTitle">Source limitation note</h3>
+            <p data-i18n="trend.sourceLimitBody">
+              These scores translate the proposal into demo assumptions. They should be replaced or recalibrated when verified local market evidence is available.
+            </p>
+          </article>
+          <article>
+            <h3 data-i18n="trend.writingGuardTitle">Writing guardrail</h3>
+            <p data-i18n="trend.writingGuardBody">
+              The radar compares planning attention. It does not claim that one technology will win or that every fleet should follow the same route.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="technology-maturity-map" class="technology-maturity content-section" data-toc-key="toc.maturityMap" data-maturity-root aria-labelledby="technologyMaturityTitle">
+        <div class="section-heading section-heading--wide">
+          <p class="section-label" data-i18n="maturity.label">Readiness decision map</p>
+          <h2 id="technologyMaturityTitle" data-i18n="maturity.title">Technology Maturity Map</h2>
+          <p data-i18n="maturity.subtitle">
+            Sorts future-mobility technologies into education, PoC planning, long-term tracking, or deferred observation.
+          </p>
+          <div class="maturity-badges" aria-label="Technology maturity data labels">
+            <span data-i18n="maturity.demoLabel">Demo assumptions</span>
+            <span data-i18n="maturity.caveat">Suitability depends on route, payload, infrastructure, service readiness, regulation, cost, and dealer education.</span>
+          </div>
+        </div>
+
+        <figure class="section-image-card section-image-card--wide">
+          <button class="section-image-card__button" type="button" data-lightbox-src="./assets/images/static/strategy-roadmap-studio-workshop.jpg">
+            <img src="./assets/images/static/strategy-roadmap-studio-workshop.jpg" alt="Strategy team using a roadmap studio view to discuss technology maturity and planning timing." loading="lazy" />
+            <span data-i18n="visual.expandImage">Expand image</span>
+          </button>
+          <figcaption data-lightbox-caption-text data-i18n="visual.maturityImageTitle">Technology maturity planning workshop</figcaption>
+        </figure>
+
+        <div class="maturity-toolbar" data-maturity-filters aria-label="Technology maturity status filters"></div>
+
+        <div class="maturity-overview">
+          <article class="maturity-selected-panel">
+            <p class="section-label" data-i18n="maturity.selectedLabel">Selected technology</p>
+            <h3 data-maturity-selected-name data-i18n="maturity.loading">Loading technology data</h3>
+            <p data-maturity-selected-notes data-i18n="maturity.loadingBody">Loading the demo assumptions and maturity model.</p>
+            <div class="maturity-score-strip" data-maturity-selected-metrics></div>
+            <div class="maturity-term-list" data-maturity-selected-terms></div>
+            <div class="maturity-scenarios">
+              <h4 data-i18n="maturity.scenarioTitle">Suitable scenarios</h4>
+              <ul data-maturity-selected-scenarios></ul>
+            </div>
+          </article>
+
+          <article class="maturity-method-panel">
+            <p class="section-label" data-i18n="maturity.methodLabel">How to read</p>
+            <h3 data-i18n="maturity.methodTitle">Four-quadrant planning logic</h3>
+            <p data-i18n="maturity.methodBody">
+              Maturity and planning value decide the quadrant. Cost changes bubble size, while risk color highlights where validation and education need more care.
+            </p>
+            <div class="maturity-metric-matrix" data-maturity-matrix></div>
+          </article>
+        </div>
+
+        <div class="maturity-layout">
+          <article class="maturity-chart-card">
+            <div class="maturity-card-header">
+              <h3 data-i18n="maturity.chartTitle">Technology maturity quadrant map</h3>
+              <span data-i18n="trend.svgLabel">SVG</span>
+            </div>
+            <div class="maturity-chart" data-maturity-chart role="img" aria-live="polite"></div>
+            <p class="maturity-accessible-summary" data-maturity-chart-summary></p>
+          </article>
+
+          <article class="maturity-cards-panel">
+            <div class="maturity-card-header">
+              <h3 data-i18n="maturity.cardsTitle">Technology cards</h3>
+              <span data-i18n="maturity.keyboardLabel">Keyboard friendly</span>
+            </div>
+            <div class="maturity-card-grid" data-maturity-cards></div>
+          </article>
+        </div>
+
+        <article class="embedded-module">
+          <div class="embedded-module__header">
+            <p class="section-label" data-i18n="visual.dynamicModuleLabel">Interactive visual module</p>
+            <h3 data-i18n="dynamic.maturity.title">Technology maturity quadrant animation</h3>
+          </div>
+          <iframe class="embedded-module__frame" src="./assets/images/dynamic_web_modules/technology-maturity-quadrant-animation/index.html" title="Technology maturity quadrant animation"></iframe>
+        </article>
+
+        <div class="maturity-notes">
+          <article>
+            <h3 data-i18n="maturity.disclaimerTitle">Demo-data boundary</h3>
+            <p data-i18n="maturity.disclaimerBody">
+              Scores are illustrative planning assumptions. They should be recalibrated with verified local evidence before business use.
+            </p>
+          </article>
+          <article>
+            <h3 data-i18n="maturity.guardrailTitle">Writing guardrail</h3>
+            <p data-i18n="maturity.guardrailBody">
+              The map avoids universal claims. A technology becomes more suitable only when customer duty cycle, infrastructure, service network, regulation, cost maturity, and dealer education are aligned.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="scenario-simulator" class="scenario-simulator content-section" data-toc-key="toc.scenarioSimulator" data-scenario-root aria-labelledby="scenarioSimulatorTitle">
+        <div class="section-heading section-heading--wide">
+          <p class="section-label" data-i18n="scenario.label">Customer scenario simulation</p>
+          <h2 id="scenarioSimulatorTitle" data-i18n="scenario.title">Scenario Simulator</h2>
+          <p data-i18n="scenario.subtitle">
+            Turns customer mission, route, energy access, and operational sensitivity into education, PoC, tracking, and deferred-observation layers.
+          </p>
+          <div class="scenario-badges" aria-label="Scenario simulator data labels">
+            <span data-i18n="scenario.demoDataset">Demo Dataset</span>
+            <span data-i18n="scenario.prototypeSimulation">Prototype Simulation</span>
+            <span data-i18n="scenario.humanReviewRequired">Human Review Required</span>
+          </div>
+        </div>
+
+        <figure class="section-image-card section-image-card--wide">
+          <button class="section-image-card__button" type="button" data-lightbox-src="./assets/images/static/scenario-simulator-planning-workshop.jpg">
+            <img src="./assets/images/static/scenario-simulator-planning-workshop.jpg" alt="Commercial vehicle customer scenario workshop comparing route, payload, downtime, and infrastructure conditions." loading="lazy" />
+            <span data-i18n="visual.expandImage">Expand image</span>
+          </button>
+          <figcaption data-lightbox-caption-text data-i18n="visual.scenarioImageTitle">Scenario simulator planning workshop</figcaption>
+        </figure>
+
+        <div class="scenario-shell">
+          <article class="scenario-control-panel">
+            <div class="scenario-panel-heading">
+              <p class="section-label" data-i18n="scenario.presetTitle">Choose customer scenario</p>
+              <span data-i18n="scenario.keyboardLabel">Keyboard and tap friendly</span>
+            </div>
+            <div class="scenario-preset-grid" data-scenario-presets></div>
+
+            <div class="scenario-panel-heading scenario-panel-heading--inputs">
+              <p class="section-label" data-i18n="scenario.inputsTitle">Adjust operating conditions</p>
+            </div>
+            <div class="scenario-inputs" data-scenario-inputs></div>
+          </article>
+
+          <article class="scenario-output-panel" aria-live="polite">
+            <div class="scenario-panel-heading">
+              <p class="section-label" data-i18n="scenario.selectedScenario">Current scenario</p>
+              <span data-i18n="scenario.outputsTitle">Strategy outputs</span>
+            </div>
+            <h3 data-scenario-selected-name data-i18n="scenario.loadError">Scenario simulation data could not be loaded.</h3>
+            <div class="scenario-risk-strip" data-scenario-risk></div>
+            <p class="scenario-boundary" data-scenario-boundary></p>
+
+            <div class="scenario-flow-card">
+              <div class="scenario-card-header">
+                <h4 data-i18n="scenario.flowTitle">Strategy flow</h4>
+                <span data-i18n="trend.svgLabel">SVG</span>
+              </div>
+              <div class="scenario-flow" data-scenario-flow role="img" aria-live="polite"></div>
+              <p class="scenario-accessible-summary" data-scenario-flow-summary></p>
+            </div>
+
+            <div class="scenario-condition-panel">
+              <h4 data-i18n="scenario.conditionsTitle">Current input conditions</h4>
+              <div class="scenario-condition-matrix" data-scenario-condition-matrix></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="scenario-section-heading">
+          <p class="section-label" data-i18n="scenario.recommendationLayers">Four strategy layers</p>
+        </div>
+        <div class="scenario-layer-grid" data-scenario-layers></div>
+
+        <article class="embedded-module">
+          <div class="embedded-module__header">
+            <p class="section-label" data-i18n="visual.dynamicModuleLabel">Interactive visual module</p>
+            <h3 data-i18n="dynamic.scenario.title">Scenario simulator interactive map</h3>
+          </div>
+          <iframe class="embedded-module__frame" src="./assets/images/dynamic_web_modules/scenario-simulator-interactive-map/index.html" title="Scenario simulator interactive map"></iframe>
+        </article>
+
+        <div class="scenario-insight-grid">
+          <article>
+            <h3 data-i18n="scenario.reasoningTitle">Product-planning reasoning</h3>
+            <p data-scenario-reasoning></p>
+          </article>
+          <article>
+            <h3 data-i18n="scenario.dealerEducationTitle">Dealer education suggestions</h3>
+            <p data-scenario-dealer></p>
+          </article>
+          <article>
+            <h3 data-i18n="scenario.interviewQuestionsTitle">Customer interview questions</h3>
+            <ul data-scenario-questions></ul>
+          </article>
+          <article>
+            <h3 data-i18n="scenario.dataGapsTitle">Data gaps</h3>
+            <ul data-scenario-gaps></ul>
+          </article>
+          <article class="scenario-insight-grid__wide">
+            <h3 data-i18n="scenario.humanReviewTitle">Human-review notes</h3>
+            <p data-scenario-human></p>
+          </article>
+        </div>
+
+        <div class="scenario-notes">
+          <article>
+            <h3 data-i18n="scenario.noLogoPolicyTitle">No-logo visual policy</h3>
+            <p data-i18n="scenario.noLogoPolicyBody">
+              The simulator uses abstract flows and diagrams only. It does not use real brand logos, license plates, customer names, or official visuals.
+            </p>
+          </article>
+          <article>
+            <h3 data-i18n="scenario.disclaimerTitle">Demo-data boundary</h3>
+            <p data-i18n="scenario.disclaimerBody">
+              All outputs are static demo assumptions. Before formal use, validate them with current regulations, vehicle specifications, energy prices, route data, and channel capability.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="energy-roadmap" class="energy-roadmap content-section" data-toc-key="toc.energyRoadmap" data-energy-root aria-labelledby="energyRoadmapTitle">
+        <div class="section-heading section-heading--wide">
+          <p class="section-label" data-i18n="energy.label">Energy strategy roadmap</p>
+          <h2 id="energyRoadmapTitle" data-i18n="energy.title">Energy Roadmap</h2>
+          <p data-i18n="energy.subtitle">
+            Compares diesel, hybrid, BEV, FCEV, V2G, and depot energy management across conditions, risks, and timing from a 2026 to 2035 product-planning view.
+          </p>
+          <div class="energy-badges" aria-label="Energy roadmap data labels">
+            <span data-i18n="energy.demoLabel">Demo assumptions</span>
+            <span data-i18n="energy.caveat">Energy pathways depend on route, mileage, payload, fueling infrastructure, service network, policy, and TCO crossover conditions.</span>
+          </div>
+        </div>
+
+        <figure class="section-image-card section-image-card--wide">
+          <button class="section-image-card__button" type="button" data-lightbox-src="./assets/images/static/energy-roadmap-depot-strategy.jpg">
+            <img src="./assets/images/static/energy-roadmap-depot-strategy.jpg" alt="Depot energy roadmap planning scene for commercial vehicle charging and powertrain strategy." loading="lazy" />
+            <span data-i18n="visual.expandImage">Expand image</span>
+          </button>
+          <figcaption data-lightbox-caption-text data-i18n="visual.energyImageTitle">Depot energy roadmap strategy</figcaption>
+        </figure>
+
+        <div class="energy-shell">
+          <article class="energy-control-panel">
+            <div class="energy-panel-heading">
+              <p class="section-label" data-i18n="energy.powertrainTitle">Choose energy path</p>
+              <span data-i18n="energy.keyboardLabel">Keyboard and tap friendly</span>
+            </div>
+            <div class="energy-path-grid" data-energy-powertrains></div>
+
+            <div class="energy-panel-heading energy-panel-heading--inputs">
+              <p class="section-label" data-i18n="energy.controlsTitle">Adjust energy conditions</p>
+            </div>
+            <div class="energy-inputs" data-energy-inputs></div>
+          </article>
+
+          <article class="energy-selected-panel" aria-live="polite">
+            <div class="energy-panel-heading">
+              <p class="section-label" data-i18n="energy.selectedLabel">Current energy path</p>
+              <span data-i18n="energy.demoLabel">Demo assumptions</span>
+            </div>
+            <h3 data-energy-selected-name data-i18n="energy.loadError">Energy roadmap data could not be loaded.</h3>
+            <p data-energy-selected-role></p>
+            <div class="energy-score-strip" data-energy-selected-metrics></div>
+            <div class="energy-term-list" data-energy-selected-terms></div>
+            <p class="energy-boundary" data-energy-boundary></p>
+          </article>
+        </div>
+
+        <div class="energy-visual-grid">
+          <article class="energy-visual-card energy-visual-card--wide">
+            <div class="energy-card-header">
+              <h3 data-i18n="energy.timelineTitle">2026-2035 energy timing</h3>
+              <span data-i18n="energy.svgLabel">SVG</span>
+            </div>
+            <div class="energy-timeline" data-energy-timeline role="img" aria-live="polite"></div>
+            <p class="energy-accessible-summary" data-energy-timeline-summary></p>
+          </article>
+
+          <article class="energy-visual-card energy-visual-card--wide">
+            <div class="energy-card-header">
+              <h3 data-i18n="energy.crossoverTitle">TCO crossover sensitivity</h3>
+              <span data-i18n="energy.svgLabel">SVG</span>
+            </div>
+            <div class="energy-crossover" data-energy-crossover role="img" aria-live="polite"></div>
+            <p class="energy-accessible-summary" data-energy-crossover-summary></p>
+          </article>
+
+          <article class="energy-visual-card">
+            <div class="energy-card-header">
+              <h3 data-i18n="energy.depotTitle">Depot charging capacity sketch</h3>
+            </div>
+            <div class="energy-depot" data-energy-depot></div>
+            <p class="energy-accessible-summary" data-energy-depot-summary></p>
+          </article>
+
+          <article class="energy-visual-card">
+            <div class="energy-card-header">
+              <h3 data-i18n="energy.sohTitle">SOH and residual-value watch</h3>
+            </div>
+            <div class="energy-soh" data-energy-soh></div>
+          </article>
+
+          <article class="energy-visual-card energy-visual-card--wide">
+            <div class="energy-card-header">
+              <h3 data-i18n="energy.carbonTitle">Carbon impact sketch</h3>
+            </div>
+            <div class="energy-carbon" data-energy-carbon></div>
+            <p class="energy-accessible-summary" data-energy-carbon-summary></p>
+          </article>
+        </div>
+
+        <article class="embedded-module">
+          <div class="embedded-module__header">
+            <p class="section-label" data-i18n="visual.dynamicModuleLabel">Interactive visual module</p>
+            <h3 data-i18n="dynamic.energy.title">Energy roadmap crossover animation</h3>
+          </div>
+          <iframe class="embedded-module__frame" src="./assets/images/dynamic_web_modules/energy-roadmap-crossover-animation/index.html" title="Energy roadmap crossover animation"></iframe>
+        </article>
+
+        <div class="energy-insight-grid">
+          <article>
+            <h3 data-i18n="energy.dependenciesTitle">Key dependencies</h3>
+            <ul data-energy-dependencies></ul>
+          </article>
+          <article>
+            <h3 data-i18n="energy.risksTitle">Risks and delay conditions</h3>
+            <ul data-energy-risks></ul>
+          </article>
+          <article>
+            <h3 data-i18n="energy.educationTitle">Dealer education topics</h3>
+            <ul data-energy-education></ul>
+          </article>
+          <article>
+            <h3 data-i18n="energy.suitabilityTitle">Customer suitability</h3>
+            <p data-energy-suitability></p>
+          </article>
+        </div>
+
+        <div class="energy-notes">
+          <article>
+            <h3 data-i18n="energy.noLogoPolicyTitle">No-logo visual policy</h3>
+            <p data-i18n="energy.noLogoPolicyBody">
+              Energy visuals use abstract SVG, cards, and illustrative values only. They do not use real brand logos, license plates, customers, or official visuals.
+            </p>
+          </article>
+          <article>
+            <h3 data-i18n="energy.disclaimerTitle">Demo-data boundary</h3>
+            <p data-i18n="energy.disclaimerBody">
+              All energy cost, carbon impact, SOH, residual value, and timing values are static demo assumptions and must be reviewed with current evidence before formal use.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="safety-adas-lab" class="safety-adas content-section" data-toc-key="toc.safetyAdas" data-safety-root aria-labelledby="safetyAdasTitle">
+        <div class="section-heading section-heading--wide">
+          <p class="section-label" data-i18n="safety.label">Safety education and risk communication</p>
+          <h2 id="safetyAdasTitle" data-i18n="safety.title">Safety & ADAS Lab</h2>
+          <p data-i18n="safety.subtitle">
+            Translates AEB, blind spot detection, surround view, fatigue warning, V2X, driver behavior analytics, and edge sensing into product planning, dealer education, customer value, and limitation communication.
+          </p>
+          <div class="safety-badges" aria-label="Safety and ADAS data labels">
+            <span data-i18n="safety.demoLabel">Demo assumptions</span>
+            <span data-i18n="safety.caveat">ADAS is driver assistance, not an accident-elimination or autonomous-driving promise.</span>
+          </div>
+        </div>
+
+        <figure class="section-image-card section-image-card--wide">
+          <button class="section-image-card__button" type="button" data-lightbox-src="./assets/images/static/safety-adas-education-lab.jpg">
+            <img src="./assets/images/static/safety-adas-education-lab.jpg" alt="Safety and ADAS education lab with commercial vehicle training and risk communication materials." loading="lazy" />
+            <span data-i18n="visual.expandImage">Expand image</span>
+          </button>
+          <figcaption data-lightbox-caption-text data-i18n="visual.safetyImageTitle">Safety and ADAS education lab</figcaption>
+        </figure>
+
+        <div class="safety-shell">
+          <article class="safety-library-panel">
+            <div class="safety-panel-heading">
+              <p class="section-label" data-i18n="safety.functionLibrary">Safety function library</p>
+              <span data-i18n="safety.keyboardLabel">Keyboard and tap friendly</span>
+            </div>
+            <div class="safety-function-grid" data-safety-library></div>
+          </article>
+
+          <article class="safety-selected-panel" aria-live="polite">
+            <div class="safety-panel-heading">
+              <p class="section-label" data-i18n="safety.selectedLabel">Current safety function</p>
+              <span data-i18n="safety.demoLabel">Demo assumptions</span>
+            </div>
+            <h3 data-safety-selected-name data-i18n="safety.loadError">Safety & ADAS data could not be loaded.</h3>
+            <div class="safety-term-list" data-safety-terms></div>
+            <p class="safety-boundary" data-safety-boundary></p>
+
+            <div class="safety-value-grid">
+              <article>
+                <h4 data-i18n="safety.technicalFunction">Technical function</h4>
+                <p data-safety-technical-function></p>
+              </article>
+              <article>
+                <h4 data-i18n="safety.customerValue">Customer value</h4>
+                <p data-safety-customer-value></p>
+              </article>
+              <article>
+                <h4 data-i18n="safety.driverEducationValue">Driver education value</h4>
+                <p data-safety-driver-education></p>
+              </article>
+            </div>
+          </article>
+        </div>
+
+        <div class="safety-visual-grid">
+          <article class="safety-heat-card">
+            <div class="safety-card-header">
+              <h3 data-i18n="safety.riskHeatMapTitle">Risk heat map</h3>
+            </div>
+            <div class="safety-heat-grid" data-safety-heat-map role="img" aria-live="polite"></div>
+            <p class="safety-accessible-summary" data-safety-heat-summary></p>
+          </article>
+
+          <article class="safety-list-card">
+            <h3 data-i18n="safety.vehicleSegments">Suitable vehicle segments</h3>
+            <ul data-safety-segments></ul>
+          </article>
+          <article class="safety-list-card">
+            <h3 data-i18n="safety.scenarios">Suitable scenarios</h3>
+            <ul data-safety-scenarios></ul>
+          </article>
+          <article class="safety-list-card safety-list-card--warning">
+            <h3 data-i18n="safety.limitations">System limitations</h3>
+            <ul data-safety-limitations></ul>
+          </article>
+          <article class="safety-list-card safety-list-card--warning">
+            <h3 data-i18n="safety.doNotOverclaim">Do not overclaim</h3>
+            <ul data-safety-overclaims></ul>
+          </article>
+        </div>
+
+        <article class="embedded-module">
+          <div class="embedded-module__header">
+            <p class="section-label" data-i18n="visual.dynamicModuleLabel">Interactive visual module</p>
+            <h3 data-i18n="dynamic.safety.title">Safety and ADAS risk education animation</h3>
+          </div>
+          <iframe class="embedded-module__frame" src="./assets/images/dynamic_web_modules/safety-adas-risk-education-animation/index.html" title="Safety and ADAS risk education animation"></iframe>
+        </article>
+
+        <div class="safety-output-grid">
+          <article>
+            <h3 data-i18n="safety.planningImplications">Product-planning implications</h3>
+            <ul data-safety-planning></ul>
+          </article>
+          <article>
+            <h3 data-i18n="safety.dealerEducationMaterials">Dealer education materials</h3>
+            <ul data-safety-education-materials></ul>
+          </article>
+          <article class="safety-output-grid__wide">
+            <h3 data-i18n="safety.customerFAQ">Customer FAQ</h3>
+            <div class="safety-faq-list" data-safety-faq></div>
+          </article>
+        </div>
+
+        <div class="safety-notes">
+          <article>
+            <h3 data-i18n="safety.noLogoPolicyTitle">No-logo visual policy</h3>
+            <p data-i18n="safety.noLogoPolicyBody">
+              This page uses abstract cards and risk sketches only. It does not use real brand logos, license plates, customers, official imagery, or rendered accident scenes.
+            </p>
+          </article>
+          <article>
+            <h3 data-i18n="safety.disclaimerTitle">Responsibility communication boundary</h3>
+            <p data-i18n="safety.disclaimerBody">
+              All safety-function copy is demo education text. Before formal use, review it against actual vehicle specifications, owner manuals, regulation, test data, and channel training material.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="connected-fleet-lab" class="connected-fleet content-section" data-toc-key="toc.connectedFleet" data-fleet-root aria-labelledby="connectedFleetTitle">
+        <div class="section-heading section-heading--wide">
+          <p class="section-label" data-i18n="fleet.label">Fleet data service lab</p>
+          <h2 id="connectedFleetTitle" data-i18n="fleet.title">Connected Fleet Lab</h2>
+          <p data-i18n="fleet.subtitle">
+            Shows how commercial vehicle product planning can extend from hardware into FMS, remote diagnostics, predictive maintenance, uptime support, carbon tracking, operating efficiency, and customer reports.
+          </p>
+          <div class="fleet-badges" aria-label="Connected fleet data labels">
+            <span data-i18n="fleet.demoLabel">Demo assumptions</span>
+            <span data-i18n="fleet.privacyCaveat">This page does not collect, transmit, or analyze any real vehicle or customer data.</span>
+          </div>
+        </div>
+
+        <figure class="section-image-card section-image-card--wide">
+          <button class="section-image-card__button" type="button" data-lightbox-src="./assets/images/static/connected-fleet-service-lab.jpg">
+            <img src="./assets/images/static/connected-fleet-service-lab.jpg" alt="Connected fleet service lab with remote diagnostics, maintenance scheduling, and customer reporting screens." loading="lazy" />
+            <span data-i18n="visual.expandImage">Expand image</span>
+          </button>
+          <figcaption data-lightbox-caption-text data-i18n="visual.fleetImageTitle">Connected fleet service lab</figcaption>
+        </figure>
+
+        <div class="fleet-shell">
+          <article class="fleet-library-panel">
+            <div class="fleet-panel-heading">
+              <p class="section-label" data-i18n="fleet.moduleLibrary">Fleet service modules</p>
+              <span data-i18n="fleet.keyboardLabel">Keyboard and tap friendly</span>
+            </div>
+            <div class="fleet-module-grid" data-fleet-library></div>
+          </article>
+
+          <article class="fleet-selected-panel" aria-live="polite">
+            <div class="fleet-panel-heading">
+              <p class="section-label" data-i18n="fleet.selectedLabel">Selected fleet service</p>
+              <span data-i18n="fleet.demoLabel">Demo assumptions</span>
+            </div>
+            <h3 data-fleet-selected-name data-i18n="fleet.loadError">Connected Fleet Lab data could not be loaded.</h3>
+            <p class="fleet-selected-summary" data-fleet-selected-summary></p>
+            <div class="fleet-score-strip" data-fleet-metrics></div>
+            <div class="fleet-term-list" data-fleet-terms></div>
+            <p class="fleet-boundary" data-fleet-boundary></p>
+          </article>
+        </div>
+
+        <article class="fleet-flow-card">
+          <div class="fleet-card-header">
+            <h3 data-i18n="fleet.flowTitle">Connected fleet data-flow logic</h3>
+            <span data-i18n="fleet.svgLabel">SVG</span>
+          </div>
+          <div class="fleet-flow" data-fleet-flow></div>
+          <p class="fleet-accessible-summary" data-fleet-flow-summary></p>
+          <div class="fleet-term-list fleet-term-list--global" data-fleet-global-terms data-i18n-aria-label="fleet.termLabel" aria-label="Connected fleet glossary terms"></div>
+          <div class="fleet-flow-step-list" data-fleet-flow-steps></div>
+        </article>
+
+        <article class="embedded-module">
+          <div class="embedded-module__header">
+            <p class="section-label" data-i18n="visual.dynamicModuleLabel">Interactive visual module</p>
+            <h3 data-i18n="dynamic.fleet.title">Connected fleet data-flow animation</h3>
+          </div>
+          <iframe class="embedded-module__frame" src="./assets/images/dynamic_web_modules/connected-fleet-data-flow-animation/index.html" title="Connected fleet data-flow animation"></iframe>
+        </article>
+
+        <div class="fleet-output-grid">
+          <article>
+            <h3 data-i18n="fleet.dataInputs">Data inputs</h3>
+            <ul data-fleet-data-inputs></ul>
+          </article>
+          <article>
+            <h3 data-i18n="fleet.customerValue">Customer value</h3>
+            <p data-fleet-customer-value></p>
+          </article>
+          <article>
+            <h3 data-i18n="fleet.planningValue">Product-planning value</h3>
+            <p data-fleet-planning-value></p>
+          </article>
+          <article>
+            <h3 data-i18n="fleet.serviceRequirements">Service or governance requirements</h3>
+            <ul data-fleet-service-requirements></ul>
+          </article>
+          <article>
+            <h3 data-i18n="fleet.riskNotes">Risk notes</h3>
+            <ul data-fleet-risk-notes></ul>
+          </article>
+          <article>
+            <h3 data-i18n="fleet.dealerEducation">Dealer education</h3>
+            <ul data-fleet-dealer-education></ul>
+          </article>
+          <article>
+            <h3 data-i18n="fleet.reportOutputs">Report outputs</h3>
+            <ul data-fleet-report-outputs></ul>
+          </article>
+        </div>
+
+        <div class="fleet-notes">
+          <article>
+            <h3 data-i18n="fleet.governanceTitle">Privacy and data-governance reminder</h3>
+            <p data-i18n="fleet.governanceBody">
+              Any formal FMS or fleet data service requires customer consent, field definitions, retention rules, human review, cybersecurity, and dealer responsibility boundaries. This website does not connect APIs or live telemetry.
+            </p>
+          </article>
+          <article>
+            <h3 data-i18n="fleet.noLogoPolicyTitle">No-logo visual policy</h3>
+            <p data-i18n="fleet.noLogoPolicyBody">
+              The data-flow view uses generic vehicle and data-service language only. It does not show real brands, customer IDs, license plates, route traces, or official system marks.
+            </p>
+          </article>
+          <article>
+            <h3 data-i18n="fleet.disclaimerTitle">Demo-data boundary</h3>
+            <p data-i18n="fleet.disclaimerBody">
+              All connected-fleet modules are demo education and planning assumptions. Before formal use, validate data definitions, consent, service capability, customer operating context, dealer process, and human-review rules.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="esg-policy-dashboard" class="esg-policy content-section" data-toc-key="toc.esgPolicy" data-esg-root aria-labelledby="esgPolicyTitle">
+        <div class="section-heading section-heading--wide">
+          <p class="section-label" data-i18n="esg.label">ESG, policy, and carbon tracking</p>
+          <h2 id="esgPolicyTitle" data-i18n="esg.title">ESG & Policy Dashboard</h2>
+          <p data-i18n="esg.subtitle">
+            Connects energy transition, carbon tracking, diesel-replacement signals, subsidy and policy monitoring, corporate sustainability reporting, and fleet decarbonization pressure into product-planning inputs.
+          </p>
+          <div class="esg-badges" aria-label="ESG and policy data labels">
+            <span data-i18n="esg.demoLabel">Demo assumptions</span>
+            <span data-i18n="esg.verificationCaveat">Policy, subsidy, and carbon factors require latest source verification.</span>
+          </div>
+          <p class="esg-boundary" data-esg-boundary></p>
+        </div>
+
+        <figure class="section-image-card section-image-card--wide">
+          <button class="section-image-card__button" type="button" data-lightbox-src="./assets/images/static/esg-policy-strategy-dashboard.jpg">
+            <img src="./assets/images/static/esg-policy-strategy-dashboard.jpg" alt="ESG and policy strategy dashboard review with carbon estimation and human-review notes." loading="lazy" />
+            <span data-i18n="visual.expandImage">Expand image</span>
+          </button>
+          <figcaption data-lightbox-caption-text data-i18n="visual.esgImageTitle">ESG and policy strategy dashboard</figcaption>
+        </figure>
+
+        <div class="esg-shell">
+          <article class="esg-library-panel">
+            <div class="esg-panel-heading">
+              <p class="section-label" data-i18n="esg.signalLibrary">Policy and carbon signals</p>
+              <span data-i18n="esg.keyboardLabel">Keyboard and tap friendly</span>
+            </div>
+            <div class="esg-signal-grid" data-esg-signals></div>
+          </article>
+
+          <article class="esg-selected-panel" aria-live="polite">
+            <div class="esg-panel-heading">
+              <p class="section-label" data-i18n="esg.selectedSignal">Current signal</p>
+              <span data-i18n="esg.demoLabel">Demo assumptions</span>
+            </div>
+            <h3 data-esg-selected-name data-i18n="esg.loadError">ESG & Policy data could not be loaded.</h3>
+            <p class="esg-selected-summary" data-esg-selected-summary></p>
+            <div class="esg-source-grid">
+              <article>
+                <h4 data-i18n="esg.sourceStatus">Source status</h4>
+                <strong data-esg-source-status></strong>
+              </article>
+              <article>
+                <h4 data-i18n="esg.sourceConfidence">Source confidence</h4>
+                <strong data-esg-source-confidence></strong>
+              </article>
+              <article>
+                <h4 data-i18n="esg.updatePlaceholder">Update-date placeholder</h4>
+                <strong data-esg-update-placeholder></strong>
+              </article>
+            </div>
+            <div class="esg-term-list" data-esg-terms></div>
+            <div class="esg-metric-grid" data-esg-metrics></div>
+            <div class="esg-detail-grid">
+              <article>
+                <h4 data-i18n="esg.planningUse">Planning use</h4>
+                <p data-esg-planning-use></p>
+              </article>
+              <article>
+                <h4 data-i18n="esg.limitation">Limitation note</h4>
+                <p data-esg-limitation></p>
+              </article>
+              <article>
+                <h4 data-i18n="esg.actions">Suggested actions</h4>
+                <ul data-esg-actions></ul>
+              </article>
+            </div>
+          </article>
+        </div>
+
+        <div class="esg-analytics-grid">
+          <article class="esg-carbon-panel">
+            <div class="esg-card-header">
+              <h3 data-i18n="esg.carbonEstimator">Demo carbon-estimation panel</h3>
+              <span data-i18n="esg.svgLabel">SVG</span>
+            </div>
+            <p class="esg-accounting-caveat" data-esg-accounting-caveat></p>
+            <div class="esg-carbon-layout">
+              <div class="esg-control-panel">
+                <h4 data-i18n="esg.controlsTitle">Estimation conditions</h4>
+                <div data-esg-carbon-controls></div>
+              </div>
+              <div class="esg-carbon-output">
+                <div class="esg-carbon-cards" data-esg-carbon-cards></div>
+                <div class="esg-carbon-chart" data-esg-carbon-chart></div>
+                <p class="esg-accessible-summary" data-esg-carbon-summary></p>
+                <p class="esg-carbon-warning" data-i18n="esg.carbonWarning">
+                  This estimate uses demo factors; formal disclosure requires verified fuel data, electricity factors, renewable share, duty cycle, mileage, payload, and accounting method.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="esg-timeline-card">
+            <div class="esg-card-header">
+              <h3 data-i18n="esg.policyTimeline">2026-2035 monitoring timeline</h3>
+              <span data-i18n="esg.svgLabel">SVG</span>
+            </div>
+            <div class="esg-timeline" data-esg-timeline></div>
+          </article>
+        </div>
+
+        <article class="embedded-module">
+          <div class="embedded-module__header">
+            <p class="section-label" data-i18n="visual.dynamicModuleLabel">Interactive visual module</p>
+            <h3 data-i18n="dynamic.esg.title">ESG policy and carbon signal animation</h3>
+          </div>
+          <iframe class="embedded-module__frame" src="./assets/images/dynamic_web_modules/esg-policy-carbon-signal-animation/index.html" title="ESG policy and carbon signal animation"></iframe>
+        </article>
+
+        <div class="esg-term-list esg-term-list--global" data-esg-global-terms data-i18n-aria-label="esg.termLabel" aria-label="ESG key terms"></div>
+
+        <div class="esg-recommendation-grid" data-esg-recommendations></div>
+
+        <div class="esg-notes">
+          <article>
+            <h3 data-i18n="esg.methodologyTitle">Writing and accounting safeguards</h3>
+            <p data-i18n="esg.methodologyBody">
+              This page explains mechanisms and data needs only. It does not claim verified reductions. Formal use requires current policy sources, enterprise accounting methods, legal or compliance review, and human review.
+            </p>
+          </article>
+          <article>
+            <h3 data-i18n="esg.noLogoPolicyTitle">No-logo visual policy</h3>
+            <p data-i18n="esg.noLogoPolicyBody">
+              The dashboard uses abstract cards, SVG, and demo values only. It does not use official marks, government-interface screenshots, customer names, license plates, or real emissions reports.
+            </p>
+          </article>
+          <article>
+            <h3 data-i18n="esg.disclaimerTitle">Demo-data boundary</h3>
+            <p data-i18n="esg.disclaimerBody">
+              All policy, subsidy, carbon-estimation, and reporting-need content is demo planning material. It must not be used as procurement, legal, accounting, compliance, or formal sustainability disclosure basis.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="strategy-roadmap-studio" class="strategy-roadmap content-section" data-toc-key="toc.roadmapStudio" data-roadmap-root aria-labelledby="strategyRoadmapTitle">
+        <div class="section-heading section-heading--wide">
+          <p class="section-label" data-roadmap-meta="demo">Demo assumptions</p>
+          <h2 id="strategyRoadmapTitle" data-roadmap-meta="title">Strategy Roadmap Studio</h2>
+          <p data-roadmap-meta="subtitle">
+            Turns module signals into a 2026 to 2035 product-planning cadence.
+          </p>
+          <div class="roadmap-badges" aria-label="Roadmap data labels">
+            <span data-roadmap-label="demo">Demo assumptions</span>
+            <span data-roadmap-label="humanReview">Human review required</span>
+            <span data-roadmap-label="notLaunchPlan">Not a launch schedule</span>
+          </div>
+        </div>
+
+        <div class="roadmap-toolbar" role="group" data-roadmap-filters aria-label="Strategy roadmap filters"></div>
+
+        <div class="roadmap-layout">
+          <article class="roadmap-chart-card">
+            <div class="roadmap-chart-card__header">
+              <div>
+                <p class="section-label" data-roadmap-label="timelineSummaryTitle">Accessibility summary</p>
+                <h3 data-roadmap-active-period>2026-2035</h3>
+              </div>
+              <span data-roadmap-count>0 items</span>
+            </div>
+            <div class="roadmap-chart" data-roadmap-chart aria-label="Interactive strategy roadmap timeline"></div>
+            <p class="roadmap-accessible-summary" data-roadmap-summary aria-live="polite"></p>
+          </article>
+
+          <article class="roadmap-detail-card" data-roadmap-detail>
+            <p class="section-label" data-roadmap-label="selectedItem">Selected item</p>
+            <h3 data-roadmap-detail-title>Loading roadmap data</h3>
+            <p data-roadmap-detail-body>Loading the demo roadmap and validation notes.</p>
+            <div class="roadmap-term-list" data-roadmap-terms></div>
+            <div class="roadmap-detail-grid">
+              <section>
+                <h4 data-roadmap-label="recommendedActions">Recommended actions</h4>
+                <ul data-roadmap-actions></ul>
+              </section>
+              <section>
+                <h4 data-roadmap-label="requiredData">Required data</h4>
+                <ul data-roadmap-required-data></ul>
+              </section>
+              <section>
+                <h4 data-roadmap-label="dealerEducation">Dealer education</h4>
+                <ul data-roadmap-dealer-education></ul>
+              </section>
+              <section>
+                <h4 data-roadmap-label="pocSuggestion">Customer PoC suggestion</h4>
+                <p data-roadmap-poc></p>
+              </section>
+              <section>
+                <h4 data-roadmap-label="successMetrics">Success metrics</h4>
+                <ul data-roadmap-metrics></ul>
+              </section>
+              <section>
+                <h4 data-roadmap-label="risks">Risks</h4>
+                <ul data-roadmap-risks></ul>
+              </section>
+              <section class="roadmap-detail-grid__wide">
+                <h4 data-roadmap-label="validationNeeds">Validation needs</h4>
+                <ul data-roadmap-validation></ul>
+              </section>
+            </div>
+          </article>
+        </div>
+
+        <article class="embedded-module">
+          <div class="embedded-module__header">
+            <p class="section-label" data-i18n="visual.dynamicModuleLabel">Interactive visual module</p>
+            <h3 data-i18n="dynamic.roadmap.title">Strategy roadmap timeline animation</h3>
+          </div>
+          <iframe class="embedded-module__frame" src="./assets/images/dynamic_web_modules/strategy-roadmap-timeline-animation/index.html" title="Strategy roadmap timeline animation"></iframe>
+        </article>
+
+        <div class="roadmap-notes">
+          <article>
+            <h3 data-roadmap-label="notLaunchPlan">Not a launch schedule</h3>
+            <p data-roadmap-boundary>
+              This roadmap is a planning framework, not an official product launch schedule.
+            </p>
+          </article>
+          <article>
+            <h3 data-roadmap-label="humanReview">Human review required</h3>
+            <p>
+              <span data-glossary-term="poc">PoC</span>
+              <span data-roadmap-review-note>
+                boundaries, data quality, customer context, policy sources, and service readiness need review before formal use.
+              </span>
+            </p>
+          </article>
+        </div>
+
+      </section>
+
+      <section id="glossary" class="content-section" data-toc-key="toc.glossary">
+        <div class="section-heading">
+          <p class="section-label" data-i18n="glossary.label">Shared terminology</p>
+          <h2 data-i18n="glossary.title">Glossary behavior scaffold</h2>
+          <p data-i18n="glossary.body">
+            Acronyms such as ADAS, BEV, FCEV, TCO, V2G, and ODD open localized popups with definitions and planning relevance.
+          </p>
+        </div>
+
+        <div class="term-list" aria-label="Glossary term examples">
+          <button type="button" class="term-chip" data-glossary-term="tco">TCO</button>
+          <button type="button" class="term-chip" data-glossary-term="bev">BEV</button>
+          <button type="button" class="term-chip" data-glossary-term="fcev">FCEV</button>
+          <button type="button" class="term-chip" data-glossary-term="v2g">V2G</button>
+          <button type="button" class="term-chip" data-glossary-term="odd">ODD</button>
+          <button type="button" class="term-chip" data-glossary-term="dealer">Dealer</button>
+        </div>
+      </section>
+
+      <section id="downloads" class="content-section content-section--compact" data-toc-key="toc.downloads">
+        <div class="section-heading">
+          <p class="section-label" data-i18n="downloads.label">Reference notes</p>
+          <h2 data-i18n="downloads.title">Static documents</h2>
+          <p data-i18n="downloads.body">These notes support transparent demo-data and limitation handling.</p>
+        </div>
+
+        <div class="download-row">
+          <a class="download-link" href="./00_SOURCE_FILES/Portfolio_05_Future_Mobility_Strategy_Lab.docx" data-i18n="downloads.proposal">Project proposal</a>
+          <a class="download-link" href="./docs/data-disclaimer.md" data-i18n="downloads.dataDisclaimer">Data disclaimer</a>
+          <a class="download-link" href="./docs/assumptions-and-limitations.md" data-i18n="downloads.assumptions">Assumptions and limitations</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p data-i18n="footer.disclaimer">
+        Personal portfolio prototype. Demo data only. No official Toyota, HINO, Hotai, dealer, customer, or government endorsement is implied.
+      </p>
+    </footer>
+
+    <script src="./assets/js/static-data.js?v=20260606-1" defer></script>
+    <script src="./assets/js/i18n.js" defer></script>
+    <script src="./assets/js/theme.js" defer></script>
+    <script src="./assets/js/floating-controls.js?v=20260603" defer></script>
+    <script src="./assets/js/glossary.js" defer></script>
+    <script src="./assets/js/image-registry.js" defer></script>
+    <script src="./assets/js/trend-radar.js" defer></script>
+    <script src="./assets/js/technology-maturity.js" defer></script>
+    <script src="./assets/js/scenario-simulator.js" defer></script>
+    <script src="./assets/js/energy-roadmap.js" defer></script>
+    <script src="./assets/js/safety-adas.js" defer></script>
+    <script src="./assets/js/connected-fleet.js" defer></script>
+    <script src="./assets/js/esg-policy.js" defer></script>
+    <script src="./assets/js/strategy-roadmap.js" defer></script>
+    <script src="./assets/js/app.js?v=20260606-1" defer></script>
+  </body>
+</html>

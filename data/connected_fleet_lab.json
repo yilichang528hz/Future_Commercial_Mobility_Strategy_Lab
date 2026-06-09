@@ -1,0 +1,569 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "moduleId": "connected-fleet-lab",
+    "dataStatus": "demo_assumptions",
+    "sourceBasis": "Portfolio proposal connected-fleet and service-planning narrative converted into a static product-planning prototype.",
+    "publicBoundary": {
+      "zh": "本車聯網實驗室僅使用 demo 假設，不收集、不傳送、不分析任何真實車輛、駕駛、客戶或營運資料。",
+      "en": "This Connected Fleet Lab uses demo assumptions only. It does not collect, transmit, or analyze any real vehicle, driver, customer, or operational data.",
+      "ja": "このコネクテッドフリートラボはデモ仮定のみを使用します。実車、運転者、顧客、運用データを収集、送信、分析しません。"
+    }
+  },
+  "flowSteps": [
+    {
+      "id": "vehicle_signals",
+      "glossaryTerms": ["fms", "soh"],
+      "label": {
+        "zh": "車輛訊號",
+        "en": "Vehicle signals",
+        "ja": "車両信号"
+      },
+      "description": {
+        "zh": "車況、里程、故障碼、能源、駕駛事件與保養紀錄。",
+        "en": "Vehicle status, mileage, fault codes, energy, driving events, and maintenance records.",
+        "ja": "車両状態、走行距離、故障コード、エネルギー、運転イベント、整備記録。"
+      }
+    },
+    {
+      "id": "data_cleaning",
+      "glossaryTerms": ["kpi"],
+      "label": {
+        "zh": "資料整理",
+        "en": "Data cleaning",
+        "ja": "データ整理"
+      },
+      "description": {
+        "zh": "定義欄位、缺漏、品質、同意與可用 KPI。",
+        "en": "Define fields, missingness, quality, consent, and usable KPIs.",
+        "ja": "項目、欠損、品質、同意、利用可能 KPI を定義します。"
+      }
+    },
+    {
+      "id": "analysis",
+      "glossaryTerms": ["ai-governance", "fms"],
+      "label": {
+        "zh": "分析判讀",
+        "en": "Analysis",
+        "ja": "分析判断"
+      },
+      "description": {
+        "zh": "用規則或 AI 輔助找出保養、效率、風險與教育線索。",
+        "en": "Use rules or AI assistance to find maintenance, efficiency, risk, and education signals.",
+        "ja": "ルールまたは AI 支援で、整備、効率、リスク、教育の手がかりを見つけます。"
+      }
+    },
+    {
+      "id": "service_action",
+      "glossaryTerms": ["ota", "soh"],
+      "label": {
+        "zh": "服務行動",
+        "en": "Service action",
+        "ja": "サービス行動"
+      },
+      "description": {
+        "zh": "排程、零件、檢修、OTA 通知或人工覆核。",
+        "en": "Scheduling, parts, inspection, OTA notification, or human review.",
+        "ja": "予約、部品、点検、OTA 通知、人による確認。"
+      }
+    },
+    {
+      "id": "dealer_support",
+      "glossaryTerms": ["dealer"],
+      "label": {
+        "zh": "通路支援",
+        "en": "Dealer support",
+        "ja": "販売店支援"
+      },
+      "description": {
+        "zh": "把數據轉成服務顧問、維修與客戶溝通流程。",
+        "en": "Translate data into service-advisor, repair, and customer communication workflows.",
+        "ja": "データをサービスアドバイザー、整備、顧客コミュニケーションへ変換します。"
+      }
+    },
+    {
+      "id": "customer_report",
+      "glossaryTerms": ["esg", "tco", "carbon-accounting"],
+      "label": {
+        "zh": "客戶報告",
+        "en": "Customer report",
+        "ja": "顧客レポート"
+      },
+      "description": {
+        "zh": "輸出營運、成本、妥善率、碳追蹤與改善建議。",
+        "en": "Output operations, cost, uptime, carbon tracking, and improvement recommendations.",
+        "ja": "運用、コスト、稼働率、炭素追跡、改善提案を出力します。"
+      }
+    }
+  ],
+  "modules": [
+    {
+      "id": "remote_diagnostics",
+      "category": "service_readiness",
+      "maturity": "near_term_education",
+      "glossaryTerms": ["fms", "ota", "kpi"],
+      "name": {
+        "zh": "遠端診斷與故障碼整理",
+        "en": "Remote diagnostics and fault-code triage",
+        "ja": "遠隔診断と故障コード整理"
+      },
+      "summary": {
+        "zh": "把故障碼、警示與車況資料轉成服務優先順序與通路溝通線索。",
+        "en": "Turns fault codes, alerts, and vehicle status into service priorities and dealer communication cues.",
+        "ja": "故障コード、警報、車両状態をサービス優先度と販売店コミュニケーションの手がかりへ変換します。"
+      },
+      "dataInputs": {
+        "zh": ["故障碼", "車輛里程", "警示時間", "維修履歷", "OTA 狀態"],
+        "en": ["Fault codes", "Vehicle mileage", "Alert timing", "Repair history", "OTA status"],
+        "ja": ["故障コード", "走行距離", "警報時刻", "整備履歴", "OTA 状態"]
+      },
+      "customerValue": {
+        "zh": "減少客戶描述問題的負擔，讓服務端更快判斷是否需要進廠、零件或人工覆核。",
+        "en": "Reduces the burden of describing issues and helps service teams decide whether workshop visit, parts, or human review is needed.",
+        "ja": "顧客が問題を説明する負担を減らし、入庫、部品、人による確認が必要かを判断しやすくします。"
+      },
+      "planningValue": {
+        "zh": "可把硬體售後延伸成服務 readiness、診斷流程與 KPI 定義。",
+        "en": "Extends hardware aftersales into service readiness, diagnostic workflow, and KPI definition.",
+        "ja": "ハードウェアのアフターサービスを、サービス準備、診断フロー、KPI 定義へ広げます。"
+      },
+      "serviceRequirements": {
+        "zh": ["故障碼對應表", "通路回應 SLA", "維修紀錄回填", "客戶同意與資料保存規則"],
+        "en": ["Fault-code mapping", "Dealer response SLA", "Repair-record feedback", "Customer consent and retention rules"],
+        "ja": ["故障コード対応表", "販売店対応 SLA", "整備記録の戻し込み", "顧客同意と保存ルール"]
+      },
+      "riskNotes": {
+        "zh": ["不能把遠端警示當成正式診斷結論。", "資料不同步或欄位未定義會造成誤判。"],
+        "en": ["Remote alerts must not be treated as final diagnostic conclusions.", "Out-of-sync data or undefined fields can cause wrong triage."],
+        "ja": ["遠隔警報を正式な診断結論として扱ってはいけません。", "データ同期不足や項目未定義は誤判断につながります。"]
+      },
+      "dealerEducation": {
+        "zh": ["如何解釋故障碼與客戶症狀的差異", "如何把遠端資料轉成進廠前準備", "如何說明資料不是即時監控"],
+        "en": ["Explain the difference between fault codes and customer symptoms", "Turn remote data into pre-workshop preparation", "Explain that data is not live surveillance"],
+        "ja": ["故障コードと顧客症状の違いを説明", "遠隔データを入庫前準備へ変換", "データはライブ監視ではないと説明"]
+      },
+      "reportOutputs": {
+        "zh": ["診斷摘要", "服務優先度", "需覆核項目"],
+        "en": ["Diagnostic summary", "Service priority", "Items needing review"],
+        "ja": ["診断要約", "サービス優先度", "確認が必要な項目"]
+      },
+      "riskScore": 62
+    },
+    {
+      "id": "predictive_maintenance",
+      "category": "uptime_support",
+      "maturity": "medium_term_poc",
+      "glossaryTerms": ["fms", "ai-governance", "soh", "poc"],
+      "name": {
+        "zh": "預測維修與妥善率支援",
+        "en": "Predictive maintenance and uptime support",
+        "ja": "予知保全と稼働率支援"
+      },
+      "summary": {
+        "zh": "用維修履歷、警示、零件壽命與營運強度，建立需人工覆核的保養提醒。",
+        "en": "Uses repair history, alerts, parts life, and operating intensity to build human-reviewed maintenance reminders.",
+        "ja": "整備履歴、警報、部品寿命、運用強度から、人が確認する保全リマインダーを作ります。"
+      },
+      "dataInputs": {
+        "zh": ["維修履歷", "零件更換週期", "車輛里程", "負載強度", "警示事件"],
+        "en": ["Repair history", "Parts replacement cycle", "Mileage", "Load intensity", "Alert events"],
+        "ja": ["整備履歴", "部品交換周期", "走行距離", "負荷強度", "警報イベント"]
+      },
+      "customerValue": {
+        "zh": "協助客戶把停工風險提前討論，但不保證能預測所有故障。",
+        "en": "Helps customers discuss downtime risk earlier, without guaranteeing every failure can be predicted.",
+        "ja": "停止リスクを早めに議論できますが、すべての故障予測を保証するものではありません。"
+      },
+      "planningValue": {
+        "zh": "形成服務產品、保養方案、零件備料與車隊顧問服務的基礎。",
+        "en": "Creates a base for service products, maintenance plans, parts stocking, and fleet advisory services.",
+        "ja": "サービス商品、保守プラン、部品在庫、フリート助言サービスの土台になります。"
+      },
+      "serviceRequirements": {
+        "zh": ["資料品質檢核", "模型或規則可解釋性", "人工覆核流程", "零件與工時準備"],
+        "en": ["Data-quality checks", "Explainable model or rules", "Human review workflow", "Parts and labor preparation"],
+        "ja": ["データ品質確認", "説明可能なモデルまたはルール", "人による確認フロー", "部品と工数の準備"]
+      },
+      "riskNotes": {
+        "zh": ["AI 或規則輸出不得當成保固或故障必然結論。", "資料偏差可能讓高風險車輛被低估。"],
+        "en": ["AI or rule output must not be treated as warranty or certain failure conclusions.", "Data bias may understate high-risk vehicles."],
+        "ja": ["AI やルール出力を保証や故障確定結論として扱いません。", "データ偏りにより高リスク車両が過小評価される可能性があります。"]
+      },
+      "dealerEducation": {
+        "zh": ["把提醒說成保養討論起點", "說明模型限制與人工覆核", "建立客戶停工成本訪談"],
+        "en": ["Frame reminders as maintenance discussion starters", "Explain model limits and human review", "Build downtime-cost interview scripts"],
+        "ja": ["リマインダーを整備議論の起点として説明", "モデル制約と人による確認を説明", "停止コストのヒアリングを作成"]
+      },
+      "reportOutputs": {
+        "zh": ["保養提醒", "妥善率風險", "需備料項目"],
+        "en": ["Maintenance reminders", "Uptime risk", "Parts to prepare"],
+        "ja": ["保全リマインダー", "稼働率リスク", "準備部品"]
+      },
+      "riskScore": 78
+    },
+    {
+      "id": "route_optimization",
+      "category": "operating_efficiency",
+      "maturity": "medium_term_poc",
+      "glossaryTerms": ["fms", "kpi", "tco"],
+      "name": {
+        "zh": "路線最佳化與能源效率",
+        "en": "Route optimization and energy efficiency",
+        "ja": "ルート最適化とエネルギー効率"
+      },
+      "summary": {
+        "zh": "把里程、停等、載重、能耗與任務時窗轉成路線改善建議。",
+        "en": "Turns mileage, stops, payload, energy use, and delivery windows into route-improvement suggestions.",
+        "ja": "走行距離、停止、積載、エネルギー使用、配送時間帯をルート改善提案に変換します。"
+      },
+      "dataInputs": {
+        "zh": ["路線紀錄", "停等時間", "載重", "能耗", "配送時窗"],
+        "en": ["Route records", "Idle or stop time", "Payload", "Energy use", "Delivery windows"],
+        "ja": ["ルート記録", "停止時間", "積載", "エネルギー使用", "配送時間帯"]
+      },
+      "customerValue": {
+        "zh": "協助客戶討論油耗、電耗、準時率與駕駛負擔，但需客戶作業資料驗證。",
+        "en": "Helps discuss fuel or energy use, punctuality, and driver burden, but requires customer operation data validation.",
+        "ja": "燃料・電力使用、定時性、運転者負担を議論できますが、顧客運用データの検証が必要です。"
+      },
+      "planningValue": {
+        "zh": "可連到 BEV 適用路線、TCO 交叉點、車隊教育與營運報告。",
+        "en": "Connects to BEV route fit, TCO crossover, fleet education, and operating reports.",
+        "ja": "BEV 適合ルート、TCO クロスオーバー、フリート教育、運用レポートにつながります。"
+      },
+      "serviceRequirements": {
+        "zh": ["客戶路線資料同意", "KPI 定義", "例外情境標記", "駕駛溝通"],
+        "en": ["Customer route-data consent", "KPI definition", "Exception tagging", "Driver communication"],
+        "ja": ["顧客ルートデータ同意", "KPI 定義", "例外場面タグ", "運転者コミュニケーション"]
+      },
+      "riskNotes": {
+        "zh": ["不能用 demo 路線建議替代正式排班或客戶營運決策。", "忽略臨時任務會讓建議失真。"],
+        "en": ["Demo route suggestions must not replace formal dispatch or customer operating decisions.", "Ignoring ad hoc work can distort recommendations."],
+        "ja": ["デモルート提案は正式配車や顧客運用判断の代替ではありません。", "臨時業務を無視すると提案が歪みます。"]
+      },
+      "dealerEducation": {
+        "zh": ["用路線資料解釋 TCO", "辨識適合 BEV PoC 的固定路線", "說明資料需客戶確認"],
+        "en": ["Use route data to explain TCO", "Identify fixed routes suitable for BEV PoCs", "Explain customer validation requirement"],
+        "ja": ["ルートデータで TCO を説明", "BEV PoC に向く固定ルートを特定", "顧客確認が必要と説明"]
+      },
+      "reportOutputs": {
+        "zh": ["路線效率", "準時率線索", "能源改善方向"],
+        "en": ["Route efficiency", "Punctuality cues", "Energy improvement direction"],
+        "ja": ["ルート効率", "定時性の手がかり", "エネルギー改善方向"]
+      },
+      "riskScore": 64
+    },
+    {
+      "id": "driver_behavior_scoring",
+      "category": "safety_governance",
+      "maturity": "near_term_education",
+      "glossaryTerms": ["fms", "ai-governance", "kpi"],
+      "name": {
+        "zh": "駕駛行為評分與教育回饋",
+        "en": "Driver behavior scoring and coaching feedback",
+        "ja": "運転行動スコアと教育フィードバック"
+      },
+      "summary": {
+        "zh": "整理急煞、急加速、怠速、超速警示與安全事件，支援教育而非單向懲處。",
+        "en": "Summarizes harsh braking, acceleration, idling, speed alerts, and safety events to support coaching rather than one-way discipline.",
+        "ja": "急制動、急加速、アイドリング、速度警報、安全イベントを整理し、一方的な処分ではなく教育を支援します。"
+      },
+      "dataInputs": {
+        "zh": ["急煞事件", "急加速", "怠速", "超速提醒", "安全警示"],
+        "en": ["Harsh braking", "Harsh acceleration", "Idling", "Speed reminders", "Safety alerts"],
+        "ja": ["急制動", "急加速", "アイドリング", "速度リマインダー", "安全警報"]
+      },
+      "customerValue": {
+        "zh": "建立駕駛教育與營運安全對話，但必須處理隱私、同意與情境覆核。",
+        "en": "Creates driver coaching and safety conversation, but must handle privacy, consent, and context review.",
+        "ja": "運転者教育と安全対話を作りますが、プライバシー、同意、文脈確認が必要です。"
+      },
+      "planningValue": {
+        "zh": "可形成安全教育服務、KPI 報告與通路顧問材料。",
+        "en": "Can become safety-coaching service, KPI reports, and dealer advisory material.",
+        "ja": "安全教育サービス、KPI レポート、販売店助言資料になります。"
+      },
+      "serviceRequirements": {
+        "zh": ["資料同意", "指標定義", "人工覆核", "駕駛申訴與修正機制"],
+        "en": ["Data consent", "Metric definitions", "Human review", "Driver dispute and correction process"],
+        "ja": ["データ同意", "指標定義", "人による確認", "運転者の異議・修正プロセス"]
+      },
+      "riskNotes": {
+        "zh": ["不可把分數當成唯一績效或懲處依據。", "AI 評分需有解釋與覆核邊界。"],
+        "en": ["Scores must not be the sole performance or disciplinary basis.", "AI scoring needs explanation and review boundaries."],
+        "ja": ["スコアを唯一の評価・処分根拠にしません。", "AI スコアには説明と確認境界が必要です。"]
+      },
+      "dealerEducation": {
+        "zh": ["用改善而非監控語氣溝通", "建立資料同意範本", "說明分數不是事故責任判斷"],
+        "en": ["Communicate improvement, not surveillance", "Create data-consent templates", "Explain scores are not accident-liability judgments"],
+        "ja": ["監視ではなく改善として説明", "データ同意テンプレートを作成", "スコアは事故責任判断ではないと説明"]
+      },
+      "reportOutputs": {
+        "zh": ["安全教育線索", "駕駛回饋", "KPI 趨勢"],
+        "en": ["Safety coaching cues", "Driver feedback", "KPI trends"],
+        "ja": ["安全教育の手がかり", "運転者フィードバック", "KPI 推移"]
+      },
+      "riskScore": 84
+    },
+    {
+      "id": "fleet_utilization",
+      "category": "asset_efficiency",
+      "maturity": "near_term_education",
+      "glossaryTerms": ["fms", "kpi", "tco"],
+      "name": {
+        "zh": "車隊利用率與資產效率",
+        "en": "Fleet utilization and asset efficiency",
+        "ja": "フリート稼働率と資産効率"
+      },
+      "summary": {
+        "zh": "把車輛出勤、閒置、里程、任務與維修停車轉成資產使用分析。",
+        "en": "Turns vehicle activity, idle time, mileage, tasks, and maintenance downtime into asset-use analysis.",
+        "ja": "車両稼働、待機、走行距離、業務、整備停止を資産利用分析へ変換します。"
+      },
+      "dataInputs": {
+        "zh": ["出勤紀錄", "閒置時間", "里程", "任務數", "維修停車"],
+        "en": ["Activity records", "Idle time", "Mileage", "Task count", "Maintenance downtime"],
+        "ja": ["稼働記録", "待機時間", "走行距離", "業務件数", "整備停止"]
+      },
+      "customerValue": {
+        "zh": "協助客戶判斷車輛是否過多、過少或配置不均。",
+        "en": "Helps customers discuss whether vehicles are too many, too few, or unevenly allocated.",
+        "ja": "車両が多すぎる、少なすぎる、配置が偏っているかを議論できます。"
+      },
+      "planningValue": {
+        "zh": "支援新車提案、租賃方案、車型配置與售後服務優先順序。",
+        "en": "Supports new-vehicle proposals, leasing plans, model allocation, and aftersales prioritization.",
+        "ja": "新車提案、リースプラン、車型配置、アフターサービス優先度を支援します。"
+      },
+      "serviceRequirements": {
+        "zh": ["任務定義", "閒置規則", "維修停車分類", "客戶營運脈絡"],
+        "en": ["Task definitions", "Idle rules", "Maintenance-downtime classification", "Customer operating context"],
+        "ja": ["業務定義", "待機ルール", "整備停止分類", "顧客運用文脈"]
+      },
+      "riskNotes": {
+        "zh": ["利用率低不必然代表車輛多餘，可能是尖峰備援或特殊任務。", "需避免用單一 KPI 下結論。"],
+        "en": ["Low utilization does not necessarily mean excess vehicles; it may reflect peak backup or special tasks.", "Avoid conclusions from one KPI only."],
+        "ja": ["低稼働率は必ずしも余剰車両を意味せず、ピーク時予備や特殊業務の可能性があります。", "単一 KPI だけで結論を出さないようにします。"]
+      },
+      "dealerEducation": {
+        "zh": ["用情境解釋 KPI", "把利用率連到車型配置", "提醒需客戶營運脈絡"],
+        "en": ["Explain KPIs by scenario", "Connect utilization to model allocation", "Remind teams to verify operating context"],
+        "ja": ["場面別に KPI を説明", "稼働率を車型配置につなぐ", "運用文脈の確認を促す"]
+      },
+      "reportOutputs": {
+        "zh": ["利用率摘要", "閒置原因", "車型配置建議"],
+        "en": ["Utilization summary", "Idle reasons", "Model-allocation suggestions"],
+        "ja": ["稼働率要約", "待機理由", "車型配置提案"]
+      },
+      "riskScore": 52
+    },
+    {
+      "id": "service_scheduling",
+      "category": "service_readiness",
+      "maturity": "near_term_education",
+      "glossaryTerms": ["fms", "kpi", "dealer"],
+      "name": {
+        "zh": "服務排程與通路妥善率支援",
+        "en": "Service scheduling and dealer uptime support",
+        "ja": "サービス予約と販売店稼働率支援"
+      },
+      "summary": {
+        "zh": "把保養週期、車輛可用時窗、通路工位與客戶停工敏感度轉成排程建議。",
+        "en": "Turns maintenance cycles, vehicle availability windows, dealer capacity, and downtime sensitivity into scheduling suggestions.",
+        "ja": "保守周期、車両利用可能時間、販売店工位、停止感度を予約提案へ変換します。"
+      },
+      "dataInputs": {
+        "zh": ["保養週期", "車輛可用時窗", "通路工位", "停工敏感度", "零件狀態"],
+        "en": ["Maintenance cycle", "Vehicle availability windows", "Dealer bay capacity", "Downtime sensitivity", "Parts status"],
+        "ja": ["保守周期", "車両利用可能時間", "販売店工位", "停止感度", "部品状態"]
+      },
+      "customerValue": {
+        "zh": "降低臨時進廠與等待不確定性，讓保養與營運排程更容易協調。",
+        "en": "Reduces uncertainty around unscheduled workshop visits and waiting time, making maintenance and operations easier to coordinate.",
+        "ja": "突発入庫と待ち時間の不確実性を下げ、整備と運用計画を調整しやすくします。"
+      },
+      "planningValue": {
+        "zh": "讓產品規劃連到售後服務能力、通路負荷與客戶妥善率。",
+        "en": "Connects product planning to aftersales capability, dealer load, and customer uptime.",
+        "ja": "商品企画をアフターサービス能力、販売店負荷、顧客稼働率につなげます。"
+      },
+      "serviceRequirements": {
+        "zh": ["通路工位資料", "零件到貨狀態", "客戶停車時窗", "預約與改期規則"],
+        "en": ["Dealer bay data", "Parts arrival status", "Customer downtime windows", "Booking and rescheduling rules"],
+        "ja": ["販売店工位データ", "部品到着状態", "顧客停止時間帯", "予約・変更ルール"]
+      },
+      "riskNotes": {
+        "zh": ["若通路資料不透明，排程建議可能失準。", "不能承諾所有進廠都可零等待。"],
+        "en": ["If dealer capacity data is not transparent, scheduling suggestions may be inaccurate.", "Do not promise zero waiting for every workshop visit."],
+        "ja": ["販売店容量データが透明でないと予約提案が不正確になります。", "すべての入庫で待ち時間ゼロを約束しません。"]
+      },
+      "dealerEducation": {
+        "zh": ["說明預約建議不是保證", "建立客戶停車時窗訪談", "把零件與工位資料回填"],
+        "en": ["Explain scheduling suggestions are not guarantees", "Interview customers on downtime windows", "Feed back parts and bay data"],
+        "ja": ["予約提案は保証ではないと説明", "顧客停止時間帯をヒアリング", "部品と工位データを戻し込む"]
+      },
+      "reportOutputs": {
+        "zh": ["排程建議", "通路負荷", "停工風險"],
+        "en": ["Scheduling suggestions", "Dealer load", "Downtime risk"],
+        "ja": ["予約提案", "販売店負荷", "停止リスク"]
+      },
+      "riskScore": 58
+    },
+    {
+      "id": "parts_prediction",
+      "category": "parts_readiness",
+      "maturity": "medium_term_poc",
+      "glossaryTerms": ["fms", "ai-governance", "kpi"],
+      "name": {
+        "zh": "零件需求預測與備料企劃",
+        "en": "Parts-demand prediction and stocking planning",
+        "ja": "部品需要予測と在庫企画"
+      },
+      "summary": {
+        "zh": "用車齡、里程、維修履歷、區域使用與季節性，支援零件備料與通路服務 readiness。",
+        "en": "Uses age, mileage, repair history, regional use, and seasonality to support parts stocking and dealer service readiness.",
+        "ja": "車齢、走行距離、整備履歴、地域利用、季節性から部品在庫と販売店サービス準備を支援します。"
+      },
+      "dataInputs": {
+        "zh": ["車齡", "里程", "維修履歷", "區域使用", "季節性"],
+        "en": ["Vehicle age", "Mileage", "Repair history", "Regional use", "Seasonality"],
+        "ja": ["車齢", "走行距離", "整備履歴", "地域利用", "季節性"]
+      },
+      "customerValue": {
+        "zh": "可降低缺料等待，但需通路庫存、供應與需求資料同步。",
+        "en": "Can reduce waiting caused by parts shortages, but needs dealer inventory, supply, and demand data alignment.",
+        "ja": "部品不足による待ち時間を下げられますが、販売店在庫、供給、需要データの整合が必要です。"
+      },
+      "planningValue": {
+        "zh": "支援售後收益、服務體驗、車型生命週期與區域通路策略。",
+        "en": "Supports aftersales revenue, service experience, model lifecycle, and regional dealer strategy.",
+        "ja": "アフター収益、サービス体験、車型ライフサイクル、地域販売店戦略を支援します。"
+      },
+      "serviceRequirements": {
+        "zh": ["庫存資料", "供應週期", "維修工單", "模型覆核", "缺料回報"],
+        "en": ["Inventory data", "Supply lead time", "Repair orders", "Model review", "Shortage feedback"],
+        "ja": ["在庫データ", "供給リードタイム", "整備工単", "モデル確認", "欠品フィードバック"]
+      },
+      "riskNotes": {
+        "zh": ["預測不可當成採購保證。", "需求突變、召修或供應異常需人工調整。"],
+        "en": ["Prediction must not be treated as a procurement guarantee.", "Demand shifts, recalls, or supply disruptions need human adjustment."],
+        "ja": ["予測を調達保証として扱いません。", "需要変動、リコール、供給異常は人による調整が必要です。"]
+      },
+      "dealerEducation": {
+        "zh": ["說明預測與實際需求差異", "建立缺料回報流程", "把模型結果納入人工覆核"],
+        "en": ["Explain prediction versus actual demand", "Create shortage feedback flow", "Put model results into human review"],
+        "ja": ["予測と実需要の差を説明", "欠品フィードバックを作成", "モデル結果を人の確認へ入れる"]
+      },
+      "reportOutputs": {
+        "zh": ["備料建議", "缺料風險", "區域需求線索"],
+        "en": ["Stocking suggestions", "Shortage risk", "Regional demand signals"],
+        "ja": ["在庫提案", "欠品リスク", "地域需要の手がかり"]
+      },
+      "riskScore": 70
+    },
+    {
+      "id": "carbon_tracking",
+      "category": "esg_reporting",
+      "maturity": "medium_term_poc",
+      "glossaryTerms": ["esg", "carbon-accounting", "fms", "v2g"],
+      "name": {
+        "zh": "碳追蹤與 ESG 營運報告",
+        "en": "Carbon tracking and ESG operating reports",
+        "ja": "炭素追跡と ESG 運用レポート"
+      },
+      "summary": {
+        "zh": "把里程、油耗/電耗、任務、能源係數與邊界設定轉成 demo 碳追蹤報告。",
+        "en": "Turns mileage, fuel or electricity use, tasks, energy factors, and boundary settings into demo carbon-tracking reports.",
+        "ja": "走行距離、燃料・電力使用、業務、エネルギー係数、境界設定を demo 炭素追跡レポートへ変換します。"
+      },
+      "dataInputs": {
+        "zh": ["里程", "油耗/電耗", "任務資料", "能源係數", "盤查邊界"],
+        "en": ["Mileage", "Fuel or electricity use", "Task data", "Energy factors", "Accounting boundary"],
+        "ja": ["走行距離", "燃料・電力使用", "業務データ", "エネルギー係数", "算定境界"]
+      },
+      "customerValue": {
+        "zh": "協助客戶理解營運碳訊號，但不能替代正式 ESG 或法定排放申報。",
+        "en": "Helps customers understand operating carbon signals, but cannot replace formal ESG or statutory emissions reporting.",
+        "ja": "運用上の炭素シグナル理解を支援しますが、正式な ESG や法定排出報告の代替ではありません。"
+      },
+      "planningValue": {
+        "zh": "連接 BEV、V2G、TCO、ESG 壓力與客戶報告服務。",
+        "en": "Connects BEV, V2G, TCO, ESG pressure, and customer reporting services.",
+        "ja": "BEV、V2G、TCO、ESG 圧力、顧客レポートサービスをつなぎます。"
+      },
+      "serviceRequirements": {
+        "zh": ["邊界定義", "活動資料品質", "能源係數更新", "人工覆核", "法規來源確認"],
+        "en": ["Boundary definition", "Activity-data quality", "Energy-factor refresh", "Human review", "Regulatory source checks"],
+        "ja": ["境界定義", "活動データ品質", "エネルギー係数更新", "人による確認", "規制情報確認"]
+      },
+      "riskNotes": {
+        "zh": ["Demo 碳數字不可作為正式盤查或法定申報。", "係數、邊界與資料來源需標明日期與版本。"],
+        "en": ["Demo carbon values must not be used as formal accounting or statutory reporting.", "Factors, boundaries, and data sources need date and version labels."],
+        "ja": ["Demo 炭素値を正式算定や法定報告に使ってはいけません。", "係数、境界、データソースには日付と版を示す必要があります。"]
+      },
+      "dealerEducation": {
+        "zh": ["區分 ESG 訊號與正式盤查", "說明活動資料與係數", "把碳報告連到能源路線圖"],
+        "en": ["Separate ESG signals from formal accounting", "Explain activity data and factors", "Connect carbon reports to the energy roadmap"],
+        "ja": ["ESG シグナルと正式算定を分ける", "活動データと係数を説明", "炭素レポートをエネルギーロードマップへ接続"]
+      },
+      "reportOutputs": {
+        "zh": ["相對碳訊號", "能源使用趨勢", "需覆核係數"],
+        "en": ["Relative carbon signal", "Energy-use trend", "Factors needing review"],
+        "ja": ["相対炭素シグナル", "エネルギー使用推移", "確認が必要な係数"]
+      },
+      "riskScore": 82
+    },
+    {
+      "id": "customer_operating_reports",
+      "category": "customer_success",
+      "maturity": "near_term_education",
+      "glossaryTerms": ["fms", "kpi", "tco", "esg"],
+      "name": {
+        "zh": "客戶營運報告與顧問化服務",
+        "en": "Customer operating reports and advisory service",
+        "ja": "顧客運用レポートと助言サービス"
+      },
+      "summary": {
+        "zh": "把妥善率、成本、路線、保養、能源與碳訊號整理成客戶可討論的營運報告。",
+        "en": "Packages uptime, cost, routes, maintenance, energy, and carbon signals into customer-facing operating reports.",
+        "ja": "稼働率、コスト、ルート、保守、エネルギー、炭素シグナルを顧客向け運用レポートにまとめます。"
+      },
+      "dataInputs": {
+        "zh": ["KPI 摘要", "服務紀錄", "路線資料", "能源資料", "碳追蹤"],
+        "en": ["KPI summary", "Service records", "Route data", "Energy data", "Carbon tracking"],
+        "ja": ["KPI 要約", "サービス記録", "ルートデータ", "エネルギーデータ", "炭素追跡"]
+      },
+      "customerValue": {
+        "zh": "讓客戶用同一份報告討論車輛、服務、成本、效率與改善行動。",
+        "en": "Lets customers discuss vehicles, service, cost, efficiency, and improvement actions from one report.",
+        "ja": "顧客が車両、サービス、コスト、効率、改善行動を1つのレポートで議論できます。"
+      },
+      "planningValue": {
+        "zh": "把產品規劃從單車銷售延伸到車隊顧問、續約與服務價值。",
+        "en": "Extends product planning from vehicle sales into fleet advisory, renewal, and service value.",
+        "ja": "商品企画を車両販売からフリート助言、更新、サービス価値へ広げます。"
+      },
+      "serviceRequirements": {
+        "zh": ["報告模板", "KPI 定義", "資料權限", "客戶會議節奏", "改善追蹤"],
+        "en": ["Report template", "KPI definitions", "Data permissions", "Customer meeting cadence", "Improvement tracking"],
+        "ja": ["レポートテンプレート", "KPI 定義", "データ権限", "顧客会議頻度", "改善追跡"]
+      },
+      "riskNotes": {
+        "zh": ["報告不得暗示收集即時資料。", "建議需標示 demo 假設與資料缺口。"],
+        "en": ["Reports must not imply real-time data collection.", "Recommendations need demo-assumption and data-gap labels."],
+        "ja": ["レポートはリアルタイムデータ収集を示唆してはいけません。", "提案には demo 仮定とデータギャップを示します。"]
+      },
+      "dealerEducation": {
+        "zh": ["用營運語言解釋 KPI", "把報告轉成客戶會議腳本", "明確說明資料來源與限制"],
+        "en": ["Explain KPIs in operating language", "Turn reports into customer meeting scripts", "Clearly explain data sources and limits"],
+        "ja": ["KPI を運用言語で説明", "レポートを顧客会議台本へ変換", "データソースと制約を明確化"]
+      },
+      "reportOutputs": {
+        "zh": ["月度營運摘要", "改善行動", "續約/增購線索"],
+        "en": ["Monthly operating summary", "Improvement actions", "Renewal or expansion cues"],
+        "ja": ["月次運用要約", "改善行動", "更新・増車の手がかり"]
+      },
+      "riskScore": 60
+    }
+  ]
+}
